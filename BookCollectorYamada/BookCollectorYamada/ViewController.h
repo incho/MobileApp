@@ -26,6 +26,7 @@
     NSTimer *haikeiTime;
     int speed;
     int HP;
+    int jumpCount;
     BOOL jumpFlag;
     BOOL takasaFlag;
     BOOL HPFlag;

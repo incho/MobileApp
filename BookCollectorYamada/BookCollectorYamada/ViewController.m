@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    speed = 1;
+    speed = 2;
     jumpFlag = true;
     HPFlag = true;
     HP = 3;
@@ -106,8 +106,8 @@
 //下の障害物が動くやつ
 -(void)syougaiRun{
     //当たり判定
-    if(syougai.center.x + 20 > player.center.x && syougai.center.x - 20 < player.center.x){
-        if(syougai.center.y + 50 > player.center.y && syougai.center.y - 50 < player.center.y){
+    if(syougai.center.x + 40 > player.center.x && syougai.center.x - 40 < player.center.x){
+        if(syougai.center.y + 40 > player.center.y && syougai.center.y - 40 < player.center.y){
             if(HPFlag == true){
                 HP = HP - 1;
                 HPFlag = false;
@@ -139,8 +139,8 @@
 //上の障害物が動くやつ
 -(void)syougai2Run{
     //当たり判定
-    if(syougai2.center.x + 20 > player.center.x && syougai2.center.x - 20 < player.center.x){
-        if(syougai2.center.y + 50 > player.center.y && syougai2.center.y - 20 < player.center.y){
+    if(syougai2.center.x + 40 > player.center.x && syougai2.center.x - 40 < player.center.x){
+        if(syougai2.center.y + 40 > player.center.y && syougai2.center.y - 40 < player.center.y){
             if(HPFlag == true){
                 HP = HP - 1;
                 HPFlag = false;
@@ -163,7 +163,6 @@
 
 //プレイヤーのタイマー
 -(void)timer3{
-    jumpFlag = false;
     time3 = [NSTimer scheduledTimerWithTimeInterval:0.01
                                              target:self
                                            selector:@selector(jump)
@@ -176,6 +175,8 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     //まだタップされていなければ
     if(jumpFlag == true){
+        jumpCount = jumpCount + 1;
+        [time3 invalidate];
         [self timer3];
         //高さ判定をtrueに
         takasaFlag = true;
@@ -186,10 +187,10 @@
 -(void)jump{
     //一定の高さまで来ていなければ上に動かす
     if(takasaFlag == true){
-        player.center = CGPointMake(player.center.x, player.center.y - 1);
+        player.center = CGPointMake(player.center.x, player.center.y - speed);
     //一定の高さまで来たら下に動かす
     }else{
-        player.center = CGPointMake(player.center.x, player.center.y + 1);
+        player.center = CGPointMake(player.center.x, player.center.y + speed);
         //下まで来たらタップの判定をtrueに
         if(player.center.y > 280){
             player.center = CGPointMake(player.center.x, 280);
@@ -198,9 +199,20 @@
         }
     }
     //上まで来たら高さの判定をfalseに
-    if(player.center.y < 190){
-        takasaFlag = false;
+    if(jumpCount == 1){
+        if(player.center.y < 190){
+            takasaFlag = false;
+            jumpFlag = false;
+            jumpCount = 0;
+        }
+    }else{
+        if(player.center.y < 100){
+            takasaFlag = false;
+            jumpFlag = false;
+            jumpCount = 0;
+        }
     }
+   
 }
 
 
@@ -217,8 +229,8 @@
 //アイテムが動くやつ
 -(void)itemRun{
     //当たり判定
-    if(item.center.x + 20 > player.center.x && item.center.x - 20 < player.center.x){
-        if(item.center.y + 50 > player.center.y && item.center.y - 20 < player.center.y){
+    if(item.center.x + 40 > player.center.x && item.center.x - 40 < player.center.x){
+        if(item.center.y + 40 > player.center.y && item.center.y - 40 < player.center.y){
             if(HPFlag == true){
                 item.image = [UIImage imageNamed:@""];
                 HP = HP + 1;
