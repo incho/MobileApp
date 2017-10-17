@@ -16,10 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    speed = 2;
+    speed = 1;
     jumpFlag = true;
     HPFlag = true;
     HP = 3;
+    kyoriCount = 60;
     
     //初期配置
     player.center = CGPointMake(player.center.x, 280);
@@ -32,11 +33,32 @@
     [self waitTimer2];
     [self waitTimer3];
     [self haikeiTimer];
+    [self kyoriTimer];
 }
+
+-(void)kyoriTimer{
+    kyoriTime = [NSTimer scheduledTimerWithTimeInterval:speed
+                                                 target:self
+                                               selector:@selector(kyori)
+                                               userInfo:nil
+                                                repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer: kyoriTime forMode:NSDefaultRunLoopMode];
+}
+
+-(void)kyori{
+    kyoriCount = kyoriCount - 1;
+    kyoriLabel.text = [NSString stringWithFormat:@"残り%dM",kyoriCount];
+    if(kyoriCount == 0){
+        [self performSegueWithIdentifier:@"gameclear" sender:nil];
+    }
+}
+
+
+
 
 //背景のタイマー
 -(void)haikeiTimer{
-    haikeiTime = [NSTimer scheduledTimerWithTimeInterval:0.01
+    haikeiTime = [NSTimer scheduledTimerWithTimeInterval:0.005
                                              target:self
                                            selector:@selector(haikei)
                                            userInfo:nil
@@ -96,7 +118,7 @@
 
 //下の障害物のタイマー
 -(void)timer1{
-    time1 = [NSTimer scheduledTimerWithTimeInterval:0.01
+    time1 = [NSTimer scheduledTimerWithTimeInterval:0.005
                                             target:self
                                           selector:@selector(syougaiRun)
                                           userInfo:nil
@@ -106,8 +128,8 @@
 //下の障害物が動くやつ
 -(void)syougaiRun{
     //当たり判定
-    if(syougai.center.x + 40 > player.center.x && syougai.center.x - 40 < player.center.x){
-        if(syougai.center.y + 40 > player.center.y && syougai.center.y - 40 < player.center.y){
+    if(syougai.center.x + 35 > player.center.x && syougai.center.x - 35 < player.center.x){
+        if(syougai.center.y + 35 > player.center.y && syougai.center.y - 35 < player.center.y){
             if(HPFlag == true){
                 HP = HP - 1;
                 HPFlag = false;
@@ -129,7 +151,7 @@
 
 //上の障害物のタイマー
 -(void)timer2{
-    time2 = [NSTimer scheduledTimerWithTimeInterval:0.01
+    time2 = [NSTimer scheduledTimerWithTimeInterval:0.005
                                              target:self
                                            selector:@selector(syougai2Run)
                                            userInfo:nil
@@ -139,8 +161,8 @@
 //上の障害物が動くやつ
 -(void)syougai2Run{
     //当たり判定
-    if(syougai2.center.x + 40 > player.center.x && syougai2.center.x - 40 < player.center.x){
-        if(syougai2.center.y + 40 > player.center.y && syougai2.center.y - 40 < player.center.y){
+    if(syougai2.center.x + 35 > player.center.x && syougai2.center.x - 35 < player.center.x){
+        if(syougai2.center.y + 35 > player.center.y && syougai2.center.y - 35 < player.center.y){
             if(HPFlag == true){
                 HP = HP - 1;
                 HPFlag = false;
@@ -163,7 +185,7 @@
 
 //プレイヤーのタイマー
 -(void)timer3{
-    time3 = [NSTimer scheduledTimerWithTimeInterval:0.01
+    time3 = [NSTimer scheduledTimerWithTimeInterval:0.005
                                              target:self
                                            selector:@selector(jump)
                                            userInfo:nil
@@ -218,7 +240,7 @@
 
 //アイテムのタイマー
 -(void)timer4{
-    time4 = [NSTimer scheduledTimerWithTimeInterval:0.01
+    time4 = [NSTimer scheduledTimerWithTimeInterval:0.005
                                              target:self
                                            selector:@selector(itemRun)
                                            userInfo:nil
@@ -229,8 +251,8 @@
 //アイテムが動くやつ
 -(void)itemRun{
     //当たり判定
-    if(item.center.x + 40 > player.center.x && item.center.x - 40 < player.center.x){
-        if(item.center.y + 40 > player.center.y && item.center.y - 40 < player.center.y){
+    if(item.center.x + 35 > player.center.x && item.center.x - 35 < player.center.x){
+        if(item.center.y + 35 > player.center.y && item.center.y - 35 < player.center.y){
             if(HPFlag == true){
                 item.image = [UIImage imageNamed:@""];
                 HP = HP + 1;
@@ -257,13 +279,13 @@
 -(void)kaihuku{
     if(HP >= 3){
         HP = 3;
-        heat3.image = [UIImage imageNamed:@"heat.png"];
+        heat3.image = [UIImage imageNamed:@"heart.png"];
     }else if(HP == 2){
         heat3.image = [UIImage imageNamed:@""];
-        heat2.image = [UIImage imageNamed:@"heat.png"];
+        heat2.image = [UIImage imageNamed:@"heart.png"];
     }else if(HP == 1){
         heat2.image = [UIImage imageNamed:@""];
-        heat1.image = [UIImage imageNamed:@"heat.png"];
+        heat1.image = [UIImage imageNamed:@"heart.png"];
     }else if(HP == 0){
         heat1.image = [UIImage imageNamed:@""];
         [self performSegueWithIdentifier:@"gameover" sender:nil];

@@ -15,15 +15,17 @@
 		0A4FAFD11F85E85500A25AFC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FAFD01F85E85500A25AFC /* main.m */; };
 		0A4FAFDB1F85E85500A25AFC /* BookCollectorYamadaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FAFDA1F85E85500A25AFC /* BookCollectorYamadaTests.m */; };
 		0A4FAFE61F85E85500A25AFC /* BookCollectorYamadaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FAFE51F85E85500A25AFC /* BookCollectorYamadaUITests.m */; };
-		0A8976D21F903CDA00DB2382 /* heal.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8976CE1F903CD900DB2382 /* heal.png */; };
-		0A8976D31F903CDA00DB2382 /* heat.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8976CF1F903CD900DB2382 /* heat.png */; };
 		0A8976D41F903CDA00DB2382 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8976D01F903CD900DB2382 /* plus.png */; };
 		0A8976D51F903CDA00DB2382 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8976D11F903CDA00DB2382 /* minus.png */; };
+		0A8976DD1F9593BD00DB2382 /* こんぺい島.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8976D71F9593BC00DB2382 /* こんぺい島.png */; };
+		0A8976DE1F9593BD00DB2382 /* トイレットペーパー.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8976D81F9593BC00DB2382 /* トイレットペーパー.png */; };
+		0A8976DF1F9593BD00DB2382 /* ラバーカップ.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8976D91F9593BD00DB2382 /* ラバーカップ.png */; };
+		0A8976E01F9593BD00DB2382 /* heal.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8976DA1F9593BD00DB2382 /* heal.png */; };
+		0A8976E11F9593BD00DB2382 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8976DB1F9593BD00DB2382 /* heart.png */; };
+		0A8976E21F9593BD00DB2382 /* konpeto.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8976DC1F9593BD00DB2382 /* konpeto.png */; };
+		0A8976E41F9593D500DB2382 /* トイレッ島.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8976E31F9593D500DB2382 /* トイレッ島.png */; };
 		0A97FD661F85E8B6004C9681 /* hito.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A97FD641F85E8B6004C9681 /* hito.png */; };
 		0A97FD671F85E8B6004C9681 /* syougai.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A97FD651F85E8B6004C9681 /* syougai.png */; };
-		0ACF4FC01F8CAA36005D6A20 /* トイレットペーパー.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ACF4FBD1F8CAA36005D6A20 /* トイレットペーパー.png */; };
-		0ACF4FC11F8CAA36005D6A20 /* トイレッ島.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ACF4FBE1F8CAA36005D6A20 /* トイレッ島.png */; };
-		0ACF4FC21F8CAA36005D6A20 /* ラバーカップ.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ACF4FBF1F8CAA36005D6A20 /* ラバーカップ.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,15 +62,17 @@
 		0A4FAFE11F85E85500A25AFC /* BookCollectorYamadaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookCollectorYamadaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4FAFE51F85E85500A25AFC /* BookCollectorYamadaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookCollectorYamadaUITests.m; sourceTree = "<group>"; };
 		0A4FAFE71F85E85500A25AFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A8976CE1F903CD900DB2382 /* heal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heal.png; sourceTree = "<group>"; };
-		0A8976CF1F903CD900DB2382 /* heat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heat.png; sourceTree = "<group>"; };
 		0A8976D01F903CD900DB2382 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		0A8976D11F903CDA00DB2382 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
+		0A8976D71F9593BC00DB2382 /* こんぺい島.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "こんぺい島.png"; path = "BookCollectorYamada/こんぺい島.png"; sourceTree = SOURCE_ROOT; };
+		0A8976D81F9593BC00DB2382 /* トイレットペーパー.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "トイレットペーパー.png"; path = "img/トイレ素材/トイレットペーパー.png"; sourceTree = SOURCE_ROOT; };
+		0A8976D91F9593BD00DB2382 /* ラバーカップ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ラバーカップ.png"; path = "img/トイレ素材/ラバーカップ.png"; sourceTree = SOURCE_ROOT; };
+		0A8976DA1F9593BD00DB2382 /* heal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heal.png; path = "img/アイテム/heal.png"; sourceTree = SOURCE_ROOT; };
+		0A8976DB1F9593BD00DB2382 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart.png; path = BookCollectorYamada/heart.png; sourceTree = SOURCE_ROOT; };
+		0A8976DC1F9593BD00DB2382 /* konpeto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = konpeto.png; path = BookCollectorYamada/konpeto.png; sourceTree = SOURCE_ROOT; };
+		0A8976E31F9593D500DB2382 /* トイレッ島.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "トイレッ島.png"; path = "img/トイレ素材/トイレッ島.png"; sourceTree = SOURCE_ROOT; };
 		0A97FD641F85E8B6004C9681 /* hito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hito.png; path = img/hito.png; sourceTree = SOURCE_ROOT; };
 		0A97FD651F85E8B6004C9681 /* syougai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = syougai.png; path = img/syougai.png; sourceTree = SOURCE_ROOT; };
-		0ACF4FBD1F8CAA36005D6A20 /* トイレットペーパー.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "トイレットペーパー.png"; path = "BookCollectorYamada/トイレットペーパー.png"; sourceTree = SOURCE_ROOT; };
-		0ACF4FBE1F8CAA36005D6A20 /* トイレッ島.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "トイレッ島.png"; path = "BookCollectorYamada/トイレッ島.png"; sourceTree = SOURCE_ROOT; };
-		0ACF4FBF1F8CAA36005D6A20 /* ラバーカップ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ラバーカップ.png"; path = "BookCollectorYamada/ラバーカップ.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 		0A4FAFC01F85E85500A25AFC /* BookCollectorYamada */ = {
 			isa = PBXGroup;
 			children = (
+				0A8976E51F9593ED00DB2382 /* こんぺい島 */,
 				0A8976D61F903CDF00DB2382 /* アイテム */,
 				0ACF4FC31F8CAA55005D6A20 /* トイレッ島 */,
 				0A97FD641F85E8B6004C9681 /* hito.png */,
@@ -157,20 +162,29 @@
 		0A8976D61F903CDF00DB2382 /* アイテム */ = {
 			isa = PBXGroup;
 			children = (
-				0A8976CE1F903CD900DB2382 /* heal.png */,
-				0A8976CF1F903CD900DB2382 /* heat.png */,
+				0A8976DB1F9593BD00DB2382 /* heart.png */,
+				0A8976DA1F9593BD00DB2382 /* heal.png */,
 				0A8976D11F903CDA00DB2382 /* minus.png */,
 				0A8976D01F903CD900DB2382 /* plus.png */,
 			);
 			name = "アイテム";
 			sourceTree = "<group>";
 		};
+		0A8976E51F9593ED00DB2382 /* こんぺい島 */ = {
+			isa = PBXGroup;
+			children = (
+				0A8976DC1F9593BD00DB2382 /* konpeto.png */,
+				0A8976D71F9593BC00DB2382 /* こんぺい島.png */,
+			);
+			name = "こんぺい島";
+			sourceTree = "<group>";
+		};
 		0ACF4FC31F8CAA55005D6A20 /* トイレッ島 */ = {
 			isa = PBXGroup;
 			children = (
-				0ACF4FBD1F8CAA36005D6A20 /* トイレットペーパー.png */,
-				0ACF4FBE1F8CAA36005D6A20 /* トイレッ島.png */,
-				0ACF4FBF1F8CAA36005D6A20 /* ラバーカップ.png */,
+				0A8976D91F9593BD00DB2382 /* ラバーカップ.png */,
+				0A8976D81F9593BC00DB2382 /* トイレットペーパー.png */,
+				0A8976E31F9593D500DB2382 /* トイレッ島.png */,
 			);
 			name = "トイレッ島";
 			sourceTree = "<group>";
@@ -281,17 +295,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A8976E21F9593BD00DB2382 /* konpeto.png in Resources */,
 				0A97FD671F85E8B6004C9681 /* syougai.png in Resources */,
-				0A8976D31F903CDA00DB2382 /* heat.png in Resources */,
-				0ACF4FC21F8CAA36005D6A20 /* ラバーカップ.png in Resources */,
-				0A8976D21F903CDA00DB2382 /* heal.png in Resources */,
 				0A4FAFCE1F85E85500A25AFC /* LaunchScreen.storyboard in Resources */,
-				0ACF4FC11F8CAA36005D6A20 /* トイレッ島.png in Resources */,
 				0A4FAFCB1F85E85500A25AFC /* Assets.xcassets in Resources */,
 				0A4FAFC91F85E85500A25AFC /* Main.storyboard in Resources */,
+				0A8976E01F9593BD00DB2382 /* heal.png in Resources */,
+				0A8976DF1F9593BD00DB2382 /* ラバーカップ.png in Resources */,
+				0A8976E11F9593BD00DB2382 /* heart.png in Resources */,
 				0A8976D51F903CDA00DB2382 /* minus.png in Resources */,
+				0A8976E41F9593D500DB2382 /* トイレッ島.png in Resources */,
+				0A8976DE1F9593BD00DB2382 /* トイレットペーパー.png in Resources */,
 				0A8976D41F903CDA00DB2382 /* plus.png in Resources */,
-				0ACF4FC01F8CAA36005D6A20 /* トイレットペーパー.png in Resources */,
+				0A8976DD1F9593BD00DB2382 /* こんぺい島.png in Resources */,
 				0A97FD661F85E8B6004C9681 /* hito.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZDQH45PUEV;
 				INFOPLIST_FILE = BookCollectorYamada/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Objective-C.practice.BookCollectorYamada";
@@ -496,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZDQH45PUEV;
 				INFOPLIST_FILE = BookCollectorYamada/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Objective-C.practice.BookCollectorYamada";
