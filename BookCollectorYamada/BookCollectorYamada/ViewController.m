@@ -20,6 +20,7 @@
     HPFlag = true;
     HP = 3;
     kyoriCount = 60;
+    costume = 0;
     
     //初期配置
     player.center = CGPointMake(player.center.x, 280);
@@ -27,14 +28,17 @@
     syougai2.center = CGPointMake(600, 190);
     item.center = CGPointMake(600, 190);
     haikei2.center = CGPointMake(852, haikei2.center.y);
-   
+    
     [self waitTimer1];
     [self waitTimer2];
     [self waitTimer3];
     [self haikeiTimer];
     [self kyoriTimer];
+    [self playerTimer];
 }
 
+
+//距離用のタイマー
 -(void)kyoriTimer{
     kyoriTime = [NSTimer scheduledTimerWithTimeInterval:speed
                                                  target:self
@@ -44,11 +48,37 @@
     [[NSRunLoop currentRunLoop] addTimer: kyoriTime forMode:NSDefaultRunLoopMode];
 }
 
+//距離を表示させる
 -(void)kyori{
     kyoriCount = kyoriCount - 1;
     kyoriLabel.text = [NSString stringWithFormat:@"残り%dM",kyoriCount];
     if(kyoriCount == 0){
         [self performSegueWithIdentifier:@"gameclear" sender:nil];
+    }
+}
+
+//プレイヤーを走らせるタイマー
+-(void)playerTimer{
+    playerTime = [NSTimer scheduledTimerWithTimeInterval:0.5
+                                                  target:self
+                                                selector:@selector(playerRun)
+                                                userInfo:nil
+                                                 repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer: playerTime forMode:NSDefaultRunLoopMode];
+}
+
+-(void)playerRun{
+    if(costume == 0){
+        player.image = [UIImage imageNamed:@"dash1.png"];
+        costume = 1;
+    }else if(costume == 1){
+        player.image = [UIImage imageNamed:@"dash2.png"];
+        costume = 0;
+    }else if(costume == 2){
+        player.image = [UIImage imageNamed:@"jump.png"];
+    }else if(costume == 3){
+        player.image = [UIImage imageNamed:@"butukaru.png"];
+        costume = 0;
     }
 }
 
@@ -58,10 +88,10 @@
 //背景のタイマー
 -(void)haikeiTimer{
     haikeiTime = [NSTimer scheduledTimerWithTimeInterval:0.005
-                                             target:self
-                                           selector:@selector(haikei)
-                                           userInfo:nil
-                                            repeats:YES];
+                                                  target:self
+                                                selector:@selector(haikei)
+                                                userInfo:nil
+                                                 repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer: haikeiTime forMode:NSDefaultRunLoopMode];
 }
 //背景動かすやつ
@@ -84,10 +114,10 @@
 -(void)waitTimer1{
     int waitTime = arc4random() % 2;
     NSTimer *WT1 = [NSTimer scheduledTimerWithTimeInterval:waitTime + 1
-                                             target:self
-                                           selector:@selector(timer1)
-                                           userInfo:nil
-                                            repeats:NO];
+                                                    target:self
+                                                  selector:@selector(timer1)
+                                                  userInfo:nil
+                                                   repeats:NO];
     [[NSRunLoop currentRunLoop] addTimer: WT1 forMode:NSDefaultRunLoopMode];
 }
 
@@ -95,10 +125,10 @@
 -(void)waitTimer2{
     int waitTime = arc4random() % 2;
     NSTimer *WT2 = [NSTimer scheduledTimerWithTimeInterval:waitTime + 1
-                                           target:self
-                                         selector:@selector(timer2)
-                                         userInfo:nil
-                                          repeats:NO];
+                                                    target:self
+                                                  selector:@selector(timer2)
+                                                  userInfo:nil
+                                                   repeats:NO];
     [[NSRunLoop currentRunLoop] addTimer: WT2 forMode:NSDefaultRunLoopMode];
 }
 
@@ -118,10 +148,10 @@
 //下の障害物のタイマー
 -(void)timer1{
     time1 = [NSTimer scheduledTimerWithTimeInterval:0.005
-                                            target:self
-                                          selector:@selector(syougaiRun)
-                                          userInfo:nil
-                                           repeats:YES];
+                                             target:self
+                                           selector:@selector(syougaiRun)
+                                           userInfo:nil
+                                            repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer: time1 forMode:NSDefaultRunLoopMode];
 }
 //下の障害物が動くやつ
@@ -130,6 +160,7 @@
     if(syougai.center.x + 35 > player.center.x && syougai.center.x - 35 < player.center.x){
         if(syougai.center.y + 35 > player.center.y && syougai.center.y - 35 < player.center.y){
             if(HPFlag == true){
+                costume = 3;
                 HP = HP - 1;
                 HPFlag = false;
                 [self kaihuku];
@@ -163,6 +194,7 @@
     if(syougai2.center.x + 35 > player.center.x && syougai2.center.x - 35 < player.center.x){
         if(syougai2.center.y + 35 > player.center.y && syougai2.center.y - 35 < player.center.y){
             if(HPFlag == true){
+                costume = 3;
                 HP = HP - 1;
                 HPFlag = false;
                 [self kaihuku];
@@ -206,16 +238,18 @@
 
 //プレイヤーがジャンプする処理
 -(void)jump{
+    costume = 2;
     //一定の高さまで来ていなければ上に動かす
     if(takasaFlag == true){
         player.center = CGPointMake(player.center.x, player.center.y - speed);
-    //一定の高さまで来たら下に動かす
+        //一定の高さまで来たら下に動かす
     }else{
         player.center = CGPointMake(player.center.x, player.center.y + speed);
         //下まで来たらタップの判定をtrueに
         if(player.center.y > 280){
             player.center = CGPointMake(player.center.x, 280);
             jumpFlag = true;
+            costume = 0;
             [time3 invalidate];
         }
     }
@@ -233,7 +267,7 @@
             jumpCount = 0;
         }
     }
-   
+    
 }
 
 
@@ -261,7 +295,7 @@
         }
     }
     
-    //障害物動かす
+    //アイテム動かす
     item.center = CGPointMake(item.center.x - speed, item.center.y);
     //左端までいったら右に戻す
     if(item.center.x < -10){
@@ -296,7 +330,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-   
+    
 }
 
 

@@ -20,6 +20,7 @@
     HPFlag = true;
     HP = 3;
     kyoriCount = 60;
+    costume = 0;
     
     //初期配置
     player.center = CGPointMake(player.center.x, 280);
@@ -33,8 +34,11 @@
     [self waitTimer3];
     [self haikeiTimer];
     [self kyoriTimer];
+    [self playerTimer];
 }
 
+
+//距離用のタイマー
 -(void)kyoriTimer{
     kyoriTime = [NSTimer scheduledTimerWithTimeInterval:speed
                                                  target:self
@@ -44,11 +48,37 @@
     [[NSRunLoop currentRunLoop] addTimer: kyoriTime forMode:NSDefaultRunLoopMode];
 }
 
+//距離を表示させる
 -(void)kyori{
     kyoriCount = kyoriCount - 1;
     kyoriLabel.text = [NSString stringWithFormat:@"残り%dM",kyoriCount];
     if(kyoriCount == 0){
         [self performSegueWithIdentifier:@"gameclear" sender:nil];
+    }
+}
+
+//プレイヤーを走らせるタイマー
+-(void)playerTimer{
+    playerTime = [NSTimer scheduledTimerWithTimeInterval:0.5
+                                                 target:self
+                                               selector:@selector(playerRun)
+                                               userInfo:nil
+                                                repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer: playerTime forMode:NSDefaultRunLoopMode];
+}
+
+-(void)playerRun{
+    if(costume == 0){
+        player.image = [UIImage imageNamed:@"dash1.png"];
+        costume = 1;
+    }else if(costume == 1){
+        player.image = [UIImage imageNamed:@"dash2.png"];
+        costume = 0;
+    }else if(costume == 2){
+        player.image = [UIImage imageNamed:@"jump.png"];
+    }else if(costume == 3){
+        player.image = [UIImage imageNamed:@"butukaru.png"];
+        costume = 0;
     }
 }
 
@@ -130,6 +160,7 @@
     if(syougai.center.x + 35 > player.center.x && syougai.center.x - 35 < player.center.x){
         if(syougai.center.y + 35 > player.center.y && syougai.center.y - 35 < player.center.y){
             if(HPFlag == true){
+                costume = 3;
                 HP = HP - 1;
                 HPFlag = false;
                 [self kaihuku];
@@ -163,6 +194,7 @@
     if(syougai2.center.x + 35 > player.center.x && syougai2.center.x - 35 < player.center.x){
         if(syougai2.center.y + 35 > player.center.y && syougai2.center.y - 35 < player.center.y){
             if(HPFlag == true){
+                costume = 3;
                 HP = HP - 1;
                 HPFlag = false;
                 [self kaihuku];
@@ -206,6 +238,7 @@
 
 //プレイヤーがジャンプする処理
 -(void)jump{
+    costume = 2;
     //一定の高さまで来ていなければ上に動かす
     if(takasaFlag == true){
         player.center = CGPointMake(player.center.x, player.center.y - speed);
@@ -216,6 +249,7 @@
         if(player.center.y > 280){
             player.center = CGPointMake(player.center.x, 280);
             jumpFlag = true;
+            costume = 0;
             [time3 invalidate];
         }
     }
@@ -261,7 +295,7 @@
         }
     }
     
-    //障害物動かす
+    //アイテム動かす
     item.center = CGPointMake(item.center.x - speed, item.center.y);
     //左端までいったら右に戻す
     if(item.center.x < -10){
