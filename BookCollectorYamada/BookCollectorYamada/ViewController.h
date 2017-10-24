@@ -26,10 +26,12 @@
     NSTimer *time4;
     NSTimer *haikeiTime;
     NSTimer *kyoriTime;
+    NSTimer *playerTime;
     int speed;
     int HP;
     int jumpCount;
     int kyoriCount;
+    int costume;
     BOOL jumpFlag;
     BOOL takasaFlag;
     BOOL HPFlag;
@@ -37,4 +39,3 @@
 
 
 @end
-
