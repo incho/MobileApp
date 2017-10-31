@@ -23,6 +23,7 @@
 		0A8976E01F9593BD00DB2382 /* heal.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8976DA1F9593BD00DB2382 /* heal.png */; };
 		0A8976E11F9593BD00DB2382 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8976DB1F9593BD00DB2382 /* heart.png */; };
 		0A8976E41F9593D500DB2382 /* トイレッ島.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8976E31F9593D500DB2382 /* トイレッ島.png */; };
+		0A9670B01F9F119500150163 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9670AF1F9F119500150163 /* TutorialViewController.m */; };
 		0AAC86271F9EEA4E00EA006B /* k_pi.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AAC86231F9EEA4D00EA006B /* k_pi.png */; };
 		0AAC86281F9EEA4E00EA006B /* k_pu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AAC86241F9EEA4D00EA006B /* k_pu.png */; };
 		0AAC86291F9EEA4E00EA006B /* k_gr.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AAC86251F9EEA4D00EA006B /* k_gr.png */; };
@@ -81,6 +82,8 @@
 		0A8976DA1F9593BD00DB2382 /* heal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heal.png; path = "img/アイテム/heal.png"; sourceTree = SOURCE_ROOT; };
 		0A8976DB1F9593BD00DB2382 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart.png; path = BookCollectorYamada/heart.png; sourceTree = SOURCE_ROOT; };
 		0A8976E31F9593D500DB2382 /* トイレッ島.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "トイレッ島.png"; path = "img/トイレ素材/トイレッ島.png"; sourceTree = SOURCE_ROOT; };
+		0A9670AF1F9F119500150163 /* TutorialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		0A9670B11F9F11A800150163 /* TutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		0AAC86231F9EEA4D00EA006B /* k_pi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = k_pi.png; path = "img/金平糖/k_pi.png"; sourceTree = SOURCE_ROOT; };
 		0AAC86241F9EEA4D00EA006B /* k_pu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = k_pu.png; path = "img/金平糖/k_pu.png"; sourceTree = SOURCE_ROOT; };
 		0AAC86251F9EEA4D00EA006B /* k_gr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = k_gr.png; path = "img/金平糖/k_gr.png"; sourceTree = SOURCE_ROOT; };
@@ -160,6 +163,8 @@
 				0AF79B8C1F9ECF1300BA0DAF /* KonpeitouViewController.h */,
 				0AF79B8D1F9ECF7800BA0DAF /* ToilettouViewController.m */,
 				0AF79B8F1F9ECF8C00BA0DAF /* ToilettouViewController.h */,
+				0A9670AF1F9F119500150163 /* TutorialViewController.m */,
+				0A9670B11F9F11A800150163 /* TutorialViewController.h */,
 				0A4FAFC71F85E85500A25AFC /* Main.storyboard */,
 				0A4FAFCA1F85E85500A25AFC /* Assets.xcassets */,
 				0A4FAFCC1F85E85500A25AFC /* LaunchScreen.storyboard */,
@@ -397,6 +402,7 @@
 			files = (
 				0A4FAFC61F85E85500A25AFC /* ViewController.m in Sources */,
 				0AF79B8B1F9ECF0000BA0DAF /* KonpeitouViewController.m in Sources */,
+				0A9670B01F9F119500150163 /* TutorialViewController.m in Sources */,
 				0A4FAFD11F85E85500A25AFC /* main.m in Sources */,
 				0A4FAFC31F85E85500A25AFC /* AppDelegate.m in Sources */,
 				0AF79B8E1F9ECF7800BA0DAF /* ToilettouViewController.m in Sources */,

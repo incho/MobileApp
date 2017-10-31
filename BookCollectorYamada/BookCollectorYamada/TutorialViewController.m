@@ -1,27 +1,27 @@
 //
-//  ToilettouViewController.m
+//  TutorialViewController.m
 //  BookCollectorYamada
 //
 //  Copyright © 2017年 MobileApp. All rights reserved.
 //
 
-#import "ToilettouViewController.h"
+#import "TutorialViewController.h"
 
-@interface ToilettouViewController ()
+@interface TutorialViewController ()
 
 @end
 
-@implementation ToilettouViewController
+@implementation TutorialViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     speed = 1;
     jumpFlag = true;
     HPFlag = true;
-    itemFlag = true;
     HP = 3;
-    kyoriCount = 120;
     costume = 0;
+    count = 0;
+    finish.hidden = YES;
     
     //初期配置
     player.center = CGPointMake(player.center.x, 280);
@@ -34,28 +34,8 @@
     [self waitTimer2];
     [self waitTimer3];
     [self haikeiTimer];
-    [self kyoriTimer];
     [self playerTimer];
-}
-
-
-//距離用のタイマー
--(void)kyoriTimer{
-    kyoriTime = [NSTimer scheduledTimerWithTimeInterval:speed
-                                                 target:self
-                                               selector:@selector(kyori)
-                                               userInfo:nil
-                                                repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer: kyoriTime forMode:NSDefaultRunLoopMode];
-}
-
-//距離を表示させる
--(void)kyori{
-    kyoriCount = kyoriCount - 1;
-    kyoriLabel.text = [NSString stringWithFormat:@"残り%dM",kyoriCount];
-    if(kyoriCount == 0){
-        [self performSegueWithIdentifier:@"gameclear" sender:nil];
-    }
+    [self timer5];
 }
 
 //プレイヤーを走らせるタイマー
@@ -133,10 +113,9 @@
     [[NSRunLoop currentRunLoop] addTimer: WT2 forMode:NSDefaultRunLoopMode];
 }
 
-//アイテムをランダムに出すためのタイマー
+//アイテムのタイマー
 -(void)waitTimer3{
-    int waitTime = arc4random() % 15;
-    NSTimer *WT3 = [NSTimer scheduledTimerWithTimeInterval:waitTime + 5
+    NSTimer *WT3 = [NSTimer scheduledTimerWithTimeInterval:20
                                                     target:self
                                                   selector:@selector(timer4)
                                                   userInfo:nil
@@ -275,7 +254,6 @@
 
 //アイテムのタイマー
 -(void)timer4{
-    itemType = arc4random() % 3;
     time4 = [NSTimer scheduledTimerWithTimeInterval:0.005
                                              target:self
                                            selector:@selector(itemRun)
@@ -286,40 +264,14 @@
 
 //アイテムが動くやつ
 -(void)itemRun{
-    if(itemFlag == true){
-        if(itemType == 0){
-            item.image = [UIImage imageNamed:@"heart.png"];
-        }else if(itemType == 1){
-            item.image = [UIImage imageNamed:@"minus.png"];
-        }else if(itemType == 2){
-            item.image = [UIImage imageNamed:@"plus.png"];
-        }
-    }
-    
     //当たり判定
     if(item.center.x + 35 > player.center.x && item.center.x - 35 < player.center.x){
         if(item.center.y + 35 > player.center.y && item.center.y - 35 < player.center.y){
-            if(itemType == 0){
-                if(HPFlag == true){
-                    item.image = [UIImage imageNamed:@""];
-                    HP = HP + 1;
-                    HPFlag = false;
-                    itemFlag = false;
-                    [self kaihuku];
-                }
-            }else if(itemType == 1){
-                if(itemFlag == true){
-                    speed = speed - 1;
-                    if(speed <= 0){
-                        speed = 1;
-                    }
-                    itemFlag = false;
-                }
-            }else if(itemType == 2){
-                if(itemFlag == true){
-                    speed = speed + 1;
-                    itemFlag = false;
-                }
+            if(HPFlag == true){
+                item.image = [UIImage imageNamed:@""];
+                HP = HP + 1;
+                HPFlag = false;
+                [self kaihuku];
             }
         }
     }
@@ -330,7 +282,7 @@
     if(item.center.x < -10){
         [time4 invalidate];
         HPFlag = true;
-        itemFlag = true;
+        item.image = [UIImage imageNamed:@"heal.png"];
         item.center = CGPointMake(600, item.center.y);
         [self waitTimer3];
     }
@@ -342,16 +294,51 @@
     if(HP >= 3){
         HP = 3;
         heat3.image = [UIImage imageNamed:@"heart.png"];
+        [UIView animateWithDuration:1 animations:^{
+            player.center=CGPointMake(250,player.center.y); }];
     }else if(HP == 2){
         heat3.image = [UIImage imageNamed:@""];
         heat2.image = [UIImage imageNamed:@"heart.png"];
+        [UIView animateWithDuration:1 animations:^{
+            player.center=CGPointMake(200,player.center.y); }];
     }else if(HP == 1){
         heat2.image = [UIImage imageNamed:@""];
         heat1.image = [UIImage imageNamed:@"heart.png"];
+        [UIView animateWithDuration:1 animations:^{
+            player.center=CGPointMake(150,player.center.y); }];
     }else if(HP == 0){
         heat1.image = [UIImage imageNamed:@""];
         [self performSegueWithIdentifier:@"gameover" sender:nil];
     }
+}
+
+
+//強制終了アイテムのタイマー
+-(void)timer5{
+    time5 = [NSTimer scheduledTimerWithTimeInterval:0.005
+                                             target:self
+                                           selector:@selector(syougai3Run)
+                                           userInfo:nil
+                                            repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer: time5 forMode:NSDefaultRunLoopMode];
+}
+
+//強制終了アイテムが動くやつ
+-(void)syougai3Run{
+    count = count + 0.005;
+    if(count > 30){
+        finish.hidden = NO;
+        //当たり判定
+        if(finish.center.x + 35 > player.center.x && finish.center.x - 35 < player.center.x){
+            if(finish.center.y + 35 > player.center.y && finish.center.y - 35 < player.center.y){
+                [self performSegueWithIdentifier:@"gameover" sender:nil];
+            }
+        }
+        
+        //障害物動かす
+        finish.center = CGPointMake(finish.center.x - speed, finish.center.y);
+    }
+    
 }
 
 

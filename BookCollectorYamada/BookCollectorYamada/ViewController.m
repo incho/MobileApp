@@ -59,7 +59,7 @@
 
 //プレイヤーを走らせるタイマー
 -(void)playerTimer{
-    playerTime = [NSTimer scheduledTimerWithTimeInterval:0.5
+    playerTime = [NSTimer scheduledTimerWithTimeInterval:0.27
                                                   target:self
                                                 selector:@selector(playerRun)
                                                 userInfo:nil

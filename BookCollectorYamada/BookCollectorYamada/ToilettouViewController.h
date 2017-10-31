@@ -31,9 +31,11 @@
     int jumpCount;
     int kyoriCount;
     int costume;
+    int itemType;
     BOOL jumpFlag;
     BOOL takasaFlag;
     BOOL HPFlag;
+    BOOL itemFlag;
 }
 
 

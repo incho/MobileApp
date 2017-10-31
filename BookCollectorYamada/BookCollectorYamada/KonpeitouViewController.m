@@ -18,8 +18,9 @@
     speed = 1;
     jumpFlag = true;
     HPFlag = true;
+    itemFlag = true;
     HP = 3;
-    kyoriCount = 60;
+    kyoriCount = 200;
     costume = 0;
     
     //初期配置
@@ -132,9 +133,10 @@
     [[NSRunLoop currentRunLoop] addTimer: WT2 forMode:NSDefaultRunLoopMode];
 }
 
-//アイテムのタイマー
+//アイテムをランダムに出すためのタイマー
 -(void)waitTimer3{
-    NSTimer *WT3 = [NSTimer scheduledTimerWithTimeInterval:20
+    int waitTime = arc4random() % 15;
+    NSTimer *WT3 = [NSTimer scheduledTimerWithTimeInterval:waitTime + 5
                                                     target:self
                                                   selector:@selector(timer4)
                                                   userInfo:nil
@@ -273,6 +275,7 @@
 
 //アイテムのタイマー
 -(void)timer4{
+    itemType = arc4random() % 3;
     time4 = [NSTimer scheduledTimerWithTimeInterval:0.005
                                              target:self
                                            selector:@selector(itemRun)
@@ -283,14 +286,40 @@
 
 //アイテムが動くやつ
 -(void)itemRun{
+    if(itemFlag == true){
+        if(itemType == 0){
+            item.image = [UIImage imageNamed:@"heart.png"];
+        }else if(itemType == 1){
+            item.image = [UIImage imageNamed:@"minus.png"];
+        }else if(itemType == 2){
+            item.image = [UIImage imageNamed:@"plus.png"];
+        }
+    }
+    
     //当たり判定
     if(item.center.x + 35 > player.center.x && item.center.x - 35 < player.center.x){
         if(item.center.y + 35 > player.center.y && item.center.y - 35 < player.center.y){
-            if(HPFlag == true){
-                item.image = [UIImage imageNamed:@""];
-                HP = HP + 1;
-                HPFlag = false;
-                [self kaihuku];
+            if(itemType == 0){
+                if(HPFlag == true){
+                    item.image = [UIImage imageNamed:@""];
+                    HP = HP + 1;
+                    HPFlag = false;
+                    itemFlag = false;
+                    [self kaihuku];
+                }
+            }else if(itemType == 1){
+                if(itemFlag == true){
+                    speed = speed - 1;
+                    if(speed <= 0){
+                        speed = 1;
+                    }
+                    itemFlag = false;
+                }
+            }else if(itemType == 2){
+                if(itemFlag == true){
+                    speed = speed + 1;
+                    itemFlag = false;
+                }
             }
         }
     }
@@ -301,7 +330,7 @@
     if(item.center.x < -10){
         [time4 invalidate];
         HPFlag = true;
-        item.image = [UIImage imageNamed:@"heal.png"];
+        itemFlag = true;
         item.center = CGPointMake(600, item.center.y);
         [self waitTimer3];
     }
