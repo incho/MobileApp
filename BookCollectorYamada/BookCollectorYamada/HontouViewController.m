@@ -1,17 +1,17 @@
 //
-//  KonpeitouViewController.m
+//  HontouViewController.m
 //  BookCollectorYamada
 //
 //  Copyright © 2017年 MobileApp. All rights reserved.
 //
 
-#import "KonpeitouViewController.h"
+#import "HontouViewController.h"
 
-@interface KonpeitouViewController ()
+@interface HontouViewController ()
 
 @end
 
-@implementation KonpeitouViewController
+@implementation HontouViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,28 +22,24 @@
     HP = 3;
     kyoriCount = 5;
     costume = 0;
-
+    clearCount = 0;
     
-    //初期配置
-    player.center = CGPointMake(player.center.x, 280);
-    syougai.center = CGPointMake(600, 290);
-    syougai2.center = CGPointMake(600, 190);
-    syougai3.center = CGPointMake(1000, 190);
-    syougai4.center = CGPointMake(1000, 290);
-    item.center = CGPointMake(600, 190);
-    haikei2.center = CGPointMake(852, haikei2.center.y);
-    
-    //保存したクリア数を取り出す
+    //保存したクリア数を取り出す 
     data = [NSUserDefaults standardUserDefaults];
     if([data objectForKey:@"clearCount"]){
         clearCount = [[data objectForKey:@"clearCount"] intValue];
     }
     
+    //初期配置
+    player.center = CGPointMake(player.center.x, 280);
+    syougai.center = CGPointMake(600, 290);
+    syougai2.center = CGPointMake(600, 190);
+    item.center = CGPointMake(600, 190);
+    haikei2.center = CGPointMake(852, haikei2.center.y);
+    
     [self waitTimer1];
     [self waitTimer2];
     [self waitTimer3];
-    [self waitTimer4];
-    [self waitTimer5];
     [self haikeiTimer];
     [self kyoriTimer];
     [self playerTimer];
@@ -64,11 +60,13 @@
 -(void)kyori{
     kyoriCount = kyoriCount - 1;
     kyoriLabel.text = [NSString stringWithFormat:@"残り%dM",kyoriCount];
+    
+    //距離が0になったら
     if(kyoriCount == 0){
         
         //クリアしたことを記録する
-        if(clearCount == 2){
-            clearCount = 3;
+        if(clearCount == 0){
+            clearCount = 1;
             [data setInteger:clearCount forKey:@"clearCount"];
             [data synchronize];
         }
@@ -80,10 +78,10 @@
 //プレイヤーを走らせるタイマー
 -(void)playerTimer{
     playerTime = [NSTimer scheduledTimerWithTimeInterval:0.5
-                                                 target:self
-                                               selector:@selector(playerRun)
-                                               userInfo:nil
-                                                repeats:YES];
+                                                  target:self
+                                                selector:@selector(playerRun)
+                                                userInfo:nil
+                                                 repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer: playerTime forMode:NSDefaultRunLoopMode];
 }
 
@@ -132,7 +130,7 @@
 
 //ランダムに出すために待つタイマー(下の障害物)
 -(void)waitTimer1{
-    int waitTime = arc4random() % 3;
+    int waitTime = arc4random() % 2;
     NSTimer *WT1 = [NSTimer scheduledTimerWithTimeInterval:waitTime + 1
                                                     target:self
                                                   selector:@selector(timer1)
@@ -143,7 +141,7 @@
 
 //ランダムに出すために待つタイマー(上の障害物)
 -(void)waitTimer2{
-    int waitTime = arc4random() % 3;
+    int waitTime = arc4random() % 2;
     NSTimer *WT2 = [NSTimer scheduledTimerWithTimeInterval:waitTime + 1
                                                     target:self
                                                   selector:@selector(timer2)
@@ -152,32 +150,10 @@
     [[NSRunLoop currentRunLoop] addTimer: WT2 forMode:NSDefaultRunLoopMode];
 }
 
-//ランダムに出すために待つタイマー(上の障害物)
--(void)waitTimer4{
-    int waitTime = arc4random() % 3;
-    NSTimer *WT4 = [NSTimer scheduledTimerWithTimeInterval:waitTime + 1
-                                                    target:self
-                                                  selector:@selector(timer5)
-                                                  userInfo:nil
-                                                   repeats:NO];
-    [[NSRunLoop currentRunLoop] addTimer: WT4 forMode:NSDefaultRunLoopMode];
-}
-
-//ランダムに出すために待つタイマー(上の障害物)
--(void)waitTimer5{
-    int waitTime = arc4random() % 3;
-    NSTimer *WT5 = [NSTimer scheduledTimerWithTimeInterval:waitTime + 1
-                                                    target:self
-                                                  selector:@selector(timer6)
-                                                  userInfo:nil
-                                                   repeats:NO];
-    [[NSRunLoop currentRunLoop] addTimer: WT5 forMode:NSDefaultRunLoopMode];
-}
-
 //アイテムをランダムに出すためのタイマー
 -(void)waitTimer3{
-    int waitTime = arc4random() % 1;
-    NSTimer *WT3 = [NSTimer scheduledTimerWithTimeInterval:waitTime
+    int waitTime = arc4random() % 15;
+    NSTimer *WT3 = [NSTimer scheduledTimerWithTimeInterval:waitTime + 5
                                                     target:self
                                                   selector:@selector(timer4)
                                                   userInfo:nil
@@ -199,12 +175,12 @@
 }
 //下の障害物が動くやつ
 -(void)syougaiRun{
+    
     //当たり判定
-    //障害物にそれぞれプレイヤー一体文の枠を作っている
-    float hit_left = syougai.center.x - 17.5 - 43;
-    float hit_right = syougai.center.x + 17.5 + 43;
-    float hit_up = syougai.center.y - 14 - 46;
-    float hit_down = syougai.center.y + 14 + 46;
+    float hit_left = syougai.center.x - 22 - 43;
+    float hit_right = syougai.center.x + 22 + 43;
+    float hit_up = syougai.center.y - 22 - 46;
+    float hit_down = syougai.center.y + 22 + 46;
     player_right = player.center.x + 21.5;
     player_left = player.center.x - 21.5;
     player_up = player.center.y - 23;
@@ -219,19 +195,18 @@
             [self kaihuku];
         }
     }
-
+    
     
     //障害物動かす
     syougai.center = CGPointMake(syougai.center.x - speed, syougai.center.y);
     //左端までいったら右に戻す
-    if(hit_right < -5){
+    if(hit_right < -10){
         [time1 invalidate];
         HPFlag = true;
         syougai.center = CGPointMake(600, syougai.center.y);
         [self waitTimer1];
     }
 }
-
 
 //上の障害物のタイマー
 -(void)timer2{
@@ -246,11 +221,10 @@
 -(void)syougai2Run{
     
     //当たり判定
-    //障害物にそれぞれプレイヤー一体文の枠を作っている
-    float hit_left = syougai2.center.x -20.5 - 43;
-    float hit_right = syougai2.center.x + 20.5 + 43;
-    float hit_up = syougai2.center.y - 15 - 46;
-    float hit_down = syougai2.center.y + 15 + 46;
+    float hit_left = syougai2.center.x - 22 - 43;
+    float hit_right = syougai2.center.x + 22 + 43;
+    float hit_up = syougai2.center.y - 22 - 46;
+    float hit_down = syougai2.center.y + 22 + 46;
     player_right = player.center.x + 21.5;
     player_left = player.center.x - 21.5;
     player_up = player.center.y - 23;
@@ -265,106 +239,17 @@
         }
     }
     
+    
     //障害物動かす
     syougai2.center = CGPointMake(syougai2.center.x - speed, syougai2.center.y);
     //左端までいったら右に戻す
-    if(hit_right + 33.5 < -5){
+    if(syougai2.center.x < -10){
         [time2 invalidate];
         HPFlag = true;
         syougai2.center = CGPointMake(600, syougai2.center.y);
         [self waitTimer2];
     }
 }
-
-
-//上2の障害物のタイマー
--(void)timer5{
-    time5 = [NSTimer scheduledTimerWithTimeInterval:0.005
-                                             target:self
-                                           selector:@selector(syougai3Run)
-                                           userInfo:nil
-                                            repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer: time5 forMode:NSDefaultRunLoopMode];
-}
-
-//上2の障害物が動くやつ
--(void)syougai3Run{
-    //当たり判定
-    //障害物にそれぞれプレイヤー一体文の枠を作っている
-    float hit_left = syougai3.center.x - 20.5 - 43;
-    float hit_right = syougai3.center.x + 20.5 + 43;
-    float hit_up = syougai3.center.y - 15 - 46;
-    float hit_down = syougai3.center.y + 15 + 46;
-    player_right = player.center.x + 21.5;
-    player_left = player.center.x - 21.5;
-    player_up = player.center.y - 23;
-    player_down = player.center.y + 23;
-    
-    if((hit_left < player_left) && (player_right < hit_right) && (hit_up < player_up) && (player_down < hit_down)){
-        if(HPFlag == true){
-            costume = 3;
-            HP = HP - 1;
-            HPFlag = false;
-            [self kaihuku];
-        }
-    }
-    
-
-    //障害物動かす
-    syougai3.center = CGPointMake(syougai3.center.x - speed, syougai3.center.y);
-    //左端までいったら右に戻す
-    if(hit_right < -5){
-        [time5 invalidate];
-        HPFlag = true;
-        syougai3.center = CGPointMake(600, syougai3.center.y);
-        [self waitTimer4];
-    }
-}
-
-
-//下2の障害物のタイマー
--(void)timer6{
-    time6 = [NSTimer scheduledTimerWithTimeInterval:0.005
-                                             target:self
-                                           selector:@selector(syougai4Run)
-                                           userInfo:nil
-                                            repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer: time6 forMode:NSDefaultRunLoopMode];
-}
-//下2の障害物が動くやつ
--(void)syougai4Run{
-    //当たり判定
-    //障害物にそれぞれプレイヤー一体文の枠を作っている
-    float hit_left = syougai4.center.x - 17.5 - 43;
-    float hit_right = syougai4.center.x + 17.5 + 43;
-    float hit_up = syougai4.center.y - 14 - 46;
-    float hit_down = syougai4.center.y + 14 + 46;
-    player_right = player.center.x + 21.5;
-    player_left = player.center.x - 21.5;
-    player_up = player.center.y - 23;
-    player_down = player.center.y + 23;
-    
-    if((hit_left < player_left) && (player_right < hit_right) && (hit_up < player_up) && (player_down < hit_down)){
-        if(HPFlag == true){
-            costume = 3;
-            HP = HP - 1;
-            HPFlag = false;
-            [self kaihuku];
-        }
-    }
-    
-    
-    //障害物動かす
-    syougai4.center = CGPointMake(syougai4.center.x - speed, syougai4.center.y);
-    //左端までいったら右に戻す
-    if(hit_right < -5){
-        [time6 invalidate];
-        HPFlag = true;
-        syougai4.center = CGPointMake(600, syougai4.center.y);
-        [self waitTimer5];
-    }
-}
-
 
 
 //プレイヤーのタイマー
@@ -414,7 +299,7 @@
             jumpCount = 0;
         }
     }else{
-        if(player.center.y < 100){
+        if(player.center.y < 90){
             takasaFlag = false;
             jumpFlag = false;
             jumpCount = 0;
@@ -471,14 +356,14 @@
         //足が遅くなるやつ取った時
         }else if(itemType == 1){
             if(itemFlag == true){
-            item.image = [UIImage imageNamed:@""];
-            speed = speed - 0.2;
+                item.image = [UIImage imageNamed:@""];
+                speed = speed - 0.2;
                 if(speed <= 0.1){
                     speed = 0.1;
                 }
-            itemFlag = false;
+                itemFlag = false;
             }
-        //足が早くなるやつ取った時
+        //足が早くなるやつを取った時
         }else if(itemType == 2){
             if(itemFlag == true){
                 item.image = [UIImage imageNamed:@""];
@@ -489,10 +374,11 @@
         
     }
     
+    
     //アイテム動かす
     item.center = CGPointMake(item.center.x - speed, item.center.y);
     //左端までいったら右に戻す
-    if(item.center.x + 18.5 < -5){
+    if(hit_right < -5){
         [time4 invalidate];
         HPFlag = true;
         itemFlag = true;

@@ -19,6 +19,39 @@
     cloudArray = @[@"雲１.png",@"雲２.png",@"雲３.png",@"雲４.png",@"雲５.png"];
     
     kiraFlag = true;
+    clearCount = 0;
+    
+    //保存したクリア数を取り出す
+    data = [NSUserDefaults standardUserDefaults];
+    if([data objectForKey:@"clearCount"]){
+        clearCount = [[data objectForKey:@"clearCount"] intValue];
+    }
+    
+    if(clearCount == 0){
+        UIImage *img = [UIImage imageNamed:@"トイレッ島灰.png"];
+        UIImage *img2 = [UIImage imageNamed:@"こんぺい島灰.png"];
+        [toilettou setBackgroundImage:img forState:UIControlStateNormal];
+        [konpeitou setBackgroundImage:img2 forState:UIControlStateNormal];
+        toilettou.enabled = NO;
+        konpeitou.enabled = NO;
+    }else if(clearCount == 1){
+        UIImage *img = [UIImage imageNamed:@"S_トイレッ島.png"];
+        UIImage *img2 = [UIImage imageNamed:@"こんぺい島灰.png"];
+        [toilettou setBackgroundImage:img forState:UIControlStateNormal];
+        [konpeitou setBackgroundImage:img2 forState:UIControlStateNormal];
+        konpeitou.enabled = NO;
+    }else if(clearCount == 2){
+        UIImage *img = [UIImage imageNamed:@"S_トイレッ島.png"];
+        UIImage *img2 = [UIImage imageNamed:@"S_こんぺい島.png"];
+        [toilettou setBackgroundImage:img forState:UIControlStateNormal];
+        [konpeitou setBackgroundImage:img2 forState:UIControlStateNormal];
+    }else if(clearCount == 3){
+        UIImage *img = [UIImage imageNamed:@"S_トイレッ島.png"];
+        UIImage *img2 = [UIImage imageNamed:@"S_こんぺい島.png"];
+        [toilettou setBackgroundImage:img forState:UIControlStateNormal];
+        [konpeitou setBackgroundImage:img2 forState:UIControlStateNormal];
+    }
+    
 
     [self kiraTimer];
     [self cloudTimer1];

@@ -20,8 +20,15 @@
     HPFlag = true;
     itemFlag = true;
     HP = 3;
-    kyoriCount = 120;
+    kyoriCount = 5;
     costume = 0;
+    
+    //保存したクリア数を取り出す
+    data = [NSUserDefaults standardUserDefaults];
+    if([data objectForKey:@"clearCount"]){
+        clearCount = [[data objectForKey:@"clearCount"] intValue];
+    }
+    
     
     //初期配置
     player.center = CGPointMake(player.center.x, 280);
@@ -54,6 +61,14 @@
     kyoriCount = kyoriCount - 1;
     kyoriLabel.text = [NSString stringWithFormat:@"残り%dM",kyoriCount];
     if(kyoriCount == 0){
+        
+        //クリアしたことを記録する
+        if(clearCount == 1){
+            clearCount = 2;
+            [data setInteger:clearCount forKey:@"clearCount"];
+            [data synchronize];
+        }
+        //ムービーへ
         [self performSegueWithIdentifier:@"gameclear" sender:nil];
     }
 }
@@ -68,6 +83,7 @@
     [[NSRunLoop currentRunLoop] addTimer: playerTime forMode:NSDefaultRunLoopMode];
 }
 
+//プレイヤーのイラスト切り替え
 -(void)playerRun{
     if(costume == 0){
         player.image = [UIImage imageNamed:@"dash1.png"];
@@ -82,7 +98,6 @@
         costume = 0;
     }
 }
-
 
 
 
@@ -113,7 +128,7 @@
 
 //ランダムに出すために待つタイマー(下の障害物)
 -(void)waitTimer1{
-    int waitTime = arc4random() % 2;
+    int waitTime = arc4random() % 5;
     NSTimer *WT1 = [NSTimer scheduledTimerWithTimeInterval:waitTime + 1
                                                     target:self
                                                   selector:@selector(timer1)
@@ -124,7 +139,7 @@
 
 //ランダムに出すために待つタイマー(上の障害物)
 -(void)waitTimer2{
-    int waitTime = arc4random() % 2;
+    int waitTime = arc4random() % 5;
     NSTimer *WT2 = [NSTimer scheduledTimerWithTimeInterval:waitTime + 1
                                                     target:self
                                                   selector:@selector(timer2)
@@ -158,22 +173,32 @@
 }
 //下の障害物が動くやつ
 -(void)syougaiRun{
+    
     //当たり判定
-    if(syougai.center.x + 35 > player.center.x && syougai.center.x - 35 < player.center.x){
-        if(syougai.center.y + 35 > player.center.y && syougai.center.y - 35 < player.center.y){
-            if(HPFlag == true){
-                costume = 3;
-                HP = HP - 1;
-                HPFlag = false;
-                [self kaihuku];
-            }
+    //障害物にそれぞれプレイヤー一体文の枠を作っている
+    float hit_left = syougai.center.x - 17.5 - 43;
+    float hit_right = syougai.center.x + 17.5 + 43;
+    float hit_up = syougai.center.y - 14 - 46;
+    float hit_down = syougai.center.y + 14 + 46;
+    player_right = player.center.x + 21.5;
+    player_left = player.center.x - 21.5;
+    player_up = player.center.y - 23;
+    player_down = player.center.y + 23;
+    
+    //障害物の周りにプレイヤー分の幅を取り、その範囲内に入っていれば当たってるよねっていう判定
+    if((hit_left < player_left) && (player_right < hit_right) && (hit_up < player_up) && (player_down < hit_down)){
+        if(HPFlag == true){
+            costume = 3;
+            HP = HP - 1;
+            HPFlag = false;
+            [self kaihuku];
         }
     }
     
     //障害物動かす
     syougai.center = CGPointMake(syougai.center.x - speed, syougai.center.y);
     //左端までいったら右に戻す
-    if(syougai.center.x < -10){
+    if(hit_right < -5){
         [time1 invalidate];
         HPFlag = true;
         syougai.center = CGPointMake(600, syougai.center.y);
@@ -193,21 +218,29 @@
 //上の障害物が動くやつ
 -(void)syougai2Run{
     //当たり判定
-    if(syougai2.center.x + 35 > player.center.x && syougai2.center.x - 35 < player.center.x){
-        if(syougai2.center.y + 35 > player.center.y && syougai2.center.y - 35 < player.center.y){
-            if(HPFlag == true){
-                costume = 3;
-                HP = HP - 1;
-                HPFlag = false;
-                [self kaihuku];
-            }
+    //障害物にそれぞれプレイヤー一体文の枠を作っている
+    float hit_left = syougai2.center.x - 19 - 43;
+    float hit_right = syougai2.center.x + 19 + 43;
+    float hit_up = syougai2.center.y - 15 - 46;
+    float hit_down = syougai2.center.y + 15 + 46;
+    player_right = player.center.x + 21.5;
+    player_left = player.center.x - 21.5;
+    player_up = player.center.y - 23;
+    player_down = player.center.y + 23;
+    
+    if((hit_left < player_left) && (player_right < hit_right) && (hit_up < player_up) && (player_down < hit_down)){
+        if(HPFlag == true){
+            costume = 3;
+            HP = HP - 1;
+            HPFlag = false;
+            [self kaihuku];
         }
     }
     
     //障害物動かす
     syougai2.center = CGPointMake(syougai2.center.x - speed, syougai2.center.y);
     //左端までいったら右に戻す
-    if(syougai2.center.x < -10){
+    if(hit_right < -5){
         [time2 invalidate];
         HPFlag = true;
         syougai2.center = CGPointMake(600, syougai2.center.y);
@@ -263,7 +296,7 @@
             jumpCount = 0;
         }
     }else{
-        if(player.center.y < 100){
+        if(player.center.y < 90){
             takasaFlag = false;
             jumpFlag = false;
             jumpCount = 0;
@@ -288,7 +321,7 @@
 -(void)itemRun{
     if(itemFlag == true){
         if(itemType == 0){
-            item.image = [UIImage imageNamed:@"heart.png"];
+            item.image = [UIImage imageNamed:@"heal.png"];
         }else if(itemType == 1){
             item.image = [UIImage imageNamed:@"minus.png"];
         }else if(itemType == 2){
@@ -297,37 +330,51 @@
     }
     
     //当たり判定
-    if(item.center.x + 35 > player.center.x && item.center.x - 35 < player.center.x){
-        if(item.center.y + 35 > player.center.y && item.center.y - 35 < player.center.y){
-            if(itemType == 0){
-                if(HPFlag == true){
-                    item.image = [UIImage imageNamed:@""];
-                    HP = HP + 1;
-                    HPFlag = false;
-                    itemFlag = false;
-                    [self kaihuku];
+    float hit_left = item.center.x - 18.5 - 43;
+    float hit_right = item.center.x + 18.5 + 43;
+    float hit_up = item.center.y - 18.5 - 46;
+    float hit_down = item.center.y + 18.5 + 46;
+    player_right = player.center.x + 21.5;
+    player_left = player.center.x - 21.5;
+    player_up = player.center.y - 23;
+    player_down = player.center.y + 23;
+    
+    if((hit_left < player_left) && (player_right < hit_right) && (hit_up < player_up) && (player_down < hit_down)){
+        
+        //♡を取った時
+        if(itemType == 0){
+            if(HPFlag == true){
+                item.image = [UIImage imageNamed:@""];
+                HP = HP + 1;
+                HPFlag = false;
+                itemFlag = false;
+                [self kaihuku];
+            }
+        //足が遅くなるアイテムを取った時
+        }else if(itemType == 1){
+            if(itemFlag == true){
+                item.image = [UIImage imageNamed:@""];
+                speed = speed - 0.2;
+                if(speed <= 0.1){
+                    speed = 0.1;
                 }
-            }else if(itemType == 1){
-                if(itemFlag == true){
-                    speed = speed - 1;
-                    if(speed <= 0){
-                        speed = 1;
-                    }
-                    itemFlag = false;
-                }
-            }else if(itemType == 2){
-                if(itemFlag == true){
-                    speed = speed + 1;
-                    itemFlag = false;
-                }
+                itemFlag = false;
+            }
+        //足が早くなるアイテムを取った時
+        }else if(itemType == 2){
+            if(itemFlag == true){
+                item.image = [UIImage imageNamed:@""];
+                speed = speed + 0.2;
+                itemFlag = false;
             }
         }
+        
     }
     
     //アイテム動かす
     item.center = CGPointMake(item.center.x - speed, item.center.y);
     //左端までいったら右に戻す
-    if(item.center.x < -10){
+    if(item.center.x + 18.5 < -5){
         [time4 invalidate];
         HPFlag = true;
         itemFlag = true;
