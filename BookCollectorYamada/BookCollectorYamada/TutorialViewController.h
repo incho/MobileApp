@@ -10,6 +10,7 @@
 @interface TutorialViewController : UIViewController{
     IBOutlet UIImageView *syougai;
     IBOutlet UIImageView *player;
+    IBOutlet UIImageView *oji;
     IBOutlet UIImageView *syougai2;
     IBOutlet UIImageView *haikei1;
     IBOutlet UIImageView *haikei2;
@@ -18,6 +19,10 @@
     IBOutlet UIImageView *heat3;
     IBOutlet UIImageView *item;
     IBOutlet UIImageView *finish;
+    IBOutlet UIView *start;
+    IBOutlet UIView *end;
+    IBOutlet UIView *top;
+    IBOutlet UIView *bottom;
     
     NSTimer *time1;
     NSTimer *time2;
@@ -26,7 +31,22 @@
     NSTimer *time5;
     NSTimer *haikeiTime;
     NSTimer *playerTime;
-    int speed;
+    float speed;
+    float player_right;
+    float player_left;
+    float player_up;
+    float player_down;
+    float haikei1_size;
+    float haikei2_size;
+    float syougai_Wsize;
+    float syougai2_Wsize;
+    float syougai_Hsize;
+    float syougai2_Hsize;
+    float player_Wsize;
+    float player_Hsize;
+    float item_size;
+    float finish_Wsize;
+    float finish_Hsize;
     int HP;
     int jumpCount;
     int costume;

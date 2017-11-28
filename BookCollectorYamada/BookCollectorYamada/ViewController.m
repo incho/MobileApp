@@ -15,8 +15,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    data = [NSUserDefaults standardUserDefaults];
 }
+
+-(IBAction)reset{
+    [data removeObjectForKey:@"clearCount"];
+    [self performSegueWithIdentifier:@"reset" sender:nil];
+}
+
 
 
 

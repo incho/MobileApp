@@ -1,5 +1,5 @@
 //
-//  ToilettouViewController.h
+//  HontouViewController.h
 //  BookCollectorYamada
 //
 //  Copyright © 2017年 MobileApp. All rights reserved.
@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ToilettouViewController : UIViewController{
+@interface HontouViewController : UIViewController{
     IBOutlet UIImageView *syougai;
     IBOutlet UIImageView *player;
     IBOutlet UIImageView *syougai2;
