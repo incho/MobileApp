@@ -18,6 +18,10 @@
     IBOutlet UIImageView *heat3;
     IBOutlet UIImageView *item;
     IBOutlet UILabel *kyoriLabel;
+    IBOutlet UIView *start;
+    IBOutlet UIView *end;
+    IBOutlet UIView *top;
+    IBOutlet UIView *bottom;
     
     NSTimer *time1;
     NSTimer *time2;
@@ -32,6 +36,16 @@
     float player_left;
     float player_up;
     float player_down;
+    float haikei1_size;
+    float haikei2_size;
+    float syougai_Wsize;
+    float syougai2_Wsize;
+    float syougai_Hsize;
+    float syougai2_Hsize;
+    float player_Wsize;
+    float player_Hsize;
+    float player_syoki;
+    float item_size;
     int HP;
     int jumpCount;
     int kyoriCount;

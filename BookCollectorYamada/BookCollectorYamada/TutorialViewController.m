@@ -27,6 +27,8 @@
     item.hidden = YES;
     
     //大きさを取得
+    player_Wsize = player.frame.size.width / 2;
+    player_Hsize = player.frame.size.height / 2;
     syougai_Wsize = syougai.frame.size.width / 2;
     syougai2_Wsize = syougai2.frame.size.width / 2;
     syougai_Hsize = syougai.frame.size.height / 2;
@@ -161,19 +163,16 @@
     
     syougai.hidden = NO;
     //当たり判定
-    float hit_left = syougai.center.x - syougai_Wsize - player_Wsize;
-    float hit_right = syougai.center.x + syougai_Wsize + player_Wsize;
-    float hit_up = syougai.center.y - syougai_Hsize - player_Hsize;
-    float hit_down = syougai.center.y + syougai_Hsize + player_Hsize;
-//    float hit_left = syougai.center.x - syougai_Wsize;
-//    float hit_right = syougai.center.x + syougai_Wsize;
-//    float hit_up = syougai.center.y - syougai_Hsize;
-//    float hit_down = syougai.center.y + syougai_Hsize;
-    player_right = player.center.x;
-    player_left = player.center.x;
-    player_up = player.center.y;
-    player_down = player.center.y;
+    float hit_left = syougai.center.x - syougai_Wsize - player.frame.size.width;
+    float hit_right = syougai.center.x + syougai_Wsize + player.frame.size.width;
+    float hit_up = syougai.center.y - syougai_Hsize - player.frame.size.height;
+    float hit_down = syougai.center.y + syougai_Hsize + player.frame.size.height;
+    player_right = player.center.x + player_Wsize;
+    player_left = player.center.x - player_Wsize;
+    player_up = player.center.y - player_Hsize;
+    player_down = player.center.y + player_Hsize;
     
+    //障害物の周りにプレイヤー分の幅を取り、その範囲内に入っていれば当たってるよねっていう判定
     if((hit_left < player_left) && (player_right < hit_right) && (hit_up < player_up) && (player_down < hit_down)){
 //        [time1 invalidate];
 //        [time2 invalidate];
@@ -227,6 +226,13 @@
     player_down = player.center.y + player_Hsize;
     
     if((hit_left < player_left) && (player_right < hit_right) && (hit_up < player_up) && (player_down < hit_down)){
+//        [time1 invalidate];
+//        [time2 invalidate];
+//        [time3 invalidate];
+//        [time4 invalidate];
+//        [time5 invalidate];
+//        [haikeiTime invalidate];
+//        [playerTime invalidate];
         if(HPFlag == true){
             costume = 3;
             HP = HP - 1;
@@ -412,10 +418,10 @@
         float hit_right = finish.center.x + finish_Wsize + player.frame.size.width;
         float hit_up = finish.center.y - finish_Hsize - player.frame.size.height;
         float hit_down = finish.center.y + finish_Hsize + player.frame.size.height;
-        player_right = player.center.x;
-        player_left = player.center.x;
-        player_up = player.center.y;
-        player_down = player.center.y;
+        player_right = player.center.x + player_Wsize;
+        player_left = player.center.x - player_Wsize;
+        player_up = player.center.y - player_Hsize;
+        player_down = player.center.y + player_Hsize;
         
         if((hit_left < player_left) && (player_right < hit_right) && (hit_up < player_up) && (player_down < hit_down)){
             [time1 invalidate];

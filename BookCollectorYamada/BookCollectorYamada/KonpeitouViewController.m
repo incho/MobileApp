@@ -22,22 +22,44 @@
     HP = 3;
     kyoriCount = 5;
     costume = 0;
+    syougai.hidden = YES;
+    syougai2.hidden = YES;
+    syougai3.hidden = YES;
+    syougai4.hidden = YES;
+    item.hidden = YES;
 
-    
-    //初期配置
-    player.center = CGPointMake(player.center.x, 280);
-    syougai.center = CGPointMake(600, 290);
-    syougai2.center = CGPointMake(600, 190);
-    syougai3.center = CGPointMake(1000, 190);
-    syougai4.center = CGPointMake(1000, 290);
-    item.center = CGPointMake(600, 190);
-    haikei2.center = CGPointMake(852, haikei2.center.y);
     
     //保存したクリア数を取り出す
     data = [NSUserDefaults standardUserDefaults];
     if([data objectForKey:@"clearCount"]){
         clearCount = [[data objectForKey:@"clearCount"] intValue];
     }
+    
+    //大きさを取得
+    player_Wsize = player.frame.size.width / 2;
+    player_Hsize = player.frame.size.height / 2;
+    player_syoki = player.center.y;
+    syougai_Wsize = syougai.frame.size.width / 2;
+    syougai2_Wsize = syougai2.frame.size.width / 2;
+    syougai3_Wsize = syougai3.frame.size.width / 2;
+    syougai4_Wsize = syougai4.frame.size.width / 2;
+    syougai_Hsize = syougai.frame.size.height / 2;
+    syougai2_Hsize = syougai2.frame.size.height / 2;
+    syougai3_Hsize = syougai3.frame.size.height / 2;
+    syougai4_Hsize = syougai4.frame.size.height / 2;
+    item_size = item.frame.size.width / 2;
+    haikei1_size = haikei1.frame.size.width / 2;
+    haikei2_size = haikei2.frame.size.width / 2;
+    
+    //初期配置
+    syougai.center = CGPointMake(start.center.x + syougai_Wsize, syougai.center.y);
+    syougai2.center = CGPointMake(start.center.x + syougai2_Wsize, syougai2.center.y);
+    syougai3.center = CGPointMake(start.center.x + syougai3_Wsize, syougai3.center.y);
+    syougai4.center = CGPointMake(start.center.x + syougai4_Wsize, syougai4.center.y);
+    item.center = CGPointMake(start.center.x + item_size, item.center.y);
+    haikei1.center = CGPointMake(top.center.x, haikei1.center.y);
+    haikei2.center = CGPointMake(start.center.x + haikei2_size, haikei2.center.y);
+    
     
     [self waitTimer1];
     [self waitTimer2];
@@ -121,11 +143,11 @@
     haikei2.center = CGPointMake(haikei2.center.x - speed, haikei2.center.y);
     
     //左端までいったらまた右から出す
-    if(haikei1.center.x < -285){
-        haikei1.center = CGPointMake(850, haikei1.center.y);
+    if(haikei1.center.x + haikei1_size < end.center.x){
+        haikei1.center = CGPointMake(start.center.x + haikei1_size, haikei1.center.y);
     }
-    if(haikei2.center.x < -285){
-        haikei2.center = CGPointMake(850, haikei2.center.y);
+    if(haikei2.center.x + haikei2_size < end.center.x){
+        haikei2.center = CGPointMake(start.center.x + haikei2_size, haikei2.center.y);
     }
 }
 
@@ -199,16 +221,17 @@
 }
 //下の障害物が動くやつ
 -(void)syougaiRun{
+    
+    syougai.hidden = NO;
     //当たり判定
-    //障害物にそれぞれプレイヤー一体文の枠を作っている
-    float hit_left = syougai.center.x - 17.5 - 43;
-    float hit_right = syougai.center.x + 17.5 + 43;
-    float hit_up = syougai.center.y - 14 - 46;
-    float hit_down = syougai.center.y + 14 + 46;
-    player_right = player.center.x + 21.5;
-    player_left = player.center.x - 21.5;
-    player_up = player.center.y - 23;
-    player_down = player.center.y + 23;
+    float hit_left = syougai.center.x - syougai_Wsize - player.frame.size.width;
+    float hit_right = syougai.center.x + syougai_Wsize + player.frame.size.width;
+    float hit_up = syougai.center.y - syougai_Hsize - player.frame.size.height;
+    float hit_down = syougai.center.y + syougai_Hsize + player.frame.size.height;
+    player_right = player.center.x + player_Wsize;
+    player_left = player.center.x - player_Wsize;
+    player_up = player.center.y - player_Hsize;
+    player_down = player.center.y + player_Hsize;
     
     //障害物の周りにプレイヤー分の幅を取り、その範囲内に入っていれば当たってるよねっていう判定
     if((hit_left < player_left) && (player_right < hit_right) && (hit_up < player_up) && (player_down < hit_down)){
@@ -224,10 +247,11 @@
     //障害物動かす
     syougai.center = CGPointMake(syougai.center.x - speed, syougai.center.y);
     //左端までいったら右に戻す
-    if(hit_right < -5){
+    if(syougai.center.x + syougai_Wsize < end.center.x){
         [time1 invalidate];
+        syougai.hidden = YES;
         HPFlag = true;
-        syougai.center = CGPointMake(600, syougai.center.y);
+        syougai.center = CGPointMake(start.center.x + syougai_Wsize, syougai.center.y);
         [self waitTimer1];
     }
 }
@@ -245,16 +269,16 @@
 //上の障害物が動くやつ
 -(void)syougai2Run{
     
+    syougai2.hidden = NO;
     //当たり判定
-    //障害物にそれぞれプレイヤー一体文の枠を作っている
-    float hit_left = syougai2.center.x -20.5 - 43;
-    float hit_right = syougai2.center.x + 20.5 + 43;
-    float hit_up = syougai2.center.y - 15 - 46;
-    float hit_down = syougai2.center.y + 15 + 46;
-    player_right = player.center.x + 21.5;
-    player_left = player.center.x - 21.5;
-    player_up = player.center.y - 23;
-    player_down = player.center.y + 23;
+    float hit_left = syougai2.center.x - syougai2_Wsize - player.frame.size.width;
+    float hit_right = syougai2.center.x + syougai2_Wsize + player.frame.size.width;
+    float hit_up = syougai2.center.y - syougai2_Hsize - player.frame.size.height;
+    float hit_down = syougai2.center.y + syougai2_Hsize + player.frame.size.height;
+    player_right = player.center.x + player_Wsize;
+    player_left = player.center.x - player_Wsize;
+    player_up = player.center.y - player_Hsize;
+    player_down = player.center.y + player_Hsize;
     
     if((hit_left < player_left) && (player_right < hit_right) && (hit_up < player_up) && (player_down < hit_down)){
         if(HPFlag == true){
@@ -268,10 +292,11 @@
     //障害物動かす
     syougai2.center = CGPointMake(syougai2.center.x - speed, syougai2.center.y);
     //左端までいったら右に戻す
-    if(hit_right + 33.5 < -5){
+    if(syougai2.center.x + syougai2_Wsize < end.center.x){
         [time2 invalidate];
+        syougai2.hidden = YES;
         HPFlag = true;
-        syougai2.center = CGPointMake(600, syougai2.center.y);
+        syougai2.center = CGPointMake(start.center.x + syougai2_Wsize, syougai2.center.y);
         [self waitTimer2];
     }
 }
@@ -289,17 +314,18 @@
 
 //上2の障害物が動くやつ
 -(void)syougai3Run{
+    syougai3.hidden = NO;
     //当たり判定
-    //障害物にそれぞれプレイヤー一体文の枠を作っている
-    float hit_left = syougai3.center.x - 20.5 - 43;
-    float hit_right = syougai3.center.x + 20.5 + 43;
-    float hit_up = syougai3.center.y - 15 - 46;
-    float hit_down = syougai3.center.y + 15 + 46;
-    player_right = player.center.x + 21.5;
-    player_left = player.center.x - 21.5;
-    player_up = player.center.y - 23;
-    player_down = player.center.y + 23;
+    float hit_left = syougai3.center.x - syougai3_Wsize - player.frame.size.width;
+    float hit_right = syougai3.center.x + syougai3_Wsize + player.frame.size.width;
+    float hit_up = syougai3.center.y - syougai3_Hsize - player.frame.size.height;
+    float hit_down = syougai3.center.y + syougai3_Hsize + player.frame.size.height;
+    player_right = player.center.x + player_Wsize;
+    player_left = player.center.x - player_Wsize;
+    player_up = player.center.y - player_Hsize;
+    player_down = player.center.y + player_Hsize;
     
+    //障害物の周りにプレイヤー分の幅を取り、その範囲内に入っていれば当たってるよねっていう判定
     if((hit_left < player_left) && (player_right < hit_right) && (hit_up < player_up) && (player_down < hit_down)){
         if(HPFlag == true){
             costume = 3;
@@ -309,14 +335,15 @@
         }
     }
     
-
+    
     //障害物動かす
     syougai3.center = CGPointMake(syougai3.center.x - speed, syougai3.center.y);
     //左端までいったら右に戻す
-    if(hit_right < -5){
+    if(syougai3.center.x + syougai3_Wsize < end.center.x){
         [time5 invalidate];
+        syougai3.hidden = YES;
         HPFlag = true;
-        syougai3.center = CGPointMake(600, syougai3.center.y);
+        syougai3.center = CGPointMake(start.center.x + syougai3_Wsize, syougai3.center.y);
         [self waitTimer4];
     }
 }
@@ -333,17 +360,19 @@
 }
 //下2の障害物が動くやつ
 -(void)syougai4Run{
-    //当たり判定
-    //障害物にそれぞれプレイヤー一体文の枠を作っている
-    float hit_left = syougai4.center.x - 17.5 - 43;
-    float hit_right = syougai4.center.x + 17.5 + 43;
-    float hit_up = syougai4.center.y - 14 - 46;
-    float hit_down = syougai4.center.y + 14 + 46;
-    player_right = player.center.x + 21.5;
-    player_left = player.center.x - 21.5;
-    player_up = player.center.y - 23;
-    player_down = player.center.y + 23;
     
+    syougai.hidden = NO;
+    //当たり判定
+    float hit_left = syougai4.center.x - syougai4_Wsize - player.frame.size.width;
+    float hit_right = syougai4.center.x + syougai4_Wsize + player.frame.size.width;
+    float hit_up = syougai4.center.y - syougai4_Hsize - player.frame.size.height;
+    float hit_down = syougai4.center.y + syougai4_Hsize + player.frame.size.height;
+    player_right = player.center.x + player_Wsize;
+    player_left = player.center.x - player_Wsize;
+    player_up = player.center.y - player_Hsize;
+    player_down = player.center.y + player_Hsize;
+    
+    //障害物の周りにプレイヤー分の幅を取り、その範囲内に入っていれば当たってるよねっていう判定
     if((hit_left < player_left) && (player_right < hit_right) && (hit_up < player_up) && (player_down < hit_down)){
         if(HPFlag == true){
             costume = 3;
@@ -357,10 +386,11 @@
     //障害物動かす
     syougai4.center = CGPointMake(syougai4.center.x - speed, syougai4.center.y);
     //左端までいったら右に戻す
-    if(hit_right < -5){
+    if(syougai4.center.x + syougai4_Wsize < end.center.x){
         [time6 invalidate];
+        syougai4.hidden = YES;
         HPFlag = true;
-        syougai4.center = CGPointMake(600, syougai4.center.y);
+        syougai4.center = CGPointMake(start.center.x + syougai4_Wsize, syougai4.center.y);
         [self waitTimer5];
     }
 }
@@ -399,22 +429,23 @@
     }else{
         player.center = CGPointMake(player.center.x, player.center.y + speed);
         //下まで来たらタップの判定をtrueに
-        if(player.center.y > 280){
-            player.center = CGPointMake(player.center.x, 280);
+        if(player.center.y > player_syoki){
+            player.center = CGPointMake(player.center.x, player_syoki);
             jumpFlag = true;
             costume = 0;
             [time3 invalidate];
         }
     }
     //上まで来たら高さの判定をfalseに
+    //1回タップ
     if(jumpCount == 1){
-        if(player.center.y < 190){
+        if(player.center.y + player_Hsize + player.frame.size.height < syougai.center.y - syougai_Hsize){
             takasaFlag = false;
             jumpFlag = false;
             jumpCount = 0;
         }
     }else{
-        if(player.center.y < 100){
+        if(player.center.y + player_Hsize + player.frame.size.height < syougai2.center.y - syougai2_Hsize){
             takasaFlag = false;
             jumpFlag = false;
             jumpCount = 0;
@@ -447,15 +478,16 @@
         }
     }
     
+    item.hidden = NO;
     //当たり判定
-    float hit_left = item.center.x - 18.5 - 43;
-    float hit_right = item.center.x + 18.5 + 43;
-    float hit_up = item.center.y - 18.5 - 46;
-    float hit_down = item.center.y + 18.5 + 46;
-    player_right = player.center.x + 21.5;
-    player_left = player.center.x - 21.5;
-    player_up = player.center.y - 23;
-    player_down = player.center.y + 23;
+    float hit_left = item.center.x - item_size - player.frame.size.width;
+    float hit_right = item.center.x + item_size + player.frame.size.width;
+    float hit_up = item.center.y - item_size - player.frame.size.height;
+    float hit_down = item.center.y + item_size + player.frame.size.height;
+    player_right = player.center.x + player_Wsize;
+    player_left = player.center.x - player_Wsize;
+    player_up = player.center.y - player_Hsize;
+    player_down = player.center.y + player_Hsize;
     
     if((hit_left < player_left) && (player_right < hit_right) && (hit_up < player_up) && (player_down < hit_down)){
         
@@ -492,11 +524,11 @@
     //アイテム動かす
     item.center = CGPointMake(item.center.x - speed, item.center.y);
     //左端までいったら右に戻す
-    if(item.center.x + 18.5 < -5){
+    if(item.center.x + item_size < end.center.x){
         [time4 invalidate];
         HPFlag = true;
         itemFlag = true;
-        item.center = CGPointMake(600, item.center.y);
+        item.center = CGPointMake(start.center.x + item_size, item.center.y);
         [self waitTimer3];
     }
 }
@@ -515,6 +547,15 @@
         heat1.image = [UIImage imageNamed:@"heart.png"];
     }else if(HP == 0){
         heat1.image = [UIImage imageNamed:@""];
+        [time1 invalidate];
+        [time2 invalidate];
+        [time3 invalidate];
+        [time4 invalidate];
+        [time5 invalidate];
+        [time6 invalidate];
+        [kyoriTime invalidate];
+        [haikeiTime invalidate];
+        [playerTime invalidate];
         [self performSegueWithIdentifier:@"gameover" sender:nil];
     }
 }
