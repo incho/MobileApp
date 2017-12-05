@@ -304,6 +304,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2OX-Vf-44y">
+                                <rect key="frame" x="566" y="0.0" width="2" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="La2-4H-dxD">
+                                <rect key="frame" x="0.0" y="0.0" width="2" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FL1-0p-y34">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bC3-QG-xb0">
+                                <rect key="frame" x="0.0" y="317" width="568" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="トイレッ島.png" translatesAutoresizingMaskIntoConstraints="NO" id="RGF-Ux-YNT">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -329,7 +349,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dash1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Css-qX-oyD">
-                                <rect key="frame" x="35" y="237" width="69" height="72"/>
+                                <rect key="frame" x="35" y="237" width="55" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="XhE-wO-b1j">
@@ -352,6 +372,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottom" destination="bC3-QG-xb0" id="ECl-43-sJN"/>
+                        <outlet property="end" destination="La2-4H-dxD" id="7Ga-I6-wh2"/>
                         <outlet property="haikei1" destination="RGF-Ux-YNT" id="T0e-2G-kiO"/>
                         <outlet property="haikei2" destination="omg-yT-lBv" id="yjP-0j-Eua"/>
                         <outlet property="heat1" destination="XhE-wO-b1j" id="LZN-Ta-7Rt"/>
@@ -360,8 +382,10 @@
                         <outlet property="item" destination="JsO-WP-zMy" id="sIa-Ed-iKX"/>
                         <outlet property="kyoriLabel" destination="vh2-Km-cg0" id="noB-TR-kSX"/>
                         <outlet property="player" destination="Css-qX-oyD" id="JTe-AG-IbH"/>
+                        <outlet property="start" destination="2OX-Vf-44y" id="tzC-TY-sgv"/>
                         <outlet property="syougai" destination="pgR-YF-TdB" id="jdr-CY-Bq7"/>
                         <outlet property="syougai2" destination="p8h-2M-3Mt" id="Ksp-he-Dkw"/>
+                        <outlet property="top" destination="FL1-0p-y34" id="P2O-H8-oda"/>
                         <segue destination="yjV-qP-0Yo" kind="modal" identifier="gameover" id="PcV-SO-Vd8"/>
                         <segue destination="9ti-sL-4yU" kind="modal" identifier="gameclear" id="7FW-42-bmb"/>
                     </connections>
@@ -442,6 +466,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V3i-kW-7Qf">
+                                <rect key="frame" x="566" y="0.0" width="2" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hM6-du-mUY">
+                                <rect key="frame" x="0.0" y="0.0" width="2" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Asj-T5-glI">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pw2-I6-M9R">
+                                <rect key="frame" x="0.0" y="317" width="568" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="こんぺい島.png" translatesAutoresizingMaskIntoConstraints="NO" id="GBO-Xe-mVX">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -471,7 +515,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dash1.png" translatesAutoresizingMaskIntoConstraints="NO" id="gGB-W7-anR">
-                                <rect key="frame" x="35" y="237" width="69" height="72"/>
+                                <rect key="frame" x="35" y="237" width="55" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="HpZ-9z-VoV">
@@ -498,6 +542,8 @@
                         <viewLayoutGuide key="safeArea" id="ywf-pN-MKj"/>
                     </view>
                     <connections>
+                        <outlet property="bottom" destination="Pw2-I6-M9R" id="M4l-KF-GhB"/>
+                        <outlet property="end" destination="hM6-du-mUY" id="DCJ-mx-IMs"/>
                         <outlet property="haikei1" destination="GBO-Xe-mVX" id="dy0-3X-LU5"/>
                         <outlet property="haikei2" destination="UBv-1Z-k2s" id="fGa-Gd-4m2"/>
                         <outlet property="heat1" destination="HpZ-9z-VoV" id="Uhs-Gw-Jgv"/>
@@ -506,10 +552,12 @@
                         <outlet property="item" destination="k2Y-Yd-dSP" id="9e6-F6-KLI"/>
                         <outlet property="kyoriLabel" destination="uw9-ao-PbC" id="7TF-Ks-Isu"/>
                         <outlet property="player" destination="gGB-W7-anR" id="T9i-jg-YsK"/>
+                        <outlet property="start" destination="V3i-kW-7Qf" id="88c-UZ-Boz"/>
                         <outlet property="syougai" destination="MEF-NA-76f" id="w72-Xj-hFF"/>
                         <outlet property="syougai2" destination="DJo-lU-ZRE" id="IXv-sQ-SZS"/>
                         <outlet property="syougai3" destination="myY-C4-udY" id="twG-Kc-wxs"/>
                         <outlet property="syougai4" destination="WHk-R2-pbU" id="4qz-IT-VAo"/>
+                        <outlet property="top" destination="Asj-T5-glI" id="vos-ZI-5SL"/>
                         <segue destination="yjV-qP-0Yo" kind="modal" identifier="gameover" id="n6v-JS-QJq"/>
                         <segue destination="ZV0-ni-KrL" kind="modal" identifier="gameclear" id="2DM-OT-LaY"/>
                     </connections>
@@ -588,6 +636,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qkS-AL-vUn">
+                                <rect key="frame" x="566" y="0.0" width="2" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QHa-Mx-dJP">
+                                <rect key="frame" x="0.0" y="0.0" width="2" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9a2-Fr-Xef">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w5x-qz-Qhu">
+                                <rect key="frame" x="0.0" y="317" width="568" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="本島.png" translatesAutoresizingMaskIntoConstraints="NO" id="85z-w2-lE9">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -613,7 +681,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dash1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yui-Gp-old">
-                                <rect key="frame" x="35" y="237" width="69" height="72"/>
+                                <rect key="frame" x="35" y="237" width="55" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="d3L-Wy-QWv">
@@ -636,6 +704,8 @@
                         <viewLayoutGuide key="safeArea" id="6gf-Lz-R6G"/>
                     </view>
                     <connections>
+                        <outlet property="bottom" destination="w5x-qz-Qhu" id="G2m-9f-YiD"/>
+                        <outlet property="end" destination="QHa-Mx-dJP" id="xfo-wa-peC"/>
                         <outlet property="haikei1" destination="85z-w2-lE9" id="WBa-vI-ulA"/>
                         <outlet property="haikei2" destination="aY2-In-5Cc" id="dXl-AJ-9nT"/>
                         <outlet property="heat1" destination="d3L-Wy-QWv" id="9mi-VO-eeQ"/>
@@ -644,8 +714,10 @@
                         <outlet property="item" destination="jLj-ED-NkX" id="c58-2q-YoL"/>
                         <outlet property="kyoriLabel" destination="Bzt-09-mOv" id="vNa-ij-sJS"/>
                         <outlet property="player" destination="Yui-Gp-old" id="Chk-c6-BwZ"/>
+                        <outlet property="start" destination="qkS-AL-vUn" id="svy-mj-n7E"/>
                         <outlet property="syougai" destination="f8j-OV-dhA" id="bNR-7Z-DIC"/>
                         <outlet property="syougai2" destination="pUt-dy-leE" id="Z2w-uW-pH2"/>
+                        <outlet property="top" destination="9a2-Fr-Xef" id="Ff5-cd-BED"/>
                         <segue destination="yjV-qP-0Yo" kind="modal" identifier="gameover" id="2zX-ML-HUh"/>
                         <segue destination="DA9-5c-bXU" kind="modal" identifier="gameclear" id="05b-Rc-3bT"/>
                     </connections>
@@ -735,15 +807,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="本.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Km-5A-wZx">
-                                <rect key="frame" x="482" y="255" width="86" height="54"/>
+                                <rect key="frame" x="481" y="276" width="87" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="本.png" translatesAutoresizingMaskIntoConstraints="NO" id="eki-72-e0f">
-                                <rect key="frame" x="482" y="132" width="89" height="56"/>
+                                <rect key="frame" x="478" y="157" width="93" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dash1.png" translatesAutoresizingMaskIntoConstraints="NO" id="l98-as-I54">
-                                <rect key="frame" x="250" y="237" width="72" height="72"/>
+                                <rect key="frame" x="250" y="237" width="55" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="6aS-bE-JoA">
@@ -880,7 +952,7 @@
     </scenes>
     <resources>
         <image name="S_本島.png" width="329" height="316"/>
-        <image name="dash1.png" width="1228" height="1520"/>
+        <image name="dash1.png" width="1017" height="1410"/>
         <image name="heal.png" width="257" height="218"/>
         <image name="heart.png" width="286" height="254"/>
         <image name="hon_b.png" width="535" height="396"/>
@@ -896,7 +968,7 @@
         <image name="チュートリアル背景.png" width="3543" height="1051"/>
         <image name="トイレットペーパー.png" width="535" height="396"/>
         <image name="トイレッ島.png" width="3543" height="1051"/>
-        <image name="本.png" width="479" height="145"/>
+        <image name="本.png" width="456" height="101"/>
         <image name="本島.png" width="3543" height="1051"/>
         <image name="本棚.png" width="334" height="509"/>
         <image name="海空.png" width="1136" height="640"/>
