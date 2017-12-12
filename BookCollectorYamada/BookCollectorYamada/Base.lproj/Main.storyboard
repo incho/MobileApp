@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bgZ-ek-H1R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bgZ-ek-H1R">
     <device id="retina4_0" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,24 +21,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-b5-LlO">
-                                <rect key="frame" x="0.0" y="112" width="109" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="初めから">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="reset" destination="bgZ-ek-H1R" eventType="touchUpInside" id="RVe-h7-EWv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xP0-GQ-sk1">
-                                <rect key="frame" x="459" y="110" width="109" height="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xP0-GQ-sk1">
+                                <rect key="frame" x="462" y="95" width="105" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="続きから">
+                                <state key="normal" image="tuduki.png">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -52,6 +39,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-b5-LlO">
+                                <rect key="frame" x="6" y="95" width="105" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="hajimekara.png">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset" destination="bgZ-ek-H1R" eventType="touchUpInside" id="RVe-h7-EWv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="N2S-7P-c25"/>
@@ -64,33 +62,30 @@
             </objects>
             <point key="canvasLocation" x="-3180.6338028169016" y="142.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial Movie View Controller-->
         <scene sceneID="ZaT-OX-dHg">
             <objects>
-                <viewController id="9xm-le-1iW" sceneMemberID="viewController">
+                <viewController id="9xm-le-1iW" customClass="TutorialMovieViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BC9-Q9-9ez">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="チュートリアルムービー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2Z-KV-9p9">
-                                <rect key="frame" x="106" y="122" width="356" height="77"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYL-wG-URY">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MiU-MY-u4l">
-                                <rect key="frame" x="517" y="270" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="次へ"/>
                                 <connections>
-                                    <segue destination="0Jr-dK-W3B" kind="modal" id="j2I-Xs-K3C"/>
+                                    <action selector="tap" destination="9xm-le-1iW" eventType="touchUpInside" id="IOH-rV-TZG"/>
+                                    <action selector="tap" destination="z7H-Ha-BOc" eventType="touchUpInside" id="MjF-Q2-fQU"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="jnq-Em-PKJ"/>
                     </view>
+                    <connections>
+                        <outlet property="movieImage" destination="cYL-wG-URY" id="kAg-Tq-53m"/>
+                        <segue destination="0Jr-dK-W3B" kind="modal" identifier="next" id="iMb-8w-duQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MT9-UY-PYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,14 +127,6 @@
                                 <rect key="frame" x="-48" y="50" width="120" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf3-oX-Vlh">
-                                <rect key="frame" x="28" y="20" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <segue destination="bgZ-ek-H1R" kind="modal" id="GLO-7A-pJf"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQO-Tp-X41">
                                 <rect key="frame" x="384" y="39" width="150" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -171,6 +158,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <segue destination="z7H-Ha-BOc" kind="modal" id="K2z-k5-bJs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf3-oX-Vlh">
+                                <rect key="frame" x="13" y="7" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="modoru.png"/>
+                                <connections>
+                                    <segue destination="bgZ-ek-H1R" kind="modal" id="GLO-7A-pJf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -229,21 +224,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkj-oN-ofw">
-                                <rect key="frame" x="20" y="20" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <segue destination="NFj-YM-R9V" kind="modal" id="Hf8-8B-X7Z"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="541-zI-I50">
                                 <rect key="frame" x="114" y="81" width="341" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="ステージムービーコレクション"/>
                                 <connections>
-                                    <segue destination="z1C-Dv-wuY" kind="modal" id="ZC1-ty-oU3"/>
+                                    <segue destination="gEA-nH-asU" kind="modal" id="z2G-Yc-caz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c62-Py-u2A">
@@ -255,6 +242,14 @@
                                     <segue destination="1eh-NO-mFr" kind="modal" id="anv-MG-rHV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkj-oN-ofw">
+                                <rect key="frame" x="20" y="20" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="modoru.png"/>
+                                <connections>
+                                    <segue destination="NFj-YM-R9V" kind="modal" id="Hf8-8B-X7Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="bjj-57-7aO"/>
@@ -262,39 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nck-AW-4Gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-401" y="2593"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="IPI-Ue-elx">
-            <objects>
-                <viewController id="z1C-Dv-wuY" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="chk-IG-qzA">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ステージムービーコレクション" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgh-hT-eF3">
-                                <rect key="frame" x="42" y="122" width="484" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvS-OW-B5k">
-                                <rect key="frame" x="20" y="20" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <segue destination="S0l-Qu-yWY" kind="modal" id="Tn7-WW-Dkb"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="ySk-Q6-PgS"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7oM-vr-NNE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="336" y="2021"/>
+            <point key="canvasLocation" x="-401.40845070422534" y="2591.25"/>
         </scene>
         <!--Toilettou View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -325,11 +288,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="トイレッ島.png" translatesAutoresizingMaskIntoConstraints="NO" id="RGF-Ux-YNT">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1079" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="トイレッ島.png" translatesAutoresizingMaskIntoConstraints="NO" id="omg-yT-lBv">
-                                <rect key="frame" x="0.0" y="0.0" width="571" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1079" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="O8E-ed-hJm">
@@ -426,33 +389,31 @@
             </objects>
             <point key="canvasLocation" x="1006" y="143"/>
         </scene>
-        <!--View Controller-->
+        <!--Hontou Movie View Controller-->
         <scene sceneID="TJD-ht-Euo">
             <objects>
-                <viewController id="DA9-5c-bXU" sceneMemberID="viewController">
+                <viewController id="DA9-5c-bXU" customClass="HontouMovieViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VWH-DM-Gy1">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ゲームクリアムービー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFo-2Q-AEw">
-                                <rect key="frame" x="44" y="101" width="480" height="119"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdq-mt-SPw">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfa-YN-bDW">
-                                <rect key="frame" x="253" y="270" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="マップへ"/>
                                 <connections>
-                                    <segue destination="NFj-YM-R9V" kind="modal" id="uUL-an-osN"/>
+                                    <action selector="tap" destination="z7H-Ha-BOc" eventType="touchUpInside" id="j8y-4t-3eK"/>
+                                    <action selector="tap2" destination="9ti-sL-4yU" eventType="touchUpInside" id="bzp-IS-Fqy"/>
+                                    <action selector="tap2" destination="DA9-5c-bXU" eventType="touchUpInside" id="zd7-zG-CZo"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="6km-TP-pu9"/>
                     </view>
+                    <connections>
+                        <outlet property="movieImage2" destination="Rdq-mt-SPw" id="2BG-A1-29S"/>
+                        <segue destination="NFj-YM-R9V" kind="modal" identifier="back" id="pw6-fZ-EKz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r6o-BA-4dq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -487,11 +448,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="こんぺい島.png" translatesAutoresizingMaskIntoConstraints="NO" id="GBO-Xe-mVX">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1079" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="こんぺい島.png" translatesAutoresizingMaskIntoConstraints="NO" id="UBv-1Z-k2s">
-                                <rect key="frame" x="0.0" y="0.0" width="571" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1079" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="k_gr.png" translatesAutoresizingMaskIntoConstraints="NO" id="myY-C4-udY">
@@ -596,33 +557,30 @@
             </objects>
             <point key="canvasLocation" x="-401" y="983"/>
         </scene>
-        <!--View Controller-->
+        <!--Hontou Movie View Controller-->
         <scene sceneID="ncJ-tp-GKd">
             <objects>
-                <viewController id="zYu-GC-Cr4" sceneMemberID="viewController">
+                <viewController id="zYu-GC-Cr4" customClass="HontouMovieViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7TG-Q3-n8a">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ステージムービー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1P-xe-Ndn">
-                                <rect key="frame" x="107" y="122" width="356" height="77"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJ5-Yw-5T7">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ID-u8-KpU">
-                                <rect key="frame" x="471" y="270" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="次へ"/>
                                 <connections>
-                                    <segue destination="Kaf-4p-2eK" kind="modal" id="KfV-yP-EgS"/>
+                                    <action selector="tap" destination="zYu-GC-Cr4" eventType="touchUpInside" id="aJd-Bt-nlS"/>
+                                    <action selector="tap" destination="z7H-Ha-BOc" eventType="touchUpInside" id="qAg-Q2-lQx"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="gHh-Qh-Yzd"/>
                     </view>
+                    <connections>
+                        <outlet property="movieImage" destination="kJ5-Yw-5T7" id="4yL-FO-3sn"/>
+                        <segue destination="Kaf-4p-2eK" kind="modal" identifier="next" id="eMb-Fi-J5N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAT-8Q-ydI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -657,11 +615,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="本島.png" translatesAutoresizingMaskIntoConstraints="NO" id="85z-w2-lE9">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1079" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="本島.png" translatesAutoresizingMaskIntoConstraints="NO" id="aY2-In-5Cc">
-                                <rect key="frame" x="0.0" y="0.0" width="571" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1079" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="c62-oD-yQT">
@@ -741,10 +699,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40R-aj-ERL">
-                                <rect key="frame" x="20" y="20" width="31" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40R-aj-ERL">
+                                <rect key="frame" x="20" y="20" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="戻る"/>
+                                <state key="normal" image="modoru.png"/>
                                 <connections>
                                     <segue destination="S0l-Qu-yWY" kind="modal" id="XrS-9d-S01"/>
                                 </connections>
@@ -756,7 +714,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qEX-xD-Td5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="336" y="3073"/>
+            <point key="canvasLocation" x="336" y="4534"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="m4Q-FX-3BR">
@@ -787,11 +745,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="チュートリアル背景.png" translatesAutoresizingMaskIntoConstraints="NO" id="OCe-hq-PaF">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1079" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="チュートリアル背景.png" translatesAutoresizingMaskIntoConstraints="NO" id="1rP-v0-KPA">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1079" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ag2-Er-MWV">
@@ -857,34 +815,30 @@
             </objects>
             <point key="canvasLocation" x="-1803.1690140845071" y="142.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial Movie View Controller-->
         <scene sceneID="SL6-49-kTV">
             <objects>
-                <viewController id="d95-gk-ryX" sceneMemberID="viewController">
+                <viewController id="d95-gk-ryX" customClass="TutorialMovieViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wLs-Jo-F3Z">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ムービー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xU6-Kj-BxR">
-                                <rect key="frame" x="106" y="122" width="356" height="77"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJP-qp-QHG">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4S-Lo-2gt">
-                                <rect key="frame" x="211" y="207" width="146" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="旅に出る"/>
                                 <connections>
-                                    <segue destination="NFj-YM-R9V" kind="modal" id="fxN-Yc-EQl"/>
+                                    <action selector="tap" destination="z7H-Ha-BOc" eventType="touchUpInside" id="PZ7-lI-e7S"/>
+                                    <action selector="tap2" destination="d95-gk-ryX" eventType="touchUpInside" id="hgc-Li-2k8"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="lSK-RY-yWy"/>
                     </view>
+                    <connections>
+                        <outlet property="movieImage2" destination="OJP-qp-QHG" id="YSB-GQ-3ZO"/>
+                        <segue destination="NFj-YM-R9V" kind="modal" identifier="next" id="y4g-gv-PFA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xHY-SU-Xke" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -949,24 +903,220 @@
             </objects>
             <point key="canvasLocation" x="1727" y="983"/>
         </scene>
+        <!--Hontou Movie View Controller-->
+        <scene sceneID="ec0-Ix-m2E">
+            <objects>
+                <viewController id="O5L-xh-YTZ" customClass="HontouMovieViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AOs-af-Kr9">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeJ-yD-AmD">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="tap2" destination="O5L-xh-YTZ" eventType="touchUpInside" id="daJ-qy-TUU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvY-RL-Le2">
+                                <rect key="frame" x="10" y="10" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="modoru.png"/>
+                                <connections>
+                                    <segue destination="gEA-nH-asU" kind="modal" id="Gpg-Ce-T8H"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="NYY-Yd-IZr"/>
+                    </view>
+                    <connections>
+                        <outlet property="movieImage2" destination="WeJ-yD-AmD" id="OA4-GE-jPd"/>
+                        <segue destination="gEA-nH-asU" kind="modal" identifier="back" id="Kyb-ua-2aI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QGk-Fu-40W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1098.5915492957747" y="1777.5"/>
+        </scene>
+        <!--Toilettoumovie View Controller-->
+        <scene sceneID="wdI-gg-2N2">
+            <objects>
+                <viewController id="xWT-Q6-lsw" customClass="ToilettoumovieViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a3V-go-ti1">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7s4-T0-giq">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="tap2" destination="xWT-Q6-lsw" eventType="touchUpInside" id="Lyb-Cw-I6X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLl-6J-euy">
+                                <rect key="frame" x="10" y="10" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="modoru.png"/>
+                                <connections>
+                                    <segue destination="gEA-nH-asU" kind="modal" id="fWM-gk-sk8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="kjf-BG-QZR"/>
+                    </view>
+                    <connections>
+                        <outlet property="movieImage2" destination="7s4-T0-giq" id="7wj-oy-q1n"/>
+                        <segue destination="gEA-nH-asU" kind="modal" identifier="back" id="4ti-Vr-oOR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qly-uR-6wo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1099" y="2591"/>
+        </scene>
+        <!--Konpeitou Movie View Controller-->
+        <scene sceneID="Pqc-81-QBi">
+            <objects>
+                <viewController id="g4a-HS-D7z" customClass="KonpeitouMovieViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a7E-vI-Gmc">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebd-wx-HyB">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="tap2" destination="g4a-HS-D7z" eventType="touchUpInside" id="QEb-j4-h62"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbk-1k-5zG">
+                                <rect key="frame" x="10" y="10" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="modoru.png"/>
+                                <connections>
+                                    <segue destination="gEA-nH-asU" kind="modal" id="xJ2-HS-ljq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="37m-O1-AXQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="movieImage2" destination="Ebd-wx-HyB" id="xU3-9h-GxA"/>
+                        <segue destination="gEA-nH-asU" kind="modal" identifier="back" id="VCx-nW-mA0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C91-VT-ACg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1099" y="3363"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="Y2w-Lh-NNU">
+            <objects>
+                <viewController id="gEA-nH-asU" customClass="SMCollectionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9gu-bs-U4V">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="海空.png" translatesAutoresizingMaskIntoConstraints="NO" id="NWC-bI-Q5T">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="キラキラ１.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mad-I8-TH6">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="雲１.png" translatesAutoresizingMaskIntoConstraints="NO" id="gph-ZM-kFg">
+                                <rect key="frame" x="67" y="3" width="153" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="雲２.png" translatesAutoresizingMaskIntoConstraints="NO" id="cj5-9X-wKq">
+                                <rect key="frame" x="384" y="10" width="77" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="雲３.png" translatesAutoresizingMaskIntoConstraints="NO" id="0LZ-7z-bvB">
+                                <rect key="frame" x="506" y="11" width="124" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="雲４.png" translatesAutoresizingMaskIntoConstraints="NO" id="SMH-4Q-5Wi">
+                                <rect key="frame" x="184" y="47" width="181" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="雲５.png" translatesAutoresizingMaskIntoConstraints="NO" id="B54-YG-HsP">
+                                <rect key="frame" x="-48" y="50" width="120" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MS-DN-hZC">
+                                <rect key="frame" x="65" y="67" width="136" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="O5L-xh-YTZ" kind="modal" id="XlI-th-D55"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gn-An-GkT">
+                                <rect key="frame" x="216" y="149" width="136" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="xWT-Q6-lsw" kind="modal" id="Hwx-sX-Umq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yb7-yz-rey">
+                                <rect key="frame" x="402" y="78" width="136" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="g4a-HS-D7z" kind="modal" id="N6i-9D-JBh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ZB-r3-INr">
+                                <rect key="frame" x="9" y="11" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="modoru.png"/>
+                                <connections>
+                                    <segue destination="S0l-Qu-yWY" kind="modal" id="MmG-WT-x7s"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Brb-Z8-ras"/>
+                    </view>
+                    <connections>
+                        <outlet property="Cloud1" destination="B54-YG-HsP" id="P7x-6Q-Ixa"/>
+                        <outlet property="Cloud2" destination="gph-ZM-kFg" id="M0o-A5-cKJ"/>
+                        <outlet property="Cloud3" destination="SMH-4Q-5Wi" id="EqP-Yb-GQP"/>
+                        <outlet property="Cloud4" destination="cj5-9X-wKq" id="p4s-Nm-qqg"/>
+                        <outlet property="Cloud5" destination="0LZ-7z-bvB" id="2rh-6u-xp8"/>
+                        <outlet property="hontou" destination="4MS-DN-hZC" id="q8k-gI-tcI"/>
+                        <outlet property="kira" destination="Mad-I8-TH6" id="gcA-se-Jis"/>
+                        <outlet property="konpeitou" destination="Yb7-yz-rey" id="BxB-El-kjC"/>
+                        <outlet property="toilettou" destination="0gn-An-GkT" id="GYh-i6-ms5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gZn-n5-Gfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="336" y="2591"/>
+        </scene>
     </scenes>
     <resources>
         <image name="S_本島.png" width="329" height="316"/>
         <image name="dash1.png" width="1017" height="1410"/>
-        <image name="heal.png" width="257" height="218"/>
+        <image name="hajimekara.png" width="320" height="240"/>
+        <image name="heal.png" width="229" height="169"/>
         <image name="heart.png" width="286" height="254"/>
-        <image name="hon_b.png" width="535" height="396"/>
-        <image name="hon_r.png" width="535" height="396"/>
-        <image name="k_bl.png" width="535" height="396"/>
-        <image name="k_gr.png" width="535" height="396"/>
-        <image name="k_pi.png" width="535" height="396"/>
-        <image name="k_pu.png" width="535" height="396"/>
+        <image name="hon_b.png" width="430" height="351"/>
+        <image name="hon_r.png" width="430" height="349"/>
+        <image name="k_bl.png" width="407" height="396"/>
+        <image name="k_gr.png" width="407" height="396"/>
+        <image name="k_pi.png" width="406" height="396"/>
+        <image name="k_pu.png" width="407" height="396"/>
+        <image name="modoru.png" width="320" height="320"/>
         <image name="oji.png" width="1228" height="1520"/>
+        <image name="tuduki.png" width="320" height="240"/>
         <image name="うんこ.png" width="247" height="253"/>
         <image name="こんぺい島.png" width="3543" height="1051"/>
         <image name="キラキラ１.png" width="1136" height="640"/>
         <image name="チュートリアル背景.png" width="3543" height="1051"/>
-        <image name="トイレットペーパー.png" width="535" height="396"/>
+        <image name="トイレットペーパー.png" width="494" height="315"/>
         <image name="トイレッ島.png" width="3543" height="1051"/>
         <image name="本.png" width="456" height="101"/>
         <image name="本島.png" width="3543" height="1051"/>
@@ -980,8 +1130,10 @@
         <image name="雲５.png" width="218" height="125"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Hwx-sX-Umq"/>
+        <segue reference="4ti-Vr-oOR"/>
         <segue reference="PcV-SO-Vd8"/>
-        <segue reference="UkY-ki-BnT"/>
-        <segue reference="Ge2-Zi-TEw"/>
+        <segue reference="MmG-WT-x7s"/>
+        <segue reference="pw6-fZ-EKz"/>
     </inferredMetricsTieBreakers>
 </document>

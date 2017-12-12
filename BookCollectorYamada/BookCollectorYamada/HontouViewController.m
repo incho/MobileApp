@@ -19,6 +19,8 @@
     jumpFlag = true;
     HPFlag = true;
     itemFlag = true;
+    haikeiFlag1 = true;
+    haikeiFlag2 = true;
     HP = 3;
     kyoriCount = 5;
     costume = 0;
@@ -49,8 +51,8 @@
     syougai.center = CGPointMake(start.center.x + syougai_Wsize, syougai.center.y);
     syougai2.center = CGPointMake(start.center.x + syougai2_Wsize, syougai2.center.y);
     item.center = CGPointMake(start.center.x + item_size, item.center.y);
-    haikei1.center = CGPointMake(top.center.x, haikei1.center.y);
-    haikei2.center = CGPointMake(start.center.x + haikei2_size, haikei2.center.y);
+    haikei1.center = CGPointMake(end.center.x + haikei1_size, haikei1.center.y);
+    haikei2.center = CGPointMake(haikei1.center.x + haikei1_size + haikei2_size, haikei2.center.y);
 
     
     [self waitTimer1];
@@ -114,6 +116,9 @@
     }else if(costume == 3){
         player.image = [UIImage imageNamed:@"butukaru.png"];
         costume = 0;
+    }else if(costume == 4){
+        player.image = [UIImage imageNamed:@"kaihuku.png"];
+        costume = 0;
     }
 }
 
@@ -134,12 +139,21 @@
     haikei1.center = CGPointMake(haikei1.center.x - speed, haikei1.center.y);
     haikei2.center = CGPointMake(haikei2.center.x - speed, haikei2.center.y);
     
-    //左端までいったらまた右から出す
-    if(haikei1.center.x + haikei1_size < end.center.x){
-        haikei1.center = CGPointMake(start.center.x + haikei1_size, haikei1.center.y);
+    //次の背景の右端が画面の右端にきたら画像を右に戻す
+    if(haikei2.center.x + haikei2_size <= start.center.x){
+        if(haikeiFlag2 == true){
+            haikeiFlag2 = false;
+            haikei1.center = CGPointMake(start.center.x + haikei1_size, haikei1.center.y);
+            haikeiFlag1 = true;
+        }
+        
     }
-    if(haikei2.center.x + haikei2_size < end.center.x){
-        haikei2.center = CGPointMake(start.center.x + haikei2_size, haikei2.center.y);
+    if(haikei1.center.x + haikei1_size <= start.center.x){
+        if(haikeiFlag1 == true){
+            haikeiFlag1 = false;
+            haikei2.center = CGPointMake(start.center.x + haikei2_size, haikei2.center.y);
+            haikeiFlag2 = true;
+        }
     }
 }
 
@@ -365,6 +379,8 @@
     player_down = player.center.y + player_Hsize;
     
     if((hit_left < player_left) && (player_right < hit_right) && (hit_up < player_up) && (player_down < hit_down)){
+        
+        costume = 4;
         
         //♡を取った時
         if(itemType == 0){
