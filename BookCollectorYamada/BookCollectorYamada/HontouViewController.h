@@ -56,6 +56,8 @@
     BOOL takasaFlag;
     BOOL HPFlag;
     BOOL itemFlag;
+    BOOL haikeiFlag1;
+    BOOL haikeiFlag2;
 }
 
 
