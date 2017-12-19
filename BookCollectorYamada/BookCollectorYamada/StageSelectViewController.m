@@ -28,28 +28,106 @@
     }
     
     if(clearCount == 0){
-        UIImage *img = [UIImage imageNamed:@"トイレッ島灰.png"];
-        UIImage *img2 = [UIImage imageNamed:@"こんぺい島灰.png"];
-        [toilettou setBackgroundImage:img forState:UIControlStateNormal];
-        [konpeitou setBackgroundImage:img2 forState:UIControlStateNormal];
+        UIImage *img = [UIImage imageNamed:@"NEW本島.png"];
+        UIImage *img2 = [UIImage imageNamed:@"トイレッ島灰.png"];
+        UIImage *img3 = [UIImage imageNamed:@"こんぺい島灰.png"];
+        [hontou setBackgroundImage:img forState:UIControlStateNormal];
+        [toilettou setBackgroundImage:img2 forState:UIControlStateNormal];
+        [konpeitou setBackgroundImage:img3 forState:UIControlStateNormal];
         toilettou.enabled = NO;
         konpeitou.enabled = NO;
+        
+        Stage1.image = [UIImage imageNamed:@"hon_r.png"];
+        Stage2.image = [UIImage imageNamed:@"hon_r.png"];
+        Stage3.image = [UIImage imageNamed:@"hon_r.png"];
+        Stage4.image = [UIImage imageNamed:@"hon_r.png"];
+        Stage5.image = [UIImage imageNamed:@"hon_r.png"];
+        
     }else if(clearCount == 1){
-        UIImage *img = [UIImage imageNamed:@"S_トイレッ島.png"];
-        UIImage *img2 = [UIImage imageNamed:@"こんぺい島灰.png"];
-        [toilettou setBackgroundImage:img forState:UIControlStateNormal];
-        [konpeitou setBackgroundImage:img2 forState:UIControlStateNormal];
+        UIImage *img = [UIImage imageNamed:@"S_本島.png"];
+        UIImage *img2 = [UIImage imageNamed:@"NEWトイレッ島.png"];
+        UIImage *img3 = [UIImage imageNamed:@"こんぺい島灰.png"];
+        [hontou setBackgroundImage:img forState:UIControlStateNormal];
+        [toilettou setBackgroundImage:img2 forState:UIControlStateNormal];
+        [konpeitou setBackgroundImage:img3 forState:UIControlStateNormal];
         konpeitou.enabled = NO;
+        
+        Stage1.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage2.image = [UIImage imageNamed:@"hon_r.png"];
+        Stage3.image = [UIImage imageNamed:@"hon_r.png"];
+        Stage4.image = [UIImage imageNamed:@"hon_r.png"];
+        Stage5.image = [UIImage imageNamed:@"hon_r.png"];
+        
     }else if(clearCount == 2){
-        UIImage *img = [UIImage imageNamed:@"S_トイレッ島.png"];
-        UIImage *img2 = [UIImage imageNamed:@"S_こんぺい島.png"];
-        [toilettou setBackgroundImage:img forState:UIControlStateNormal];
-        [konpeitou setBackgroundImage:img2 forState:UIControlStateNormal];
+        UIImage *img = [UIImage imageNamed:@"S_本島.png"];
+        UIImage *img2 = [UIImage imageNamed:@"S_トイレッ島.png"];
+        UIImage *img3 = [UIImage imageNamed:@"NEWこんぺい島.png"];
+        [hontou setBackgroundImage:img forState:UIControlStateNormal];
+        [toilettou setBackgroundImage:img2 forState:UIControlStateNormal];
+        [konpeitou setBackgroundImage:img3 forState:UIControlStateNormal];
+        
+        Stage1.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage2.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage3.image = [UIImage imageNamed:@"hon_r.png"];
+        Stage4.image = [UIImage imageNamed:@"hon_r.png"];
+        Stage5.image = [UIImage imageNamed:@"hon_r.png"];
+        
     }else if(clearCount == 3){
-        UIImage *img = [UIImage imageNamed:@"S_トイレッ島.png"];
-        UIImage *img2 = [UIImage imageNamed:@"S_こんぺい島.png"];
-        [toilettou setBackgroundImage:img forState:UIControlStateNormal];
-        [konpeitou setBackgroundImage:img2 forState:UIControlStateNormal];
+        UIImage *img = [UIImage imageNamed:@"S_本島.png"];
+        UIImage *img2 = [UIImage imageNamed:@"NEWトイレッ島.png"];
+        UIImage *img3 = [UIImage imageNamed:@"S_こんぺい島.png"];
+        [hontou setBackgroundImage:img forState:UIControlStateNormal];
+        [toilettou setBackgroundImage:img2 forState:UIControlStateNormal];
+        [konpeitou setBackgroundImage:img3 forState:UIControlStateNormal];
+        
+        Stage1.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage2.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage3.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage4.image = [UIImage imageNamed:@"hon_r.png"];
+        Stage5.image = [UIImage imageNamed:@"hon_r.png"];
+        
+    }else if(clearCount == 4){
+        UIImage *img = [UIImage imageNamed:@"S_本島.png"];
+        UIImage *img2 = [UIImage imageNamed:@"S_トイレッ島.png"];
+        UIImage *img3 = [UIImage imageNamed:@"NEWこんぺい島.png"];
+        [hontou setBackgroundImage:img forState:UIControlStateNormal];
+        [toilettou setBackgroundImage:img2 forState:UIControlStateNormal];
+        [konpeitou setBackgroundImage:img3 forState:UIControlStateNormal];
+        
+        Stage1.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage2.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage3.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage4.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage5.image = [UIImage imageNamed:@"hon_r.png"];
+        
+    }else if(clearCount == 5){
+        UIImage *img = [UIImage imageNamed:@"NEW本島.png"];
+        UIImage *img2 = [UIImage imageNamed:@"S_トイレッ島.png"];
+        UIImage *img3 = [UIImage imageNamed:@"S_こんぺい島.png"];
+        [hontou setBackgroundImage:img forState:UIControlStateNormal];
+        [toilettou setBackgroundImage:img2 forState:UIControlStateNormal];
+        [konpeitou setBackgroundImage:img3 forState:UIControlStateNormal];
+        
+        Stage1.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage2.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage3.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage4.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage5.image = [UIImage imageNamed:@"hon_b.png"];
+        
+    }else if(clearCount == 6){
+        UIImage *img = [UIImage imageNamed:@"S_本島.png"];
+        UIImage *img2 = [UIImage imageNamed:@"S_トイレッ島.png"];
+        UIImage *img3 = [UIImage imageNamed:@"S_こんぺい島.png"];
+        [hontou setBackgroundImage:img forState:UIControlStateNormal];
+        [toilettou setBackgroundImage:img2 forState:UIControlStateNormal];
+        [konpeitou setBackgroundImage:img3 forState:UIControlStateNormal];
+        
+        Stage1.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage2.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage3.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage4.image = [UIImage imageNamed:@"hon_b.png"];
+        Stage5.image = [UIImage imageNamed:@"hon_b.png"];
+        
     }
     
 

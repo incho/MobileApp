@@ -16,38 +16,74 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    count = 0;
-    movieArray = @[@"t1s.png",@"t2s.png",@"t3s.png",@"t4s.png"];
-    UIImage *img = [UIImage imageNamed:movieArray[count]];
-    [movieImage setBackgroundImage:img forState:UIControlStateNormal];
+    clearCount = 0;
+    data = [NSUserDefaults standardUserDefaults];
+    if([data objectForKey:@"clearCount"]){
+        clearCount = [[data objectForKey:@"clearCount"] intValue];
+    }
     
-    count2 = 0;
-    movieArray2 = @[@"t1g.png",@"t2g.png",@"t3g.png",@"t4g.png",@"t5g.png",@"t6g.png"];
-    UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
-    [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
+    if(clearCount == 1){
+        start.hidden = YES;
+        normal.hidden = YES;
+        hard.hidden = YES;
+        
+        count = 0;
+        movieArray = @[@"t1s.png",@"t2s.png",@"t3s.png",@"t4s.png"];
+        UIImage *img = [UIImage imageNamed:movieArray[count]];
+        [movieImage setBackgroundImage:img forState:UIControlStateNormal];
+    
+        count2 = 0;
+        movieArray2 = @[@"t1g.png",@"t2g.png",@"t3g.png",@"t4g.png",@"t5g.png",@"t6g.png"];
+        UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
+        [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
+    }else if(clearCount < 3){
+        normal.hidden = YES;
+        hard.hidden = YES;
+        UIImage *img = [UIImage imageNamed:@"トイレッ島.png"];
+        [movieImage setBackgroundImage:img forState:UIControlStateNormal];
+        
+        UIImage *img2 = [UIImage imageNamed:@"トイレッ島.png"];
+        [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
+    }else{
+        start.hidden = YES;
+        UIImage *img = [UIImage imageNamed:@"トイレッ島.png"];
+        [movieImage setBackgroundImage:img forState:UIControlStateNormal];
+        
+        UIImage *img2 = [UIImage imageNamed:@"トイレッ島.png"];
+        [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
+    }
     
 }
 
 
 -(IBAction)tap{
-    count = count + 1;
-    
-    if(count == movieArray.count){
-        [self performSegueWithIdentifier:@"next" sender:nil];
+    if(clearCount == 1){
+        count = count + 1;
+        
+        if(count == movieArray.count){
+            [self performSegueWithIdentifier:@"next" sender:nil];
+        }else{
+            UIImage *img = [UIImage imageNamed:movieArray[count]];
+            [movieImage setBackgroundImage:img forState:UIControlStateNormal];
+        }
     }else{
-        UIImage *img = [UIImage imageNamed:movieArray[count]];
-        [movieImage setBackgroundImage:img forState:UIControlStateNormal];
+        [self performSegueWithIdentifier:@"next" sender:nil];
     }
+
 }
 
 -(IBAction)tap2{
-    count2 = count2 + 1;
-    
-    if(count2 == movieArray2.count){
-        [self performSegueWithIdentifier:@"back" sender:nil];
+    if(clearCount == 1){
+        count2 = count2 + 1;
+        
+        if(count2 == movieArray2.count){
+            [self performSegueWithIdentifier:@"back" sender:nil];
+        }else{
+            UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
+            [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
+        }
     }else{
-        UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
-        [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
+        [self performSegueWithIdentifier:@"back" sender:nil];
     }
 }
 

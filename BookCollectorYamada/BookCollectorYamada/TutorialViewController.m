@@ -297,7 +297,7 @@
     //上まで来たら高さの判定をfalseに
     //1回タップ
     if(jumpCount == 1){
-        if(player.center.y + player_Hsize + player.frame.size.height < syougai.center.y - syougai_Hsize){
+        if(player.center.y + player_Hsize + player.frame.size.height + syougai_Hsize < syougai.center.y - syougai_Hsize){
             takasaFlag = false;
             jumpFlag = false;
             jumpCount = 0;

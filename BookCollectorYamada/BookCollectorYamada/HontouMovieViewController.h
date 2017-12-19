@@ -10,11 +10,14 @@
 @interface HontouMovieViewController : UIViewController{
     IBOutlet UIButton *movieImage;
     IBOutlet UIButton *movieImage2;
+    IBOutlet UILabel *start;
     
     NSArray *movieArray;
     NSArray *movieArray2;
+    NSUserDefaults *data;
     int count;
     int count2;
+    int clearCount;
     
 }
 
