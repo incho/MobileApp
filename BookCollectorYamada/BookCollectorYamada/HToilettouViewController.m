@@ -1,17 +1,17 @@
 //
-//  ToilettouViewController.m
+//  HToilettouViewController.m
 //  BookCollectorYamada
 //
 //  Copyright © 2017年 MobileApp. All rights reserved.
 //
 
-#import "ToilettouViewController.h"
+#import "HToilettouViewController.h"
 
-@interface ToilettouViewController ()
+@interface HToilettouViewController ()
 
 @end
 
-@implementation ToilettouViewController
+@implementation HToilettouViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -83,8 +83,8 @@
     if(kyoriCount == 0){
         
         //クリアしたことを記録する
-        if(clearCount == 1){
-            clearCount = 2;
+        if(clearCount == 3){
+            clearCount = 4;
             [data setInteger:clearCount forKey:@"clearCount"];
             [data synchronize];
         }
@@ -146,7 +146,7 @@
             haikei1.center = CGPointMake(start.center.x + haikei1_size, haikei1.center.y);
             haikeiFlag1 = true;
         }
-       
+        
     }
     if(haikei1.center.x + haikei1_size <= start.center.x){
         if(haikeiFlag1 == true){
@@ -389,7 +389,7 @@
                 itemFlag = false;
                 [self kaihuku];
             }
-        //足が遅くなるアイテムを取った時
+            //足が遅くなるアイテムを取った時
         }else if(itemType == 1){
             if(itemFlag == true){
                 item.image = [UIImage imageNamed:@""];
@@ -399,7 +399,7 @@
                 }
                 itemFlag = false;
             }
-        //足が早くなるアイテムを取った時
+            //足が早くなるアイテムを取った時
         }else if(itemType == 2){
             if(itemFlag == true){
                 item.image = [UIImage imageNamed:@""];

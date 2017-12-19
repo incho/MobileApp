@@ -10,11 +10,16 @@
 @interface KonpeitouMovieViewController : UIViewController{
     IBOutlet UIButton *movieImage;
     IBOutlet UIButton *movieImage2;
+    IBOutlet UIButton *normal;
+    IBOutlet UIButton *hard;
+    IBOutlet UILabel *start;
     
+    NSUserDefaults *data;
     NSArray *movieArray;
     NSArray *movieArray2;
     int count;
     int count2;
+    int clearCount;
     
 }
 

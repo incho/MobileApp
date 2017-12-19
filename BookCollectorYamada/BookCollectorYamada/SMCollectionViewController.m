@@ -30,7 +30,7 @@
     if(clearCount == 0){
         UIImage *img = [UIImage imageNamed:@"トイレッ島灰.png"];
         UIImage *img2 = [UIImage imageNamed:@"こんぺい島灰.png"];
-        UIImage *img3 = [UIImage imageNamed:@"S_本島.png"];
+        UIImage *img3 = [UIImage imageNamed:@"本島灰.png"];
         [toilettou setBackgroundImage:img forState:UIControlStateNormal];
         [konpeitou setBackgroundImage:img2 forState:UIControlStateNormal];
         [hontou setBackgroundImage:img3 forState:UIControlStateNormal];

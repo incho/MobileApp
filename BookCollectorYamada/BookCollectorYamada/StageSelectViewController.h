@@ -15,6 +15,11 @@
     IBOutlet UIImageView *Cloud3;
     IBOutlet UIImageView *Cloud4;
     IBOutlet UIImageView *Cloud5;
+    IBOutlet UIImageView *Stage1;
+    IBOutlet UIImageView *Stage2;
+    IBOutlet UIImageView *Stage3;
+    IBOutlet UIImageView *Stage4;
+    IBOutlet UIImageView *Stage5;
     IBOutlet UIButton *hontou;
     IBOutlet UIButton *toilettou;
     IBOutlet UIButton *konpeitou;
