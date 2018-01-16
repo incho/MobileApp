@@ -252,7 +252,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAZ-cY-hBM">
                                 <rect key="frame" x="195" y="60" width="175" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="normalButton.png"/>
+                                <state key="normal" image="normal.png"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="modal" id="H29-05-alY"/>
                                 </connections>
@@ -634,7 +634,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5O-0g-fhJ">
                                 <rect key="frame" x="195" y="60" width="175" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="normalButton.png"/>
+                                <state key="normal" image="normal.png"/>
                                 <connections>
                                     <segue destination="7gI-ep-BFx" kind="modal" id="DXI-vc-GMS"/>
                                 </connections>
@@ -1069,33 +1069,33 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yb7-yz-rey">
-                                <rect key="frame" x="228" y="250" width="210" height="60"/>
+                                <rect key="frame" x="228" y="257" width="210" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="こんぺい島終了ムービー"/>
+                                <state key="normal" title="こんぺい島終了ムービー" backgroundImage="noimage.png"/>
                                 <connections>
                                     <action selector="Fkonpei" destination="gEA-nH-asU" eventType="touchUpInside" id="fbl-lB-Hc9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gn-An-GkT">
-                                <rect key="frame" x="228" y="190" width="210" height="50"/>
+                                <rect key="frame" x="228" y="192" width="210" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="トイレッ島終了ムービー"/>
+                                <state key="normal" title="トイレッ島終了ムービー" backgroundImage="noimage.png"/>
                                 <connections>
                                     <action selector="Ftoile" destination="gEA-nH-asU" eventType="touchUpInside" id="htZ-V3-rDY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MS-DN-hZC">
-                                <rect key="frame" x="228" y="135" width="210" height="50"/>
+                                <rect key="frame" x="228" y="127" width="210" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="本島終了ムービー"/>
+                                <state key="normal" title="本島終了ムービー" backgroundImage="noimage.png"/>
                                 <connections>
                                     <action selector="Fhontou" destination="gEA-nH-asU" eventType="touchUpInside" id="x2U-FJ-hfD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1b-dr-9oH">
-                                <rect key="frame" x="10" y="250" width="210" height="60"/>
+                                <rect key="frame" x="10" y="257" width="210" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="こんぺい島開始ムービー">
+                                <state key="normal" title="こんぺい島開始ムービー" backgroundImage="noimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -1103,19 +1103,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yj5-5y-2L5">
-                                <rect key="frame" x="10" y="70" width="210" height="60"/>
+                                <rect key="frame" x="10" y="62" width="210" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="チュートリアル開始ムービー">
+                                <state key="normal" title="チュートリアル開始ムービー" backgroundImage="noimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="Stutorial" destination="gEA-nH-asU" eventType="touchUpInside" id="Arx-yC-Npx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbs-3o-eyr">
-                                <rect key="frame" x="10" y="125" width="210" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbs-3o-eyr">
+                                <rect key="frame" x="10" y="127" width="210" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="本島開始ムービー">
+                                <state key="normal" title="本島開始ムービー" backgroundImage="noimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -1123,19 +1123,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmf-yA-jZf">
-                                <rect key="frame" x="10" y="185" width="210" height="60"/>
+                                <rect key="frame" x="10" y="192" width="210" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="トイレッ開始ムービー">
+                                <state key="normal" title="トイレッ開始ムービー" backgroundImage="noimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="Stoile" destination="gEA-nH-asU" eventType="touchUpInside" id="oJe-DL-Vuk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKH-KN-xTb">
-                                <rect key="frame" x="228" y="70" width="210" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKH-KN-xTb">
+                                <rect key="frame" x="228" y="62" width="210" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="チュートリアル終了ムービー">
+                                <state key="normal" title="チュートリアル終了ムービー" backgroundImage="noimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -1415,7 +1415,8 @@
         <image name="k_pi.png" width="406" height="396"/>
         <image name="k_pu.png" width="407" height="396"/>
         <image name="modoru.png" width="320" height="320"/>
-        <image name="normalButton.png" width="938" height="362"/>
+        <image name="noimage.png" width="1136" height="640"/>
+        <image name="normal.png" width="160" height="120"/>
         <image name="oji.png" width="1228" height="1520"/>
         <image name="tuduki.png" width="320" height="240"/>
         <image name="うんこ.png" width="247" height="253"/>
@@ -1444,6 +1445,6 @@
         <segue reference="n6v-JS-QJq"/>
         <segue reference="u58-uN-X9F"/>
         <segue reference="MmG-WT-x7s"/>
-        <segue reference="C9c-11-HLh"/>
+        <segue reference="tMW-Pf-TMj"/>
     </inferredMetricsTieBreakers>
 </document>
