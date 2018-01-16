@@ -15,9 +15,6 @@
     IBOutlet UIImageView *Cloud3;
     IBOutlet UIImageView *Cloud4;
     IBOutlet UIImageView *Cloud5;
-    IBOutlet UIButton *hontou;
-    IBOutlet UIButton *toilettou;
-    IBOutlet UIButton *konpeitou;
     
     NSTimer *kiraTime;
     NSTimer *cloudTime1;
@@ -26,15 +23,22 @@
     NSTimer *cloudTime4;
     NSTimer *cloudTime5;
     NSUserDefaults *data;
-    int clearCount;
-    BOOL kiraFlag;
     NSArray *cloudArray;
+    NSString *select;
+    int clearCount;
+    int MovieCount;
+    BOOL kiraFlag;
     
 }
 
-
-
-
+-(IBAction)Stutorial;
+-(IBAction)Ftutorial;
+-(IBAction)Shontou;
+-(IBAction)Fhontou;
+-(IBAction)Stoile;
+-(IBAction)Ftoile;
+-(IBAction)Skonpei;
+-(IBAction)Fkonpei;
 
 
 

@@ -27,42 +27,11 @@
         clearCount = [[data objectForKey:@"clearCount"] intValue];
     }
     
-    if(clearCount == 0){
-        UIImage *img = [UIImage imageNamed:@"トイレッ島灰.png"];
-        UIImage *img2 = [UIImage imageNamed:@"こんぺい島灰.png"];
-        UIImage *img3 = [UIImage imageNamed:@"本島灰.png"];
-        [toilettou setBackgroundImage:img forState:UIControlStateNormal];
-        [konpeitou setBackgroundImage:img2 forState:UIControlStateNormal];
-        [hontou setBackgroundImage:img3 forState:UIControlStateNormal];
-        toilettou.enabled = NO;
-        konpeitou.enabled = NO;
-        hontou.enabled = NO;
-    }else if(clearCount == 1){
-        UIImage *img = [UIImage imageNamed:@"トイレッ島灰.png"];
-        UIImage *img2 = [UIImage imageNamed:@"こんぺい島灰.png"];
-        UIImage *img3 = [UIImage imageNamed:@"S_本島.png"];
-        [toilettou setBackgroundImage:img forState:UIControlStateNormal];
-        [konpeitou setBackgroundImage:img2 forState:UIControlStateNormal];
-        [hontou setBackgroundImage:img3 forState:UIControlStateNormal];
-        toilettou.enabled = NO;
-        konpeitou.enabled = NO;
-    }else if(clearCount == 2){
-        UIImage *img = [UIImage imageNamed:@"S_トイレッ島.png"];
-        UIImage *img2 = [UIImage imageNamed:@"こんぺい島灰.png"];
-        UIImage *img3 = [UIImage imageNamed:@"S_本島.png"];
-        [toilettou setBackgroundImage:img forState:UIControlStateNormal];
-        [konpeitou setBackgroundImage:img2 forState:UIControlStateNormal];
-        [hontou setBackgroundImage:img3 forState:UIControlStateNormal];
-        konpeitou.enabled = NO;
-    }else if(clearCount == 3){
-        UIImage *img = [UIImage imageNamed:@"S_トイレッ島.png"];
-        UIImage *img2 = [UIImage imageNamed:@"S_こんぺい島.png"];
-        UIImage *img3 = [UIImage imageNamed:@"S_本島.png"];
-        [toilettou setBackgroundImage:img forState:UIControlStateNormal];
-        [konpeitou setBackgroundImage:img2 forState:UIControlStateNormal];
-        [hontou setBackgroundImage:img3 forState:UIControlStateNormal];
+    MovieCount = 0;
+    if([data objectForKey:@"MovieCount"]){
+        MovieCount = [[data objectForKey:@"MovieCount"] intValue];
     }
-    
+    NSLog(@"%d",MovieCount);
     
     [self kiraTimer];
     [self cloudTimer1];
@@ -192,6 +161,78 @@
         Cloud5.image = [UIImage imageNamed:cloudArray[random]];
     }
 }
+
+
+-(IBAction)Stutorial{
+    select = @"チュートリアル開始";
+    [data setObject:select forKey:@"ムービー選択"];
+    [data synchronize];
+    [self performSegueWithIdentifier:@"select" sender:nil];
+}
+
+-(IBAction)Ftutorial{
+    select = @"チュートリアル終了";
+    [data setObject:select forKey:@"ムービー選択"];
+    [data synchronize];
+    [self performSegueWithIdentifier:@"select" sender:nil];
+}
+
+-(IBAction)Shontou{
+    if(MovieCount >= 1){
+        select = @"本島開始";
+        [data setObject:select forKey:@"ムービー選択"];
+        [data synchronize];
+        [self performSegueWithIdentifier:@"select" sender:nil];
+    }
+}
+
+-(IBAction)Fhontou{
+    if(MovieCount >= 2){
+        select = @"本島終了";
+        [data setObject:select forKey:@"ムービー選択"];
+        [data synchronize];
+        [self performSegueWithIdentifier:@"select" sender:nil];
+    }
+}
+
+-(IBAction)Stoile{
+    if(MovieCount >= 3){
+        select = @"トイレッ島開始";
+        [data setObject:select forKey:@"ムービー選択"];
+        [data synchronize];
+        [self performSegueWithIdentifier:@"select" sender:nil];
+    }
+}
+
+-(IBAction)Ftoile{
+    if(MovieCount >= 4){
+        select = @"トイレッ島終了";
+        [data setObject:select forKey:@"ムービー選択"];
+        [data synchronize];
+        [self performSegueWithIdentifier:@"select" sender:nil];
+    }
+}
+
+-(IBAction)Skonpei{
+    if(MovieCount >= 5){
+        select = @"こんぺい島開始";
+        [data setObject:select forKey:@"ムービー選択"];
+        [data synchronize];
+        [self performSegueWithIdentifier:@"select" sender:nil];
+    }
+}
+
+-(IBAction)Fkonpei{
+    if(MovieCount >= 6){
+        select = @"こんぺい島終了";
+        [data setObject:select forKey:@"ムービー選択"];
+        [data synchronize];
+        [self performSegueWithIdentifier:@"select" sender:nil];
+    }
+}
+
+
+
 
 
 - (void)didReceiveMemoryWarning {

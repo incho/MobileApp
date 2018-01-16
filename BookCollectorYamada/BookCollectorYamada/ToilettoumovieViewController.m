@@ -16,13 +16,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    clearCount = 0;
     data = [NSUserDefaults standardUserDefaults];
+    
+    MovieCount = 0;
+    if([data objectForKey:@"MovieCount"]){
+        MovieCount = [[data objectForKey:@"MovieCount"] intValue];
+    }
+    
+    clearCount = 0;
     if([data objectForKey:@"clearCount"]){
         clearCount = [[data objectForKey:@"clearCount"] intValue];
     }
     
-    if(clearCount == 1){
+    if(MovieCount == 2){
         start.hidden = YES;
         normal.hidden = YES;
         hard.hidden = YES;
@@ -32,11 +38,17 @@
         UIImage *img = [UIImage imageNamed:movieArray[count]];
         [movieImage setBackgroundImage:img forState:UIControlStateNormal];
     
+    }else if(MovieCount == 3){
+        normal.hidden = YES;
+        hard.hidden = YES;
+        
         count2 = 0;
         movieArray2 = @[@"t1g.png",@"t2g.png",@"t3g.png",@"t4g.png",@"t5g.png",@"t6g.png"];
+        UIImage *img = [UIImage imageNamed:@"トイレッ島.png"];
+        [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
         [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
-    }else if(clearCount < 3){
+    }else if(MovieCount > 2){
         normal.hidden = YES;
         hard.hidden = YES;
         UIImage *img = [UIImage imageNamed:@"トイレッ島.png"];
@@ -44,23 +56,45 @@
         
         UIImage *img2 = [UIImage imageNamed:@"トイレッ島.png"];
         [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
-    }else{
+    }
+    if(clearCount == 3){
         start.hidden = YES;
+        normal.hidden = NO;
+        hard.hidden = NO;
         UIImage *img = [UIImage imageNamed:@"トイレッ島.png"];
         [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         
         UIImage *img2 = [UIImage imageNamed:@"トイレッ島.png"];
         [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
+        
+        UIImage *img3 = [UIImage imageNamed:@"hardNewButton.png"];
+        [hard setBackgroundImage:img3 forState:UIControlStateNormal];
+        
+    }else if(clearCount > 3){
+        start.hidden = YES;
+        normal.hidden = NO;
+        hard.hidden = NO;
+        UIImage *img = [UIImage imageNamed:@"トイレッ島.png"];
+        [movieImage setBackgroundImage:img forState:UIControlStateNormal];
+        
+        UIImage *img2 = [UIImage imageNamed:@"トイレッ島.png"];
+        [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
+        
+        UIImage *img3 = [UIImage imageNamed:@"hardButton.png"];
+        [hard setBackgroundImage:img3 forState:UIControlStateNormal];
     }
     
 }
 
 
 -(IBAction)tap{
-    if(clearCount == 1){
+    if(MovieCount == 2){
         count = count + 1;
         
         if(count == movieArray.count){
+            MovieCount = MovieCount + 1;
+            [data setInteger:MovieCount forKey:@"MovieCount"];
+            [data synchronize];
             [self performSegueWithIdentifier:@"next" sender:nil];
         }else{
             UIImage *img = [UIImage imageNamed:movieArray[count]];
@@ -73,10 +107,13 @@
 }
 
 -(IBAction)tap2{
-    if(clearCount == 1){
+    if(MovieCount == 3){
         count2 = count2 + 1;
         
         if(count2 == movieArray2.count){
+            MovieCount = MovieCount + 1;
+            [data setInteger:MovieCount forKey:@"MovieCount"];
+            [data synchronize];
             [self performSegueWithIdentifier:@"back" sender:nil];
         }else{
             UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];

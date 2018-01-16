@@ -15,7 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    speed = 1;
+    speed = 1.5;
     jumpFlag = true;
     HPFlag = true;
     itemFlag = true;
@@ -210,7 +210,7 @@
     [[NSRunLoop currentRunLoop] addTimer: WT5 forMode:NSDefaultRunLoopMode];
 }
 
-//アイテムをランダムに出すためのタイマー
+//アイテムを出すためのタイマー
 -(void)waitTimer3{
     int waitTime = arc4random() % 1;
     NSTimer *WT3 = [NSTimer scheduledTimerWithTimeInterval:waitTime

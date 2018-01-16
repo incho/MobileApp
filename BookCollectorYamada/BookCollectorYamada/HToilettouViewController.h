@@ -9,8 +9,10 @@
 
 @interface HToilettouViewController : UIViewController{
     IBOutlet UIImageView *syougai;
-    IBOutlet UIImageView *player;
     IBOutlet UIImageView *syougai2;
+    IBOutlet UIImageView *syougai3;
+    IBOutlet UIImageView *syougai4;
+    IBOutlet UIImageView *player;
     IBOutlet UIImageView *haikei1;
     IBOutlet UIImageView *haikei2;
     IBOutlet UIImageView *heat1;
@@ -27,6 +29,8 @@
     NSTimer *time2;
     NSTimer *time3;
     NSTimer *time4;
+    NSTimer *time5;
+    NSTimer *time6;
     NSTimer *haikeiTime;
     NSTimer *kyoriTime;
     NSTimer *playerTime;
@@ -40,8 +44,12 @@
     float haikei2_size;
     float syougai_Wsize;
     float syougai2_Wsize;
+    float syougai3_Wsize;
+    float syougai4_Wsize;
     float syougai_Hsize;
     float syougai2_Hsize;
+    float syougai3_Hsize;
+    float syougai4_Hsize;
     float player_Wsize;
     float player_Hsize;
     float player_syoki;
