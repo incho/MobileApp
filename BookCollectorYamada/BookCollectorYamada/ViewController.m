@@ -20,6 +20,7 @@
 
 -(IBAction)reset{
     [data removeObjectForKey:@"clearCount"];
+    [data removeObjectForKey:@"MovieCount"];
     [self performSegueWithIdentifier:@"reset" sender:nil];
 }
 

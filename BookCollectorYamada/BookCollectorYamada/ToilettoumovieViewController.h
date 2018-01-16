@@ -20,6 +20,7 @@
     int count;
     int count2;
     int clearCount;
+    int MovieCount;
     
 }
 
