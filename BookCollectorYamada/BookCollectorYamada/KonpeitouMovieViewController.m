@@ -69,7 +69,7 @@
         UIImage *img2 = [UIImage imageNamed:@"こんぺい島.png"];
         [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
         
-        UIImage *img3 = [UIImage imageNamed:@"hardNewButton.png"];
+        UIImage *img3 = [UIImage imageNamed:@"hardNew.png"];
         [hard setBackgroundImage:img3 forState:UIControlStateNormal];
         
     }else if(clearCount > 4){
@@ -83,7 +83,7 @@
         UIImage *img2 = [UIImage imageNamed:@"こんぺい島.png"];
         [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
         
-        UIImage *img3 = [UIImage imageNamed:@"hardButton.png"];
+        UIImage *img3 = [UIImage imageNamed:@"hard.png"];
         [hard setBackgroundImage:img3 forState:UIControlStateNormal];
     }
 }

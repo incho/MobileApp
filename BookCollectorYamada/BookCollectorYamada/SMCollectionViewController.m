@@ -31,7 +31,6 @@
     if([data objectForKey:@"MovieCount"]){
         MovieCount = [[data objectForKey:@"MovieCount"] intValue];
     }
-    NSLog(@"%d",MovieCount);
     
     [self kiraTimer];
     [self cloudTimer1];
