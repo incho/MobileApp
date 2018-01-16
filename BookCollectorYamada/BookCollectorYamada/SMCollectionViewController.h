@@ -9,12 +9,15 @@
 
 @interface SMCollectionViewController : UIViewController{
     
-    IBOutlet UIImageView *kira;
-    IBOutlet UIImageView *Cloud1;
-    IBOutlet UIImageView *Cloud2;
-    IBOutlet UIImageView *Cloud3;
-    IBOutlet UIImageView *Cloud4;
-    IBOutlet UIImageView *Cloud5;
+    IBOutlet UIButton *tuS;
+    IBOutlet UIButton *tuG;
+    IBOutlet UIButton *honS;
+    IBOutlet UIButton *honG;
+    IBOutlet UIButton *toiS;
+    IBOutlet UIButton *toiG;
+    IBOutlet UIButton *konS;
+    IBOutlet UIButton *konG;
+    
     
     NSTimer *kiraTime;
     NSTimer *cloudTime1;
