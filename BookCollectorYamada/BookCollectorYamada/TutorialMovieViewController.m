@@ -17,12 +17,12 @@
     [super viewDidLoad];
     
     count = 0;
-    movieArray = @[@"No1_1.png",@"No1_2.png",@"No1_3.png",@"No1_4.png",@"No1_5.png",@"No2_1.png",@"No2_2.png",@"No2_3.png",@"No2_4.png",@"No2_5.png",@"No3_1.png",@"No3_2.png",@"No3_3.png",@"No3_4.png",@"No3_5.png",@"No4_1.png",@"No4_2.png",@"No4_3.png",@"No4_4.png",@"No5_1.png",@"No5_2.png",@"No5_3.png",@"No5_4.png",@"No6_1.png",@"No6_2.png",@"No6_3.png"];
+    movieArray = @[@"No1_1.png",@"No1_2.png",@"No1_3.png",@"No1_4.png",@"No1_5.png",@"No2_1.png",@"No2_2.png",@"No2_3.png",@"No2_4.png",@"No2_5.png",@"No3_1.png",@"No3_2.png",@"No3_3.png",@"No3_4.png",@"No3_5.png",@"No4_1.png",@"No4_2.png",@"No4_3.png",@"No4_4.png"];
     UIImage *img = [UIImage imageNamed:movieArray[count]];
     [movieImage setBackgroundImage:img forState:UIControlStateNormal];
     
     count2 = 0;
-    movieArray2 = @[@"t1g.png",@"t2g.png",@"t3g.png",@"t4g.png",@"t5g.png",@"t6g.png"];
+    movieArray2 = @[@"No5_1.png",@"No5_2.png",@"No5_3.png",@"No5_4.png",@"No6_1.png",@"No6_2.png",@"No6_3.png"];
     UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
     [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
     
@@ -51,7 +51,9 @@
     }
 }
 
-
+-(IBAction)skip{
+    [self performSegueWithIdentifier:@"next" sender:nil];
+}
 
 
 

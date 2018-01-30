@@ -375,7 +375,7 @@
 //下2の障害物が動くやつ
 -(void)syougai4Run{
     
-    syougai.hidden = NO;
+    syougai4.hidden = NO;
     //当たり判定
     float hit_left = syougai4.center.x - syougai4_Wsize - player.frame.size.width;
     float hit_right = syougai4.center.x + syougai4_Wsize + player.frame.size.width;

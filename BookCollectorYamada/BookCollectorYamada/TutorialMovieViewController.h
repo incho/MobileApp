@@ -21,6 +21,7 @@
 
 -(IBAction)tap;
 -(IBAction)tap2;
+-(IBAction)skip;
 
 
 

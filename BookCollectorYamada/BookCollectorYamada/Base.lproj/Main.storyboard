@@ -78,6 +78,14 @@
                                     <action selector="tap" destination="z7H-Ha-BOc" eventType="touchUpInside" id="MjF-Q2-fQU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFE-av-X8U">
+                                <rect key="frame" x="488" y="10" width="60" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="skip.png"/>
+                                <connections>
+                                    <action selector="skip" destination="9xm-le-1iW" eventType="touchUpInside" id="jsr-Qb-U7Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="jnq-Em-PKJ"/>
@@ -89,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MT9-UY-PYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2494" y="143"/>
+            <point key="canvasLocation" x="-2494.0140845070423" y="142.5"/>
         </scene>
         <!--Stage Select View Controller-->
         <scene sceneID="Owb-CA-57x">
@@ -255,6 +263,14 @@
                                 <state key="normal" image="normal.png"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="modal" id="H29-05-alY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmN-8n-gjZ">
+                                <rect key="frame" x="488" y="10" width="60" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="skip.png"/>
+                                <connections>
+                                    <action selector="skip" destination="z7H-Ha-BOc" eventType="touchUpInside" id="Hxo-qa-34S"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -466,6 +482,14 @@
                                     <action selector="tap2" destination="DA9-5c-bXU" eventType="touchUpInside" id="zd7-zG-CZo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vsp-vH-IXZ">
+                                <rect key="frame" x="488" y="11" width="60" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="skip.png"/>
+                                <connections>
+                                    <action selector="skip" destination="DA9-5c-bXU" eventType="touchUpInside" id="gHA-RK-39b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="6km-TP-pu9"/>
@@ -639,6 +663,14 @@
                                     <segue destination="7gI-ep-BFx" kind="modal" id="DXI-vc-GMS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOh-AF-4Qd">
+                                <rect key="frame" x="488" y="10" width="60" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="skip.png"/>
+                                <connections>
+                                    <action selector="skip" destination="YXB-am-Z1Y" eventType="touchUpInside" id="2US-Vn-Kfh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="14o-5x-Sve"/>
@@ -686,6 +718,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgB-My-8L6">
+                                <rect key="frame" x="488" y="10" width="60" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="skip.png"/>
+                                <connections>
+                                    <action selector="skip" destination="zYu-GC-Cr4" eventType="touchUpInside" id="cle-hH-gfQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="gHh-Qh-Yzd"/>
@@ -952,6 +992,14 @@
                                     <action selector="tap2" destination="d95-gk-ryX" eventType="touchUpInside" id="hgc-Li-2k8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ER-39-TmP">
+                                <rect key="frame" x="488" y="9" width="60" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="skip.png"/>
+                                <connections>
+                                    <action selector="skip" destination="d95-gk-ryX" eventType="touchUpInside" id="TNt-Fn-FlR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="lSK-RY-yWy"/>
@@ -979,6 +1027,14 @@
                                 <connections>
                                     <action selector="tap" destination="z7H-Ha-BOc" eventType="touchUpInside" id="s3d-xr-77O"/>
                                     <action selector="tap2" destination="9ti-sL-4yU" eventType="touchUpInside" id="53g-iZ-xtn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3j-C4-byJ">
+                                <rect key="frame" x="488" y="8" width="60" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="skip.png"/>
+                                <connections>
+                                    <action selector="skip" destination="9ti-sL-4yU" eventType="touchUpInside" id="U2H-xw-8sR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1009,6 +1065,14 @@
                                     <action selector="tap" destination="z7H-Ha-BOc" eventType="touchUpInside" id="eDP-bV-sEl"/>
                                     <action selector="tap2" destination="9ti-sL-4yU" eventType="touchUpInside" id="Wqb-a7-C9z"/>
                                     <action selector="tap2" destination="ZV0-ni-KrL" eventType="touchUpInside" id="eDT-aw-q9y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etT-le-5iK">
+                                <rect key="frame" x="488" y="8" width="60" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="skip.png"/>
+                                <connections>
+                                    <action selector="skip" destination="ZV0-ni-KrL" eventType="touchUpInside" id="mKu-KF-ACn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1393,6 +1457,7 @@
         <image name="modoru.png" width="320" height="320"/>
         <image name="normal.png" width="160" height="120"/>
         <image name="oji.png" width="1228" height="1520"/>
+        <image name="skip.png" width="160" height="120"/>
         <image name="tuduki.png" width="320" height="240"/>
         <image name="うんこ.png" width="247" height="253"/>
         <image name="こんぺい島.png" width="3543" height="1051"/>
@@ -1412,7 +1477,6 @@
         <image name="雲５.png" width="218" height="125"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m5m-i5-YQw"/>
         <segue reference="3Lq-kX-bbZ"/>
         <segue reference="Ryi-Xe-EhU"/>
         <segue reference="7FW-42-bmb"/>
@@ -1420,6 +1484,6 @@
         <segue reference="n6v-JS-QJq"/>
         <segue reference="u58-uN-X9F"/>
         <segue reference="MmG-WT-x7s"/>
-        <segue reference="tMW-Pf-TMj"/>
+        <segue reference="C9c-11-HLh"/>
     </inferredMetricsTieBreakers>
 </document>
