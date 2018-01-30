@@ -43,7 +43,7 @@
         hard.hidden = YES;
         
         count2 = 0;
-        movieArray2 = @[@"kon_ed1.png",@"kon_ed2.png",@"kon_ed3.png",@"kon_ed4.png",@"kon_ed5.png",@"kon_ed6.png",@"kon_ed7.png",@"kon_ed8.png",@"kon_ed9.png",@"kon_ed10.png",@"kon_ed11.png"];
+        movieArray2 = @[@"kon_ed1.png",@"kon_ed2.png",@"kon_ed3.png",@"kon_ed4.png",@"kon_ed5.png",@"kon_ed6.png",@"kon_ed7.png",@"kon_ed8.png",@"kon_ed9.png",@"kon_ed10.png",@"kon_ed11.png",@"after1_1.png",@"after1_2.png",@"after1_3.png",@"after1_4.png",@"after1_5.png",@"after1_6.png",@"after1_7.png"];
         UIImage *img = [UIImage imageNamed:@"こんぺい島.png"];
         [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
@@ -129,7 +129,9 @@
 }
 
 
-
+-(IBAction)skip{
+    [self performSegueWithIdentifier:@"next" sender:nil];
+}
 
 
 

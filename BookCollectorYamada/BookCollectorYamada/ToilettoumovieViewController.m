@@ -56,7 +56,9 @@
         
         UIImage *img2 = [UIImage imageNamed:@"トイレッ島.png"];
         [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
+        
     }
+    
     if(clearCount == 3){
         start.hidden = YES;
         normal.hidden = NO;
@@ -64,7 +66,7 @@
         UIImage *img = [UIImage imageNamed:@"トイレッ島.png"];
         [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         
-        UIImage *img2 = [UIImage imageNamed:@"トイレッ島.png"];
+        UIImage *img2 = [UIImage imageNamed:@"after1_8.png"];
         [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
         
         UIImage *img3 = [UIImage imageNamed:@"hardNew.png"];
@@ -83,7 +85,6 @@
         UIImage *img3 = [UIImage imageNamed:@"hard.png"];
         [hard setBackgroundImage:img3 forState:UIControlStateNormal];
     }
-    
 }
 
 
@@ -120,11 +121,16 @@
             [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
         }
     }else{
+        MovieCount = 7;
+        [data setInteger:MovieCount forKey:@"MovieCount"];
+        [data synchronize];
         [self performSegueWithIdentifier:@"back" sender:nil];
     }
 }
 
-
+-(IBAction)skip{
+    [self performSegueWithIdentifier:@"next" sender:nil];
+}
 
 
 

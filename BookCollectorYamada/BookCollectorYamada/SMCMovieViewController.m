@@ -32,9 +32,9 @@
 
 -(void)kakunou{
     if([select isEqualToString:@"チュートリアル開始"]){
-        Array = @[@"No1_1.png",@"No1_2.png",@"No1_3.png",@"No1_4.png",@"No1_5.png",@"No2_1.png",@"No2_2.png",@"No2_3.png",@"No2_4.png",@"No3_1.png",@"No3_2.png",@"No3_3.png",@"No3_4.png",@"No3_5.png",@"No5_1.png",@"No5_2.png",@"No5_3.png",@"No5_4.png"];
+        Array = @[@"No1_1.png",@"No1_2.png",@"No1_3.png",@"No1_4.png",@"No1_5.png",@"No2_1.png",@"No2_2.png",@"No2_3.png",@"No2_4.png",@"No2_5.png",@"No3_1.png",@"No3_2.png",@"No3_3.png",@"No3_4.png",@"No3_5.png",@"No4_1.png",@"No4_2.png",@"No4_3.png",@"No4_4.png"];
     }else if([select isEqualToString:@"チュートリアル終了"]){
-        Array = @[@"No1_1.png",@"No1_2.png",@"No1_3.png",@"No1_4.png",@"No1_5.png",@"No2_1.png",@"No2_2.png",@"No2_3.png",@"No2_4.png",@"No3_1.png",@"No3_2.png",@"No3_3.png",@"No3_4.png",@"No3_5.png",@"No5_1.png",@"No5_2.png",@"No5_3.png",@"No5_4.png"];
+        Array = @[@"No5_1.png",@"No5_2.png",@"No5_3.png",@"No5_4.png",@"No6_1.png",@"No6_2.png",@"No6_3.png"];
     }else if([select isEqualToString:@"本島開始"]){
         Array = @[@"t1s.png",@"t2s.png",@"t3s.png",@"t4s.png"];
     }else if([select isEqualToString:@"本島終了"]){

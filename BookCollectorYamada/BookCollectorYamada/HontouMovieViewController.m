@@ -45,10 +45,10 @@
         [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
         [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
-    }else if(MovieCount == 6){
+    }else if(MovieCount == 7){
         start.hidden = YES;
         count = 0;
-        movieArray = @[@"t1s.png",@"t2s.png",@"t3s.png",@"t4s.png"];
+        movieArray = @[@"last6_1.png",@"last6_2.png",@"last6_3.png",@"last6_4.png"];
         UIImage *img = [UIImage imageNamed:movieArray[count]];
         [movieImage setBackgroundImage:img forState:UIControlStateNormal];
     }else{
@@ -76,7 +76,7 @@
             UIImage *img = [UIImage imageNamed:movieArray[count]];
             [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         }
-    }else if(MovieCount == 6){
+    }else if(MovieCount == 7){
         count = count + 1;
         
         if(count == movieArray.count){
@@ -117,7 +117,9 @@
     }
 }
 
-
+-(IBAction)skip{
+    [self performSegueWithIdentifier:@"next" sender:nil];
+}
 
 
 
