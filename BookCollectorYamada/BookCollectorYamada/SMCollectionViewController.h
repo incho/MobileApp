@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface SMCollectionViewController : UIViewController{
     
@@ -17,20 +18,17 @@
     IBOutlet UIButton *toiG;
     IBOutlet UIButton *konS;
     IBOutlet UIButton *konG;
+    IBOutlet UIButton *end;
+    IBOutlet UIButton *end1;
+    IBOutlet UIButton *end2;
+    IBOutlet UIButton *end3;
     
-    
-    NSTimer *kiraTime;
-    NSTimer *cloudTime1;
-    NSTimer *cloudTime2;
-    NSTimer *cloudTime3;
-    NSTimer *cloudTime4;
-    NSTimer *cloudTime5;
     NSUserDefaults *data;
     NSArray *cloudArray;
     NSString *select;
+    AVAudioPlayer *audio;
     int clearCount;
     int MovieCount;
-    BOOL kiraFlag;
     
 }
 
@@ -42,6 +40,10 @@
 -(IBAction)Ftoile;
 -(IBAction)Skonpei;
 -(IBAction)Fkonpei;
+-(IBAction)Ending;
+-(IBAction)Ending1;
+-(IBAction)Ending2;
+-(IBAction)Ending3;
 
 
 

@@ -16,6 +16,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *bundle = [[NSBundle mainBundle] pathForResource:@"movieSelect" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:bundle];
+    audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [audio play];
+    
+    
     clearCount = 0;
     
     //保存したクリア数を取り出す
@@ -39,7 +46,7 @@
         [konS setBackgroundImage:img forState:UIControlStateNormal];
         [konG setBackgroundImage:img forState:UIControlStateNormal];
         
-        UIImage *img2 = [UIImage imageNamed:@"No1_1.png"];
+        UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
         [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
@@ -52,7 +59,7 @@
         [konS setBackgroundImage:img forState:UIControlStateNormal];
         [konG setBackgroundImage:img forState:UIControlStateNormal];
         
-        UIImage *img2 = [UIImage imageNamed:@"No1_1.png"];
+        UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
         [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
@@ -66,7 +73,7 @@
         [konS setBackgroundImage:img forState:UIControlStateNormal];
         [konG setBackgroundImage:img forState:UIControlStateNormal];
         
-        UIImage *img2 = [UIImage imageNamed:@"No1_1.png"];
+        UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
         [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
@@ -80,7 +87,7 @@
         [konS setBackgroundImage:img forState:UIControlStateNormal];
         [konG setBackgroundImage:img forState:UIControlStateNormal];
         
-        UIImage *img2 = [UIImage imageNamed:@"No1_1.png"];
+        UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
         [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
@@ -95,7 +102,7 @@
         [konS setBackgroundImage:img forState:UIControlStateNormal];
         [konG setBackgroundImage:img forState:UIControlStateNormal];
         
-        UIImage *img2 = [UIImage imageNamed:@"No1_1.png"];
+        UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
         [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
@@ -111,7 +118,7 @@
         UIImage *img = [UIImage imageNamed:@"noimage.png"];
         [konG setBackgroundImage:img forState:UIControlStateNormal];
         
-        UIImage *img2 = [UIImage imageNamed:@"No1_1.png"];
+        UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
         [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
@@ -129,7 +136,7 @@
         UIImage *img = [UIImage imageNamed:@"noimage.png"];
         [konG setBackgroundImage:img forState:UIControlStateNormal];
         
-        UIImage *img2 = [UIImage imageNamed:@"No1_1.png"];
+        UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
         [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
@@ -146,24 +153,30 @@
         UIImage *img9 = [UIImage imageNamed:@"kon_ed1.png"];
         [konG setBackgroundImage:img9 forState:UIControlStateNormal];
     }else if(MovieCount >= 7){
-        UIImage *img2 = [UIImage imageNamed:@"No1_1.png"];
+        UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
         [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
         UIImage *img4 = [UIImage imageNamed:@"No1_3.png"];
         [honS setBackgroundImage:img4 forState:UIControlStateNormal];
-        UIImage *img5 = [UIImage imageNamed:@"No1_4.png"];
+        UIImage *img5 = [UIImage imageNamed:@"本島ゴール.png"];
         [honG setBackgroundImage:img5 forState:UIControlStateNormal];
-        UIImage *img6 = [UIImage imageNamed:@"t1s.png"];
+        UIImage *img6 = [UIImage imageNamed:@"トイレッ島開始.png"];
         [toiS setBackgroundImage:img6 forState:UIControlStateNormal];
-        UIImage *img7 = [UIImage imageNamed:@"t1s.png"];
+        UIImage *img7 = [UIImage imageNamed:@"トイレッ島ゴール.png"];
         [toiG setBackgroundImage:img7 forState:UIControlStateNormal];
-        UIImage *img8 = [UIImage imageNamed:@"t1g.png"];
+        UIImage *img8 = [UIImage imageNamed:@"kon_op1.png"];
         [konS setBackgroundImage:img8 forState:UIControlStateNormal];
         UIImage *img9 = [UIImage imageNamed:@"kon_op1.png"];
         [konG setBackgroundImage:img9 forState:UIControlStateNormal];
-        UIImage *img = [UIImage imageNamed:@"kon_ed1.png"];
-        [konG setBackgroundImage:img forState:UIControlStateNormal];
+        UIImage *img10 = [UIImage imageNamed:@"３ステージクリア後.png"];
+        [end setBackgroundImage:img10 forState:UIControlStateNormal];
+        UIImage *img11 = [UIImage imageNamed:@"lastmae.png"];
+        [end1 setBackgroundImage:img11 forState:UIControlStateNormal];
+        UIImage *img12 = [UIImage imageNamed:@"エンディング2.png"];
+        [end2 setBackgroundImage:img12 forState:UIControlStateNormal];
+        UIImage *img13 = [UIImage imageNamed:@"エンディング3.png"];
+        [end3 setBackgroundImage:img13 forState:UIControlStateNormal];
     }
     
 }
@@ -173,6 +186,7 @@
     select = @"チュートリアル開始";
     [data setObject:select forKey:@"ムービー選択"];
     [data synchronize];
+    [audio stop];
     [self performSegueWithIdentifier:@"select" sender:nil];
 }
 
@@ -180,6 +194,7 @@
     select = @"チュートリアル終了";
     [data setObject:select forKey:@"ムービー選択"];
     [data synchronize];
+    [audio stop];
     [self performSegueWithIdentifier:@"select" sender:nil];
 }
 
@@ -188,6 +203,7 @@
         select = @"本島開始";
         [data setObject:select forKey:@"ムービー選択"];
         [data synchronize];
+        [audio stop];
         [self performSegueWithIdentifier:@"select" sender:nil];
     }
 }
@@ -197,6 +213,7 @@
         select = @"本島終了";
         [data setObject:select forKey:@"ムービー選択"];
         [data synchronize];
+        [audio stop];
         [self performSegueWithIdentifier:@"select" sender:nil];
     }
 }
@@ -206,6 +223,7 @@
         select = @"トイレッ島開始";
         [data setObject:select forKey:@"ムービー選択"];
         [data synchronize];
+        [audio stop];
         [self performSegueWithIdentifier:@"select" sender:nil];
     }
 }
@@ -215,6 +233,7 @@
         select = @"トイレッ島終了";
         [data setObject:select forKey:@"ムービー選択"];
         [data synchronize];
+        [audio stop];
         [self performSegueWithIdentifier:@"select" sender:nil];
     }
 }
@@ -224,6 +243,7 @@
         select = @"こんぺい島開始";
         [data setObject:select forKey:@"ムービー選択"];
         [data synchronize];
+        [audio stop];
         [self performSegueWithIdentifier:@"select" sender:nil];
     }
 }
@@ -233,6 +253,47 @@
         select = @"こんぺい島終了";
         [data setObject:select forKey:@"ムービー選択"];
         [data synchronize];
+        [audio stop];
+        [self performSegueWithIdentifier:@"select" sender:nil];
+    }
+}
+
+-(IBAction)Ending{
+    if(MovieCount >= 7){
+        select = @"エンディング";
+        [data setObject:select forKey:@"ムービー選択"];
+        [data synchronize];
+        [audio stop];
+        [self performSegueWithIdentifier:@"select" sender:nil];
+    }
+}
+
+-(IBAction)Ending1{
+    if(MovieCount >= 7){
+        select = @"エンディング1";
+        [data setObject:select forKey:@"ムービー選択"];
+        [data synchronize];
+        [audio stop];
+        [self performSegueWithIdentifier:@"select" sender:nil];
+    }
+}
+
+-(IBAction)Ending2{
+    if(MovieCount >= 7){
+        select = @"エンディング2";
+        [data setObject:select forKey:@"ムービー選択"];
+        [data synchronize];
+        [audio stop];
+        [self performSegueWithIdentifier:@"select" sender:nil];
+    }
+}
+
+-(IBAction)Ending3{
+    if(MovieCount >= 7){
+        select = @"エンディング3";
+        [data setObject:select forKey:@"ムービー選択"];
+        [data synchronize];
+        [audio stop];
         [self performSegueWithIdentifier:@"select" sender:nil];
     }
 }

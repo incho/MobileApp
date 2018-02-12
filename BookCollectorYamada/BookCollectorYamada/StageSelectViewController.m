@@ -16,6 +16,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *bundle = [[NSBundle mainBundle] pathForResource:@"ステージ選択画面" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:bundle];
+    audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [audio play];
+    
     cloudArray = @[@"雲１.png",@"雲２.png",@"雲３.png",@"雲４.png",@"雲５.png"];
     
     kiraFlag = true;
@@ -258,6 +264,21 @@
         int random = arc4random() % 5;
         Cloud5.image = [UIImage imageNamed:cloudArray[random]];
     }
+}
+
+-(IBAction)hon{
+    [audio stop];
+    [self performSegueWithIdentifier:@"hon" sender:nil];
+}
+
+-(IBAction)toile{
+    [audio stop];
+    [self performSegueWithIdentifier:@"toile" sender:nil];
+}
+
+-(IBAction)kon{
+    [audio stop];
+    [self performSegueWithIdentifier:@"kon" sender:nil];
 }
 
 

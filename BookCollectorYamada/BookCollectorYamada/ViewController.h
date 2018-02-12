@@ -9,11 +9,10 @@
 
 @interface ViewController : UIViewController{
     
-    NSUserDefaults *data;
+    
     
     
 }
 
--(IBAction)reset;
 
 @end

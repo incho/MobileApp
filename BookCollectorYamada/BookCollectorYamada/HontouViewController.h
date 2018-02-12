@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface HontouViewController : UIViewController{
     IBOutlet UIImageView *syougai;
@@ -31,6 +32,7 @@
     NSTimer *kyoriTime;
     NSTimer *playerTime;
     NSUserDefaults *data;
+    AVAudioPlayer *audio;
     float speed;
     float player_right;
     float player_left;

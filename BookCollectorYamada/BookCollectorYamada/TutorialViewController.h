@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface TutorialViewController : UIViewController{
     IBOutlet UIImageView *syougai;
@@ -31,6 +32,7 @@
     NSTimer *time5;
     NSTimer *haikeiTime;
     NSTimer *playerTime;
+    AVAudioPlayer *audio;
     float speed;
     float player_right;
     float player_left;
