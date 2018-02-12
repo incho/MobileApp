@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface StageSelectViewController : UIViewController{
     IBOutlet UIImageView *kira;
@@ -30,11 +31,17 @@
     NSTimer *cloudTime3;
     NSTimer *cloudTime4;
     NSTimer *cloudTime5;
+    NSArray *cloudArray;
     NSUserDefaults *data;
+    AVAudioPlayer *audio;
     int clearCount;
     BOOL kiraFlag;
-    NSArray *cloudArray;
+    
 }
+-(IBAction)hon;
+-(IBAction)toile;
+-(IBAction)kon;
+
 
 
 @end

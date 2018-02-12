@@ -46,7 +46,15 @@
     }else if([select isEqualToString:@"こんぺい島開始"]){
         Array = @[@"kon_op1.png",@"kon_op2.png",@"kon_op3.png",@"kon_op4.png",@"kon_op5.png"];
     }else if([select isEqualToString:@"こんぺい島終了"]){
-        Array = @[@"kon_ed1.png",@"kon_ed2.png",@"kon_ed3.png",@"kon_ed4.png",@"kon_ed5.png",@"kon_ed6.png",@"kon_ed7.png",@"kon_ed8.png",@"kon_ed9.png",@"kon_ed10.png",@"kon_ed11.png"];
+        Array = @[@"kon_ed1.png",@"kon_ed2.png",@"kon_ed3.png",@"kon_ed4.png",@"kon_ed5.png",@"kon_ed6.png",@"kon_ed7.png",@"kon_ed8.png",@"kon_ed9.png",@"kon_ed10.png",@"kon_ed11.png",@"after1_1.png",@"after1_2.png",@"after1_3.png",@"after1_4.png",@"after1_5.png",@"after1_6.png",@"after1_7.png"];
+    }else if([select isEqualToString:@"エンディング"]){
+        Array = @[@"last_1.png",@"last_2.png",@"last_3.png",@"last_4.png",@"last_5.png",@"last_6.png",@"last_7_select.png",@"last_9.png",@"last_10.png"];
+    }else if([select isEqualToString:@"エンディング1"]){
+        Array = @[@"last_8_1.png",@"last3_1.png",@"last3_2.png",@"last3_3.png",@"last3_4.png"];
+    }else if([select isEqualToString:@"エンディング2"]){
+        Array = @[@"last_8_2.png",@"last4_1.png",@"last4_2.png",@"last4_3.png",@"last4_4.png",@"last5_1.png",@"last5_2.png",@"last5_3.png"];
+    }else if([select isEqualToString:@"エンディング3"]){
+        Array = @[@"last_8_3.png",@"last6_1.png",@"last6_2.png",@"last6_3.png",@"last6_4.png"];
     }
     
     UIImage *img = [UIImage imageNamed:Array[tapCount]];

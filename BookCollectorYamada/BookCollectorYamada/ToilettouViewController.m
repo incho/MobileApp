@@ -15,6 +15,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSString *bundle = [[NSBundle mainBundle] pathForResource:@"トイレッ島BGM" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:bundle];
+    audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [audio play];
+    
     speed = 1;
     jumpFlag = true;
     HPFlag = true;
@@ -89,6 +96,7 @@
             [data synchronize];
         }
         //ムービーへ
+        [audio stop];
         [self performSegueWithIdentifier:@"gameclear" sender:nil];
     }
 }
@@ -443,6 +451,7 @@
         [kyoriTime invalidate];
         [haikeiTime invalidate];
         [playerTime invalidate];
+        [audio stop];
         [self performSegueWithIdentifier:@"gameover" sender:nil];
     }
 }

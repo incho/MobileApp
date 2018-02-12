@@ -129,7 +129,19 @@
 }
 
 -(IBAction)skip{
-    [self performSegueWithIdentifier:@"next" sender:nil];
+    if(MovieCount == 2){
+        MovieCount = MovieCount + 1;
+        [data setInteger:MovieCount forKey:@"MovieCount"];
+        [data synchronize];
+        [self performSegueWithIdentifier:@"next" sender:nil];
+    }else if(MovieCount == 3){
+        MovieCount = MovieCount + 1;
+        [data setInteger:MovieCount forKey:@"MovieCount"];
+        [data synchronize];
+        [self performSegueWithIdentifier:@"next" sender:nil];
+    }else{
+        [self performSegueWithIdentifier:@"next" sender:nil];
+    }
 }
 
 

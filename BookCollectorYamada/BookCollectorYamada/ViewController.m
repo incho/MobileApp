@@ -15,23 +15,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    data = [NSUserDefaults standardUserDefaults];
-}
-
--(IBAction)reset{
-    [data removeObjectForKey:@"clearCount"];
-    [data removeObjectForKey:@"MovieCount"];
-    [self performSegueWithIdentifier:@"reset" sender:nil];
-}
-
-
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
     
 }
+
 
 
 @end

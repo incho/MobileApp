@@ -48,7 +48,7 @@
     }else if(MovieCount == 7){
         start.hidden = YES;
         count = 0;
-        movieArray = @[@"last6_1.png",@"last6_2.png",@"last6_3.png",@"last6_4.png"];
+        movieArray = @[@"last_1.png",@"last_2.png",@"last_3.png",@"last_4.png",@"last_5.png",@"last_6.png"];
         UIImage *img = [UIImage imageNamed:movieArray[count]];
         [movieImage setBackgroundImage:img forState:UIControlStateNormal];
     }else{
@@ -78,8 +78,8 @@
         }
     }else if(MovieCount == 7){
         count = count + 1;
-        
         if(count == movieArray.count){
+            
             clearCount = 6;
             [data setInteger:clearCount forKey:@"clearCount"];
             [data synchronize];
@@ -88,7 +88,7 @@
             [data setInteger:MovieCount forKey:@"MovieCount"];
             [data synchronize];
             
-            [self performSegueWithIdentifier:@"back" sender:nil];
+            [self performSegueWithIdentifier:@"endSelect" sender:nil];
         }else{
             UIImage *img = [UIImage imageNamed:movieArray[count]];
             [movieImage setBackgroundImage:img forState:UIControlStateNormal];
@@ -118,8 +118,30 @@
 }
 
 -(IBAction)skip{
-    [self performSegueWithIdentifier:@"next" sender:nil];
+    if(MovieCount == 0){
+        MovieCount = MovieCount + 1;
+        [data setInteger:MovieCount forKey:@"MovieCount"];
+        [data synchronize];
+        [self performSegueWithIdentifier:@"next" sender:nil];
+    }else if(MovieCount == 1){
+        MovieCount = MovieCount + 1;
+        [data setInteger:MovieCount forKey:@"MovieCount"];
+        [data synchronize];
+        [self performSegueWithIdentifier:@"next" sender:nil];
+    }else if(MovieCount == 7){
+        clearCount = 6;
+        [data setInteger:clearCount forKey:@"clearCount"];
+        [data synchronize];
+        
+        MovieCount = MovieCount + 1;
+        [data setInteger:MovieCount forKey:@"MovieCount"];
+        [data synchronize];
+        [self performSegueWithIdentifier:@"next" sender:nil];
+    }else{
+        [self performSegueWithIdentifier:@"next" sender:nil];
+    }
 }
+
 
 
 
