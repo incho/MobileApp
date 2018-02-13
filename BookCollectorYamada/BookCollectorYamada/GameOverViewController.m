@@ -18,12 +18,11 @@
     [super viewDidLoad];
     
     
-    NSString *bundle = [[NSBundle mainBundle] pathForResource:@"gameover" ofType:@"mp3"];
-    NSURL *url = [NSURL fileURLWithPath:bundle];
-    audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     
-    [audio play];
-    
+}
+
+-(IBAction)tap{
+    [self performSegueWithIdentifier:@"back" sender:nil];
 }
 
 

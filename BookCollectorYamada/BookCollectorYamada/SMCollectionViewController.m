@@ -45,6 +45,10 @@
         [toiG setBackgroundImage:img forState:UIControlStateNormal];
         [konS setBackgroundImage:img forState:UIControlStateNormal];
         [konG setBackgroundImage:img forState:UIControlStateNormal];
+        [end setBackgroundImage:img forState:UIControlStateNormal];
+        [end1 setBackgroundImage:img forState:UIControlStateNormal];
+        [end2 setBackgroundImage:img forState:UIControlStateNormal];
+        [end3 setBackgroundImage:img forState:UIControlStateNormal];
         
         UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
@@ -58,12 +62,16 @@
         [toiG setBackgroundImage:img forState:UIControlStateNormal];
         [konS setBackgroundImage:img forState:UIControlStateNormal];
         [konG setBackgroundImage:img forState:UIControlStateNormal];
+        [end setBackgroundImage:img forState:UIControlStateNormal];
+        [end1 setBackgroundImage:img forState:UIControlStateNormal];
+        [end2 setBackgroundImage:img forState:UIControlStateNormal];
+        [end3 setBackgroundImage:img forState:UIControlStateNormal];
         
         UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
         [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
-        UIImage *img4 = [UIImage imageNamed:@"No1_3.png"];
+        UIImage *img4 = [UIImage imageNamed:@"本島開始.png"];
         [honS setBackgroundImage:img4 forState:UIControlStateNormal];
         
     }else if(MovieCount == 2){
@@ -72,87 +80,130 @@
         [toiG setBackgroundImage:img forState:UIControlStateNormal];
         [konS setBackgroundImage:img forState:UIControlStateNormal];
         [konG setBackgroundImage:img forState:UIControlStateNormal];
+        [end setBackgroundImage:img forState:UIControlStateNormal];
+        [end1 setBackgroundImage:img forState:UIControlStateNormal];
+        [end2 setBackgroundImage:img forState:UIControlStateNormal];
+        [end3 setBackgroundImage:img forState:UIControlStateNormal];
         
         UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
         [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
-        UIImage *img4 = [UIImage imageNamed:@"No1_3.png"];
+        UIImage *img4 = [UIImage imageNamed:@"本島開始.png"];
         [honS setBackgroundImage:img4 forState:UIControlStateNormal];
-        UIImage *img5 = [UIImage imageNamed:@"No1_4.png"];
+        UIImage *img5 = [UIImage imageNamed:@"本島ゴール.png"];
         [honG setBackgroundImage:img5 forState:UIControlStateNormal];
     }else if(MovieCount == 3){
         UIImage *img = [UIImage imageNamed:@"noimage.png"];
         [toiG setBackgroundImage:img forState:UIControlStateNormal];
         [konS setBackgroundImage:img forState:UIControlStateNormal];
         [konG setBackgroundImage:img forState:UIControlStateNormal];
+        [end setBackgroundImage:img forState:UIControlStateNormal];
+        [end1 setBackgroundImage:img forState:UIControlStateNormal];
+        [end2 setBackgroundImage:img forState:UIControlStateNormal];
+        [end3 setBackgroundImage:img forState:UIControlStateNormal];
         
         UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
         [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
-        UIImage *img4 = [UIImage imageNamed:@"No1_3.png"];
+        UIImage *img4 = [UIImage imageNamed:@"本島開始.png"];
         [honS setBackgroundImage:img4 forState:UIControlStateNormal];
-        UIImage *img5 = [UIImage imageNamed:@"No1_4.png"];
+        UIImage *img5 = [UIImage imageNamed:@"本島ゴール.png"];
         [honG setBackgroundImage:img5 forState:UIControlStateNormal];
-        UIImage *img6 = [UIImage imageNamed:@"t1s.png"];
+        UIImage *img6 = [UIImage imageNamed:@"トイレッ島開始.png"];
         [toiS setBackgroundImage:img6 forState:UIControlStateNormal];
     }else if(MovieCount == 4){
         UIImage *img = [UIImage imageNamed:@"noimage.png"];
         [konS setBackgroundImage:img forState:UIControlStateNormal];
         [konG setBackgroundImage:img forState:UIControlStateNormal];
+        [end setBackgroundImage:img forState:UIControlStateNormal];
+        [end1 setBackgroundImage:img forState:UIControlStateNormal];
+        [end2 setBackgroundImage:img forState:UIControlStateNormal];
+        [end3 setBackgroundImage:img forState:UIControlStateNormal];
         
         UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
         [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
-        UIImage *img4 = [UIImage imageNamed:@"No1_3.png"];
+        UIImage *img4 = [UIImage imageNamed:@"本島開始.png"];
         [honS setBackgroundImage:img4 forState:UIControlStateNormal];
-        UIImage *img5 = [UIImage imageNamed:@"No1_4.png"];
+        UIImage *img5 = [UIImage imageNamed:@"本島ゴール.png"];
         [honG setBackgroundImage:img5 forState:UIControlStateNormal];
-        UIImage *img6 = [UIImage imageNamed:@"t1s.png"];
+        UIImage *img6 = [UIImage imageNamed:@"トイレッ島開始.png"];
         [toiS setBackgroundImage:img6 forState:UIControlStateNormal];
-        UIImage *img7 = [UIImage imageNamed:@"t1g.png"];
+        UIImage *img7 = [UIImage imageNamed:@"トイレッ島ゴール.png"];
         [toiG setBackgroundImage:img7 forState:UIControlStateNormal];
     }else if(MovieCount == 5){
         UIImage *img = [UIImage imageNamed:@"noimage.png"];
         [konG setBackgroundImage:img forState:UIControlStateNormal];
+        [end setBackgroundImage:img forState:UIControlStateNormal];
+        [end1 setBackgroundImage:img forState:UIControlStateNormal];
+        [end2 setBackgroundImage:img forState:UIControlStateNormal];
+        [end3 setBackgroundImage:img forState:UIControlStateNormal];
         
         UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
         [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
-        UIImage *img4 = [UIImage imageNamed:@"No1_3.png"];
+        UIImage *img4 = [UIImage imageNamed:@"本島開始.png"];
         [honS setBackgroundImage:img4 forState:UIControlStateNormal];
-        UIImage *img5 = [UIImage imageNamed:@"No1_4.png"];
+        UIImage *img5 = [UIImage imageNamed:@"本島ゴール.png"];
         [honG setBackgroundImage:img5 forState:UIControlStateNormal];
-        UIImage *img6 = [UIImage imageNamed:@"t1s.png"];
+        UIImage *img6 = [UIImage imageNamed:@"トイレッ島開始.png"];
         [toiS setBackgroundImage:img6 forState:UIControlStateNormal];
-        UIImage *img7 = [UIImage imageNamed:@"t1g.png"];
+        UIImage *img7 = [UIImage imageNamed:@"トイレッ島ゴール.png"];
         [toiG setBackgroundImage:img7 forState:UIControlStateNormal];
-        UIImage *img8 = [UIImage imageNamed:@"kon_op1.png"];
+        UIImage *img8 = [UIImage imageNamed:@"こんぺい島開始.png"];
         [konS setBackgroundImage:img8 forState:UIControlStateNormal];
     }else if(MovieCount == 6){
         UIImage *img = [UIImage imageNamed:@"noimage.png"];
         [konG setBackgroundImage:img forState:UIControlStateNormal];
+        [end setBackgroundImage:img forState:UIControlStateNormal];
+        [end1 setBackgroundImage:img forState:UIControlStateNormal];
+        [end2 setBackgroundImage:img forState:UIControlStateNormal];
+        [end3 setBackgroundImage:img forState:UIControlStateNormal];
         
         UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
         [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
-        UIImage *img4 = [UIImage imageNamed:@"No1_3.png"];
+        UIImage *img4 = [UIImage imageNamed:@"本島開始.png"];
         [honS setBackgroundImage:img4 forState:UIControlStateNormal];
-        UIImage *img5 = [UIImage imageNamed:@"No1_4.png"];
+        UIImage *img5 = [UIImage imageNamed:@"本島ゴール.png"];
         [honG setBackgroundImage:img5 forState:UIControlStateNormal];
-        UIImage *img6 = [UIImage imageNamed:@"t1s.png"];
+        UIImage *img6 = [UIImage imageNamed:@"トイレッ島開始.png"];
         [toiS setBackgroundImage:img6 forState:UIControlStateNormal];
-        UIImage *img7 = [UIImage imageNamed:@"t1g.png"];
+        UIImage *img7 = [UIImage imageNamed:@"トイレッ島ゴール.png"];
         [toiG setBackgroundImage:img7 forState:UIControlStateNormal];
-        UIImage *img8 = [UIImage imageNamed:@"kon_op1.png"];
+        UIImage *img8 = [UIImage imageNamed:@"こんぺい島開始.png"];
         [konS setBackgroundImage:img8 forState:UIControlStateNormal];
-        UIImage *img9 = [UIImage imageNamed:@"kon_ed1.png"];
+        UIImage *img9 = [UIImage imageNamed:@"こんぺい島ゴール.png"];
         [konG setBackgroundImage:img9 forState:UIControlStateNormal];
     }else if(MovieCount >= 7){
+        UIImage *img = [UIImage imageNamed:@"noimage.png"];
+        [end setBackgroundImage:img forState:UIControlStateNormal];
+        [end1 setBackgroundImage:img forState:UIControlStateNormal];
+        [end2 setBackgroundImage:img forState:UIControlStateNormal];
+        [end3 setBackgroundImage:img forState:UIControlStateNormal];
+        
+        UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
+        [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
+        UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
+        [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
+        UIImage *img4 = [UIImage imageNamed:@"本島開始.png"];
+        [honS setBackgroundImage:img4 forState:UIControlStateNormal];
+        UIImage *img5 = [UIImage imageNamed:@"本島ゴール.png"];
+        [honG setBackgroundImage:img5 forState:UIControlStateNormal];
+        UIImage *img6 = [UIImage imageNamed:@"トイレッ島開始.png"];
+        [toiS setBackgroundImage:img6 forState:UIControlStateNormal];
+        UIImage *img7 = [UIImage imageNamed:@"トイレッ島ゴール.png"];
+        [toiG setBackgroundImage:img7 forState:UIControlStateNormal];
+        UIImage *img8 = [UIImage imageNamed:@"こんぺい島開始.png"];
+        [konS setBackgroundImage:img8 forState:UIControlStateNormal];
+        UIImage *img9 = [UIImage imageNamed:@"こんぺい島ゴール.png"];
+        [konG setBackgroundImage:img9 forState:UIControlStateNormal];
+    }else if(MovieCount == 10){
         UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
@@ -171,7 +222,7 @@
         [konG setBackgroundImage:img9 forState:UIControlStateNormal];
         UIImage *img10 = [UIImage imageNamed:@"３ステージクリア後.png"];
         [end setBackgroundImage:img10 forState:UIControlStateNormal];
-        UIImage *img11 = [UIImage imageNamed:@"エンディング1.png"];
+        UIImage *img11 = [UIImage imageNamed:@"エンディング1 .png"];
         [end1 setBackgroundImage:img11 forState:UIControlStateNormal];
         UIImage *img12 = [UIImage imageNamed:@"エンディング2.png"];
         [end2 setBackgroundImage:img12 forState:UIControlStateNormal];

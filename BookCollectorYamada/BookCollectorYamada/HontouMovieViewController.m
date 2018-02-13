@@ -30,6 +30,7 @@
     }
     
     
+    
     clearCount = 0;
     if([data objectForKey:@"clearCount"]){
         clearCount = [[data objectForKey:@"clearCount"] intValue];
@@ -51,7 +52,7 @@
         [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
         [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
-    }else if(MovieCount == 7){
+    }else if(MovieCount == 10){
         start.hidden = YES;
         count = 0;
         movieArray = @[@"last_1.png",@"last_2.png",@"last_3.png",@"last_4.png",@"last_5.png",@"last_6.png"];
@@ -83,13 +84,13 @@
             UIImage *img = [UIImage imageNamed:movieArray[count]];
             [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         }
-    }else if(MovieCount == 7){
+    }else if(MovieCount == 10){
         count = count + 1;
         if(count == movieArray.count){
             
-            clearCount = 6;
-            [data setInteger:clearCount forKey:@"clearCount"];
-            [data synchronize];
+//            clearCount = 6;
+//            [data setInteger:clearCount forKey:@"clearCount"];
+//            [data synchronize];
             
             MovieCount = MovieCount + 1;
             [data setInteger:MovieCount forKey:@"MovieCount"];
@@ -140,8 +141,8 @@
         [data synchronize];
         [audio stop];
         [self performSegueWithIdentifier:@"next" sender:nil];
-    }else if(MovieCount == 7){
-        clearCount = 6;
+    }else if(MovieCount == 10){
+        clearCount = 10;
         [data setInteger:clearCount forKey:@"clearCount"];
         [data synchronize];
         
@@ -157,14 +158,6 @@
 }
 
 
-
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-}
 
 
 @end
