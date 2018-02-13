@@ -1207,6 +1207,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BookCollectorYamada/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = BookcollecterYOGI;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Objective-C.practice.BookCollectorYamada";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1221,6 +1222,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BookCollectorYamada/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = BookcollecterYOGI;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Objective-C.practice.BookCollectorYamada";
 				PRODUCT_NAME = "$(TARGET_NAME)";
