@@ -29,7 +29,7 @@
     haikeiFlag1 = true;
     haikeiFlag2 = true;
     HP = 3;
-    kyoriCount = 5;
+    kyoriCount = 20;
     costume = 0;
     syougai.hidden = YES;
     syougai2.hidden = YES;
