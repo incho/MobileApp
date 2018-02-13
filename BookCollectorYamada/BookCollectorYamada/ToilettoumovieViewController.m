@@ -16,18 +16,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *bundle = [[NSBundle mainBundle] pathForResource:@"movie" ofType:@"mp3"];
-    NSURL *url = [NSURL fileURLWithPath:bundle];
-    audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    
-    [audio play];
-    
     data = [NSUserDefaults standardUserDefaults];
     
     MovieCount = 0;
     if([data objectForKey:@"MovieCount"]){
         MovieCount = [[data objectForKey:@"MovieCount"] intValue];
     }
+    
+    if(MovieCount <= 5){
+        NSString *bundle = [[NSBundle mainBundle] pathForResource:@"movie" ofType:@"mp3"];
+        NSURL *url = [NSURL fileURLWithPath:bundle];
+        audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        
+        [audio play];
+    }
+    
     
     clearCount = 0;
     if([data objectForKey:@"clearCount"]){
@@ -69,6 +72,7 @@
         start.hidden = YES;
         normal.hidden = NO;
         hard.hidden = NO;
+        movieImage.enabled = NO;
         UIImage *img = [UIImage imageNamed:@"トイレッ島.png"];
         [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         
@@ -82,6 +86,7 @@
         start.hidden = YES;
         normal.hidden = NO;
         hard.hidden = NO;
+        movieImage.enabled = NO;
         UIImage *img = [UIImage imageNamed:@"トイレッ島.png"];
         [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         
@@ -99,6 +104,21 @@
         count = count + 1;
         
         if(count == movieArray.count){
+            MovieCount = MovieCount + 1;
+            [data setInteger:MovieCount forKey:@"MovieCount"];
+            [data synchronize];
+            [audio stop];
+            [self performSegueWithIdentifier:@"next" sender:nil];
+        }else{
+            UIImage *img = [UIImage imageNamed:movieArray[count]];
+            [movieImage setBackgroundImage:img forState:UIControlStateNormal];
+        }
+    }else if(MovieCount == 6){
+        NSLog(@"%d",MovieCount);
+        count = count + 1;
+        
+        if(count == movieArray.count){
+            NSLog(@"%d",MovieCount);
             MovieCount = MovieCount + 1;
             [data setInteger:MovieCount forKey:@"MovieCount"];
             [data synchronize];
@@ -128,8 +148,20 @@
             UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
             [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
         }
+    }else if(MovieCount == 7){
+        count2 = count2 + 1;
+        
+        if(count2 == movieArray2.count){
+            MovieCount = MovieCount + 1;
+            [data setInteger:MovieCount forKey:@"MovieCount"];
+            [data synchronize];
+            [audio stop];
+            [self performSegueWithIdentifier:@"back" sender:nil];
+        }else{
+            UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
+            [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
+        }
     }else{
-        MovieCount = 7;
         [data setInteger:MovieCount forKey:@"MovieCount"];
         [data synchronize];
         [audio stop];
@@ -150,20 +182,34 @@
         [data synchronize];
         [audio stop];
         [self performSegueWithIdentifier:@"next" sender:nil];
+    }else if(MovieCount == 6){
+        MovieCount = MovieCount + 1;
+        [data setInteger:MovieCount forKey:@"MovieCount"];
+        [data synchronize];
+        [audio stop];
+        [self performSegueWithIdentifier:@"next" sender:nil];
+    }else if(MovieCount == 7){
+        MovieCount = MovieCount + 1;
+        [data setInteger:MovieCount forKey:@"MovieCount"];
+        [data synchronize];
+        [audio stop];
+        [self performSegueWithIdentifier:@"next" sender:nil];
     }else{
         [audio stop];
         [self performSegueWithIdentifier:@"next" sender:nil];
     }
 }
 
-
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
+-(IBAction)Htap{
+    MovieCount = MovieCount + 1;
+    [data setInteger:MovieCount forKey:@"MovieCount"];
+    [data synchronize];
+    [audio stop];
+    [self performSegueWithIdentifier:@"hard" sender:nil];
 }
+
+
+
 
 
 @end

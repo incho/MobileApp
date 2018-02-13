@@ -33,6 +33,14 @@
         clearCount = [[data objectForKey:@"clearCount"] intValue];
     }
     
+    int MovieCount = 0;
+    if([data objectForKey:@"MovieCount"]){
+        MovieCount = [[data objectForKey:@"MovieCount"] intValue];
+    }
+    
+    NSLog(@"%d",MovieCount);
+    
+    
     if(clearCount == 0){
         UIImage *img = [UIImage imageNamed:@"NEW本島.png"];
         UIImage *img2 = [UIImage imageNamed:@"トイレッ島灰.png"];

@@ -15,5 +15,7 @@
     
 }
 
+-(IBAction)tap;
+
 
 @end
