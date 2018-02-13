@@ -36,6 +36,8 @@
         MovieCount = [[data objectForKey:@"MovieCount"] intValue];
     }
     
+    NSLog(@"%d",MovieCount);
+    
     
     if(MovieCount == 0){
         UIImage *img = [UIImage imageNamed:@"noimage.png"];
@@ -180,7 +182,7 @@
         [konS setBackgroundImage:img8 forState:UIControlStateNormal];
         UIImage *img9 = [UIImage imageNamed:@"こんぺい島ゴール.png"];
         [konG setBackgroundImage:img9 forState:UIControlStateNormal];
-    }else if(MovieCount >= 7){
+    }else if(MovieCount == 7){
         UIImage *img = [UIImage imageNamed:@"noimage.png"];
         [end setBackgroundImage:img forState:UIControlStateNormal];
         [end1 setBackgroundImage:img forState:UIControlStateNormal];
@@ -203,7 +205,8 @@
         [konS setBackgroundImage:img8 forState:UIControlStateNormal];
         UIImage *img9 = [UIImage imageNamed:@"こんぺい島ゴール.png"];
         [konG setBackgroundImage:img9 forState:UIControlStateNormal];
-    }else if(MovieCount == 10){
+    }else if(MovieCount >= 10){
+        NSLog(@"%d",MovieCount);
         UIImage *img2 = [UIImage imageNamed:@"tyu-toriaru.png"];
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];

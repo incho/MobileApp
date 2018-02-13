@@ -23,6 +23,13 @@
     
     [audio play];
     
+    data = [NSUserDefaults standardUserDefaults];
+    
+    MovieCount = 0;
+    if([data objectForKey:@"MovieCount"]){
+        MovieCount = [[data objectForKey:@"MovieCount"] intValue];
+    }
+    
     movieImage.hidden = YES;
     
     tapCount = 0;
@@ -71,6 +78,11 @@
     tapCount = tapCount + 1;
     
     if(tapCount == Array.count){
+        MovieCount = MovieCount + 1;
+        [data setInteger:MovieCount forKey:@"MovieCount"];
+        clearCount = 10;
+        [data setInteger:MovieCount forKey:@"clearCount"];
+        [data synchronize];
         [audio stop];
         [self performSegueWithIdentifier:@"back" sender:nil];
     }else{
