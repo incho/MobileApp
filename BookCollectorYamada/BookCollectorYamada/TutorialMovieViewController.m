@@ -59,11 +59,6 @@
     }
 }
 
--(IBAction)skip{
-    [audio stop];
-    [self performSegueWithIdentifier:@"next" sender:nil];
-}
-
 
 
 

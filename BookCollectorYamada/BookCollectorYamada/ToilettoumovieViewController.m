@@ -114,7 +114,6 @@
             [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         }
     }else if(MovieCount == 6){
-            NSLog(@"%d",MovieCount);
             MovieCount = MovieCount + 1;
             [data setInteger:MovieCount forKey:@"MovieCount"];
             [data synchronize];
@@ -154,36 +153,7 @@
     }
 }
 
--(IBAction)skip{
-    if(MovieCount == 2){
-        MovieCount = MovieCount + 1;
-        [data setInteger:MovieCount forKey:@"MovieCount"];
-        [data synchronize];
-        [audio stop];
-        [self performSegueWithIdentifier:@"next" sender:nil];
-    }else if(MovieCount == 3){
-        MovieCount = MovieCount + 1;
-        [data setInteger:MovieCount forKey:@"MovieCount"];
-        [data synchronize];
-        [audio stop];
-        [self performSegueWithIdentifier:@"next" sender:nil];
-    }else if(MovieCount == 6){
-        MovieCount = MovieCount + 1;
-        [data setInteger:MovieCount forKey:@"MovieCount"];
-        [data synchronize];
-        [audio stop];
-        [self performSegueWithIdentifier:@"next" sender:nil];
-    }else if(MovieCount == 7){
-        MovieCount = MovieCount + 1;
-        [data setInteger:MovieCount forKey:@"MovieCount"];
-        [data synchronize];
-        [audio stop];
-        [self performSegueWithIdentifier:@"next" sender:nil];
-    }else{
-        [audio stop];
-        [self performSegueWithIdentifier:@"next" sender:nil];
-    }
-}
+
 
 -(IBAction)Htap{
     MovieCount = MovieCount + 1;
@@ -193,6 +163,9 @@
     [self performSegueWithIdentifier:@"hard" sender:nil];
 }
 
+-(IBAction)modoru{
+    [self performSegueWithIdentifier:@"back" sender:nil];
+}
 
 
 

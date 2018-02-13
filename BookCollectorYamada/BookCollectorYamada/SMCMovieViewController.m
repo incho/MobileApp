@@ -82,15 +82,7 @@
 }
 
 
-
-
-
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
+-(IBAction)modoru{
+    [self performSegueWithIdentifier:@"back" sender:nil];
 }
-
 @end

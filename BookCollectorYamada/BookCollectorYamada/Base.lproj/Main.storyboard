@@ -70,14 +70,6 @@
                                     <action selector="tap" destination="z7H-Ha-BOc" eventType="touchUpInside" id="MjF-Q2-fQU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFE-av-X8U">
-                                <rect key="frame" x="488" y="10" width="60" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="skip.png"/>
-                                <connections>
-                                    <action selector="skip" destination="9xm-le-1iW" eventType="touchUpInside" id="jsr-Qb-U7Q"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="jnq-Em-PKJ"/>
@@ -164,7 +156,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="modoru.png"/>
                                 <connections>
-                                    <segue destination="bgZ-ek-H1R" kind="modal" id="GLO-7A-pJf"/>
+                                    <action selector="modoru" destination="NFj-YM-R9V" eventType="touchUpInside" id="lG7-p3-H8r"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hon_b.png" translatesAutoresizingMaskIntoConstraints="NO" id="01j-jd-kZ7">
@@ -209,6 +201,7 @@
                         <segue destination="zYu-GC-Cr4" kind="modal" identifier="hon" id="Y20-C5-Fh0"/>
                         <segue destination="z7H-Ha-BOc" kind="modal" identifier="toile" id="3Xt-aW-h1L"/>
                         <segue destination="YXB-am-Z1Y" kind="modal" identifier="kon" id="vSh-IV-T5q"/>
+                        <segue destination="bgZ-ek-H1R" kind="modal" identifier="back" id="JVd-ts-qsh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQ7-4h-Paf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -242,7 +235,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="modoru.png"/>
                                 <connections>
-                                    <segue destination="NFj-YM-R9V" kind="modal" id="cdC-Db-JFU"/>
+                                    <action selector="modoru" destination="z7H-Ha-BOc" eventType="touchUpInside" id="swE-PD-irR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdv-Ld-qpF">
@@ -254,19 +247,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAZ-cY-hBM">
-                                <rect key="frame" x="195" y="60" width="175" height="102"/>
+                                <rect key="frame" x="196" y="20" width="175" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="normal.png"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="modal" id="H29-05-alY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmN-8n-gjZ">
-                                <rect key="frame" x="488" y="10" width="60" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="skip.png"/>
-                                <connections>
-                                    <action selector="skip" destination="z7H-Ha-BOc" eventType="touchUpInside" id="Hxo-qa-34S"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -280,6 +265,7 @@
                         <outlet property="start" destination="195-h3-i3C" id="KMC-eQ-maU"/>
                         <segue destination="BYZ-38-t0r" kind="modal" identifier="next" id="u58-uN-X9F"/>
                         <segue destination="cMi-cd-a0o" kind="modal" identifier="hard" id="Pce-0M-4Gf"/>
+                        <segue destination="NFj-YM-R9V" kind="modal" identifier="back" id="A0H-Se-zGZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xDA-Oq-eLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -435,14 +421,6 @@
                                     <action selector="tap" destination="z7H-Ha-BOc" eventType="touchUpInside" id="j8y-4t-3eK"/>
                                     <action selector="tap2" destination="9ti-sL-4yU" eventType="touchUpInside" id="bzp-IS-Fqy"/>
                                     <action selector="tap2" destination="DA9-5c-bXU" eventType="touchUpInside" id="zd7-zG-CZo"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vsp-vH-IXZ">
-                                <rect key="frame" x="488" y="11" width="60" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="skip.png"/>
-                                <connections>
-                                    <action selector="skip" destination="DA9-5c-bXU" eventType="touchUpInside" id="gHA-RK-39b"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -604,7 +582,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="modoru.png"/>
                                 <connections>
-                                    <segue destination="NFj-YM-R9V" kind="modal" id="tMW-Pf-TMj"/>
+                                    <action selector="modoru" destination="YXB-am-Z1Y" eventType="touchUpInside" id="R3d-oe-zNE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5O-0g-fhJ">
@@ -613,14 +591,6 @@
                                 <state key="normal" image="normal.png"/>
                                 <connections>
                                     <segue destination="7gI-ep-BFx" kind="modal" id="DXI-vc-GMS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOh-AF-4Qd">
-                                <rect key="frame" x="488" y="10" width="60" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="skip.png"/>
-                                <connections>
-                                    <action selector="skip" destination="YXB-am-Z1Y" eventType="touchUpInside" id="2US-Vn-Kfh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -633,6 +603,7 @@
                         <outlet property="normal" destination="b5O-0g-fhJ" id="GV2-Zr-d88"/>
                         <outlet property="start" destination="p27-2e-C3i" id="IRl-5H-Y4g"/>
                         <segue destination="7gI-ep-BFx" kind="modal" identifier="next" id="XQG-la-sNh"/>
+                        <segue destination="NFj-YM-R9V" kind="modal" identifier="back" id="VLE-5a-RG6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0V3-jU-OPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -717,7 +688,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="modoru.png"/>
                                 <connections>
-                                    <segue destination="NFj-YM-R9V" kind="modal" id="96p-Mo-QGa"/>
+                                    <action selector="modoru" destination="zYu-GC-Cr4" eventType="touchUpInside" id="STG-js-Vio"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タップでスタート！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyg-e7-GwV">
@@ -727,14 +698,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgB-My-8L6">
-                                <rect key="frame" x="488" y="10" width="60" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="skip.png"/>
-                                <connections>
-                                    <action selector="skip" destination="zYu-GC-Cr4" eventType="touchUpInside" id="cle-hH-gfQ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="gHh-Qh-Yzd"/>
@@ -964,14 +927,6 @@
                                     <action selector="tap2" destination="d95-gk-ryX" eventType="touchUpInside" id="hgc-Li-2k8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ER-39-TmP">
-                                <rect key="frame" x="488" y="9" width="60" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="skip.png"/>
-                                <connections>
-                                    <action selector="skip" destination="d95-gk-ryX" eventType="touchUpInside" id="TNt-Fn-FlR"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="lSK-RY-yWy"/>
@@ -999,14 +954,6 @@
                                 <connections>
                                     <action selector="tap" destination="z7H-Ha-BOc" eventType="touchUpInside" id="s3d-xr-77O"/>
                                     <action selector="tap2" destination="9ti-sL-4yU" eventType="touchUpInside" id="53g-iZ-xtn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3j-C4-byJ">
-                                <rect key="frame" x="488" y="8" width="60" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="skip.png"/>
-                                <connections>
-                                    <action selector="skip" destination="9ti-sL-4yU" eventType="touchUpInside" id="U2H-xw-8sR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1037,14 +984,6 @@
                                     <action selector="tap" destination="z7H-Ha-BOc" eventType="touchUpInside" id="eDP-bV-sEl"/>
                                     <action selector="tap2" destination="9ti-sL-4yU" eventType="touchUpInside" id="Wqb-a7-C9z"/>
                                     <action selector="tap2" destination="ZV0-ni-KrL" eventType="touchUpInside" id="eDT-aw-q9y"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etT-le-5iK">
-                                <rect key="frame" x="488" y="8" width="60" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="skip.png"/>
-                                <connections>
-                                    <action selector="skip" destination="ZV0-ni-KrL" eventType="touchUpInside" id="mKu-KF-ACn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1224,7 +1163,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="modoru.png"/>
                                 <connections>
-                                    <segue destination="gEA-nH-asU" kind="modal" id="9uc-1k-zct"/>
+                                    <action selector="modoru" destination="vVD-8A-Qz2" eventType="touchUpInside" id="4HW-Lq-VFc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1234,6 +1173,7 @@
                     <connections>
                         <outlet property="movieImage" destination="Us2-kt-V80" id="kqR-PM-5Aw"/>
                         <segue destination="gEA-nH-asU" kind="modal" identifier="back" id="3Lq-kX-bbZ"/>
+                        <segue destination="gEA-nH-asU" kind="modal" id="Fqd-8I-24r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Pp-F7-tig" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1466,7 +1406,6 @@
         <image name="modoru.png" width="320" height="320"/>
         <image name="normal.png" width="160" height="120"/>
         <image name="oji.png" width="1228" height="1520"/>
-        <image name="skip.png" width="160" height="120"/>
         <image name="start.png" width="1136" height="640"/>
         <image name="tuduki.png" width="320" height="240"/>
         <image name="うんこ.png" width="247" height="253"/>
@@ -1486,13 +1425,12 @@
         <image name="雲５.png" width="218" height="125"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m5m-i5-YQw"/>
         <segue reference="3Lq-kX-bbZ"/>
         <segue reference="2DM-OT-LaY"/>
         <segue reference="21d-Bn-Ti5"/>
         <segue reference="XQG-la-sNh"/>
         <segue reference="n6w-0a-hHI"/>
         <segue reference="H29-05-alY"/>
-        <segue reference="Rt9-qY-JCi"/>
+        <segue reference="A0H-Se-zGZ"/>
     </inferredMetricsTieBreakers>
 </document>

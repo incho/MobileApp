@@ -289,13 +289,10 @@
     [self performSegueWithIdentifier:@"kon" sender:nil];
 }
 
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
+-(IBAction)modoru{
+    [self performSegueWithIdentifier:@"back" sender:nil];
 }
+
 
 
 @end
