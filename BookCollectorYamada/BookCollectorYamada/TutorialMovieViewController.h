@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface TutorialMovieViewController : UIViewController{
     IBOutlet UIButton *movieImage;
@@ -13,6 +14,7 @@
     
     NSArray *movieArray;
     NSArray *movieArray2;
+    AVAudioPlayer *audio;
     int count;
     int count2;
     

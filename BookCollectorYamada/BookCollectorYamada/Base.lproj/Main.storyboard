@@ -391,21 +391,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gameover.png" translatesAutoresizingMaskIntoConstraints="NO" id="6yY-bd-ORH">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnB-g8-NaH">
-                                <rect key="frame" x="254" y="270" width="62" height="30"/>
+                                <rect key="frame" x="139" y="239" width="290" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="マップへ"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.67114093959731547" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                <state key="normal" title="マップへ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="NFj-YM-R9V" kind="modal" id="AiE-4T-wzn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ゲームオーバー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLI-h0-jsa">
-                                <rect key="frame" x="44" y="101" width="480" height="119"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="41R-mJ-0vF"/>
@@ -413,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEU-TK-70O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008" y="1365"/>
+            <point key="canvasLocation" x="1007.7464788732394" y="1365"/>
         </scene>
         <!--Hontou Movie View Controller-->
         <scene sceneID="TJD-ht-Euo">
@@ -1085,7 +1086,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="modoru.png"/>
                                 <connections>
-                                    <segue destination="NFj-YM-R9V" kind="modal" id="6zL-e6-A7z"/>
+                                    <action selector="tap" destination="gEA-nH-asU" eventType="touchUpInside" id="9QX-b1-6js"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yb7-yz-rey">
@@ -1191,6 +1192,7 @@
                         <outlet property="tuG" destination="IKH-KN-xTb" id="kNS-S8-Eve"/>
                         <outlet property="tuS" destination="yj5-5y-2L5" id="zcg-2d-i9z"/>
                         <segue destination="vVD-8A-Qz2" kind="modal" identifier="select" id="m5m-i5-YQw"/>
+                        <segue destination="NFj-YM-R9V" kind="modal" identifier="back" id="Rt9-qY-JCi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZn-n5-Gfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1444,6 +1446,7 @@
         <image name="dash1.png" width="1013" height="1414"/>
         <image name="dash2.png" width="1013" height="1414"/>
         <image name="gallery.png" width="1136" height="640"/>
+        <image name="gameover.png" width="1136" height="640"/>
         <image name="hajimekara.png" width="320" height="240"/>
         <image name="hard.png" width="160" height="120"/>
         <image name="heal.png" width="229" height="169"/>
@@ -1484,6 +1487,6 @@
         <segue reference="XQG-la-sNh"/>
         <segue reference="n6w-0a-hHI"/>
         <segue reference="u58-uN-X9F"/>
-        <segue reference="tMW-Pf-TMj"/>
+        <segue reference="AiE-4T-wzn"/>
     </inferredMetricsTieBreakers>
 </document>

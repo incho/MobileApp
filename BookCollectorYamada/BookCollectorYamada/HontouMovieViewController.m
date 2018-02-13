@@ -16,6 +16,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *bundle = [[NSBundle mainBundle] pathForResource:@"movie" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:bundle];
+    audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [audio play];
+    
     data = [NSUserDefaults standardUserDefaults];
     
     MovieCount = 0;
@@ -34,12 +40,12 @@
     if(MovieCount == 0){
         start.hidden = YES;
         count = 0;
-        movieArray = @[@"t1s.png",@"t2s.png",@"t3s.png",@"t4s.png"];
+        movieArray = @[@"hon1_1.png",@"hon1_2.png",@"hon1_3.png",@"hon1_4.png"];
         UIImage *img = [UIImage imageNamed:movieArray[count]];
         [movieImage setBackgroundImage:img forState:UIControlStateNormal];
     }else if(MovieCount == 1){
         count2 = 0;
-        movieArray2 = @[@"t1g.png",@"t2g.png",@"t3g.png",@"t4g.png",@"t5g.png",@"t6g.png"];
+        movieArray2 = @[@"hon2_1.png",@"hon2_2.png",@"hon2_3.png",@"hon2_4.png",@"hon2_5.png",@"hon3_1.png"];
         
         UIImage *img = [UIImage imageNamed:@"本島.png"];
         [movieImage setBackgroundImage:img forState:UIControlStateNormal];
@@ -71,6 +77,7 @@
             MovieCount = MovieCount + 1;
             [data setInteger:MovieCount forKey:@"MovieCount"];
             [data synchronize];
+            [audio stop];
             [self performSegueWithIdentifier:@"next" sender:nil];
         }else{
             UIImage *img = [UIImage imageNamed:movieArray[count]];
@@ -87,13 +94,14 @@
             MovieCount = MovieCount + 1;
             [data setInteger:MovieCount forKey:@"MovieCount"];
             [data synchronize];
-            
+            [audio stop];
             [self performSegueWithIdentifier:@"endSelect" sender:nil];
         }else{
             UIImage *img = [UIImage imageNamed:movieArray[count]];
             [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         }
     }else{
+        [audio stop];
         [self performSegueWithIdentifier:@"next" sender:nil];
     }
     
@@ -107,12 +115,14 @@
             MovieCount = MovieCount + 1;
             [data setInteger:MovieCount forKey:@"MovieCount"];
             [data synchronize];
+            [audio stop];
             [self performSegueWithIdentifier:@"back" sender:nil];
         }else{
             UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
             [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
         }
     }else{
+        [audio stop];
         [self performSegueWithIdentifier:@"back" sender:nil];
     }
 }
@@ -122,11 +132,13 @@
         MovieCount = MovieCount + 1;
         [data setInteger:MovieCount forKey:@"MovieCount"];
         [data synchronize];
+        [audio stop];
         [self performSegueWithIdentifier:@"next" sender:nil];
     }else if(MovieCount == 1){
         MovieCount = MovieCount + 1;
         [data setInteger:MovieCount forKey:@"MovieCount"];
         [data synchronize];
+        [audio stop];
         [self performSegueWithIdentifier:@"next" sender:nil];
     }else if(MovieCount == 7){
         clearCount = 6;
@@ -136,8 +148,10 @@
         MovieCount = MovieCount + 1;
         [data setInteger:MovieCount forKey:@"MovieCount"];
         [data synchronize];
+        [audio stop];
         [self performSegueWithIdentifier:@"next" sender:nil];
     }else{
+        [audio stop];
         [self performSegueWithIdentifier:@"next" sender:nil];
     }
 }

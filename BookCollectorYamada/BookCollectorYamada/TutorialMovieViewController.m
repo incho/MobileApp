@@ -16,8 +16,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *bundle = [[NSBundle mainBundle] pathForResource:@"movie" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:bundle];
+    audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [audio play];
+    
     count = 0;
-    movieArray = @[@"No1_1.png",@"No1_2.png",@"No1_3.png",@"No1_4.png",@"No1_5.png",@"No2_1.png",@"No2_2.png",@"No2_3.png",@"No2_4.png",@"No2_5.png",@"No3_1.png",@"No3_2.png",@"No3_3.png",@"No3_4.png",@"No3_5.png",@"No4_1.png",@"No4_2.png",@"No4_3.png",@"No4_4.png"];
+    movieArray = @[@"No1_1.png",@"No1_2.png",@"No1_3.png",@"No1_4.png",@"No1_5.png",@"No2_1.png",@"No2_2.png",@"No2_3.png",@"No2_4.png",@"No2_5.png",@"No3_1.png",@"No3_2.png",@"No3_3.png",@"No3_4.png",@"No3_5.png",@"No4_1.png",@"No4_2.png",@"No4_3.png",@"No4_4.png",@"No4_5.png"];
     UIImage *img = [UIImage imageNamed:movieArray[count]];
     [movieImage setBackgroundImage:img forState:UIControlStateNormal];
     
@@ -33,6 +39,7 @@
     count = count + 1;
     
     if(count == movieArray.count){
+        [audio stop];
         [self performSegueWithIdentifier:@"next" sender:nil];
     }else{
         UIImage *img = [UIImage imageNamed:movieArray[count]];
@@ -44,6 +51,7 @@
     count2 = count2 + 1;
     
     if(count2 == movieArray2.count){
+        [audio stop];
         [self performSegueWithIdentifier:@"next" sender:nil];
     }else{
         UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
@@ -52,6 +60,7 @@
 }
 
 -(IBAction)skip{
+    [audio stop];
     [self performSegueWithIdentifier:@"next" sender:nil];
 }
 

@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *bundle = [[NSBundle mainBundle] pathForResource:@"movie" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:bundle];
+    audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [audio play];
+    
     data = [NSUserDefaults standardUserDefaults];
     
     MovieCount = 0;
@@ -97,12 +103,14 @@
             MovieCount = MovieCount + 1;
             [data setInteger:MovieCount forKey:@"MovieCount"];
             [data synchronize];
+            [audio stop];
             [self performSegueWithIdentifier:@"next" sender:nil];
         }else{
             UIImage *img = [UIImage imageNamed:movieArray[count]];
             [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         }
     }else{
+        [audio stop];
         [self performSegueWithIdentifier:@"next" sender:nil];
     }
     
@@ -117,12 +125,14 @@
             MovieCount = MovieCount + 1;
             [data setInteger:MovieCount forKey:@"MovieCount"];
             [data synchronize];
+            [audio stop];
             [self performSegueWithIdentifier:@"back" sender:nil];
         }else{
             UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
             [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
         }
     }else{
+        [audio stop];
         [self performSegueWithIdentifier:@"back" sender:nil];
     }
 
@@ -134,13 +144,16 @@
         MovieCount = MovieCount + 1;
         [data setInteger:MovieCount forKey:@"MovieCount"];
         [data synchronize];
+        [audio stop];
         [self performSegueWithIdentifier:@"next" sender:nil];
     }else if(MovieCount == 5){
         MovieCount = MovieCount + 1;
         [data setInteger:MovieCount forKey:@"MovieCount"];
         [data synchronize];
+        [audio stop];
         [self performSegueWithIdentifier:@"next" sender:nil];
     }else{
+        [audio stop];
         [self performSegueWithIdentifier:@"next" sender:nil];
     }
 }

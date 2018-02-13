@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *bundle = [[NSBundle mainBundle] pathForResource:@"movie" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:bundle];
+    audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [audio play];
+    
     movieImage.hidden = YES;
     
     tapCount = 0;
@@ -24,21 +30,6 @@
     data = [NSUserDefaults standardUserDefaults];
     if([data objectForKey:@"clearCount"]){
         clearCount = [[data objectForKey:@"clearCount"] intValue];
-    }
-    if([data objectForKey:@"ムービー選択"]){
-        select = [data objectForKey:@"ムービー選択"];
-    }
-}
-
--(IBAction)tap{
-    
-    tapCount = tapCount + 1;
-    
-    if(tapCount == Array.count){
-        [self performSegueWithIdentifier:@"back" sender:nil];
-    }else{
-        UIImage *img = [UIImage imageNamed:Array[tapCount]];
-        [movieImage setBackgroundImage:img forState:UIControlStateNormal];
     }
 }
 
@@ -48,7 +39,7 @@
     select1.hidden = YES;
     select2.hidden = YES;
     select3.hidden = YES;
-    Array = @[@"last_8_1.png",@"last_9.png",@"last_10.png",@"last_3_1.png",@"last_3_2.png",@"last_3_3.png",@"last_3_4.png"];
+    Array = @[@"last_8_1.png",@"last_9.png",@"last_10.png",@"last3_1.png",@"last3_2.png",@"last3_3.png",@"last3_4.png",@"complete.png"];
     UIImage *img = [UIImage imageNamed:Array[tapCount]];
     [movieImage setBackgroundImage:img forState:UIControlStateNormal];
 }
@@ -59,7 +50,7 @@
     select1.hidden = YES;
     select2.hidden = YES;
     select3.hidden = YES;
-    Array = @[@"last_8_2.png",@"last_9.png",@"last_10.png",@"last_4_1.png",@"last_4_2.png",@"last_4_3.png",@"last_4_4.png",@"last_5_1.png",@"last_5_2.png",@"last_5_3.png"];
+    Array = @[@"last_8_2.png",@"last_9.png",@"last_10.png",@"last4_1.png",@"last4_2.png",@"last4_3.png",@"last4_4.png",@"last5_1.png",@"last5_2.png",@"last5_3.png",@"complete.png"];
     UIImage *img = [UIImage imageNamed:Array[tapCount]];
     [movieImage setBackgroundImage:img forState:UIControlStateNormal];
 }
@@ -70,9 +61,22 @@
     select1.hidden = YES;
     select2.hidden = YES;
     select3.hidden = YES;
-    Array = @[@"last_8_3.png",@"last_9.png",@"last_10.png",@"last_6_1.png",@"last_6_2.png",@"last_6_3.png",@"last_6_4.png"];
+    Array = @[@"last_8_3.png",@"last_9.png",@"last_10.png",@"last6_1.png",@"last6_2.png",@"last6_3.png",@"last6_4.png",@"complete.png"];
     UIImage *img = [UIImage imageNamed:Array[tapCount]];
     [movieImage setBackgroundImage:img forState:UIControlStateNormal];
+}
+
+-(IBAction)tap{
+    
+    tapCount = tapCount + 1;
+    
+    if(tapCount == Array.count){
+        [audio stop];
+        [self performSegueWithIdentifier:@"back" sender:nil];
+    }else{
+        UIImage *img = [UIImage imageNamed:Array[tapCount]];
+        [movieImage setBackgroundImage:img forState:UIControlStateNormal];
+    }
 }
 
 

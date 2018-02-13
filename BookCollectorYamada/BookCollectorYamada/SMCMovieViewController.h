@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface SMCMovieViewController : UIViewController{
 
@@ -15,6 +16,7 @@
     NSUserDefaults *data;
     NSArray *Array;
     NSString *select;
+    AVAudioPlayer *audio;
     int clearCount;
     int tapCount;
 }

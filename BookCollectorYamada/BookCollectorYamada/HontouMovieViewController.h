@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface HontouMovieViewController : UIViewController{
     IBOutlet UIButton *movieImage;
@@ -15,6 +16,7 @@
     NSArray *movieArray;
     NSArray *movieArray2;
     NSUserDefaults *data;
+    AVAudioPlayer *audio;
     int count;
     int count2;
     int clearCount;

@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface KonpeitouMovieViewController : UIViewController{
     IBOutlet UIButton *movieImage;
@@ -17,6 +18,7 @@
     NSUserDefaults *data;
     NSArray *movieArray;
     NSArray *movieArray2;
+    AVAudioPlayer *audio;
     int count;
     int count2;
     int clearCount;
