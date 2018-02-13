@@ -16,6 +16,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *bundle = [[NSBundle mainBundle] pathForResource:@"movie" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:bundle];
+    audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [audio play];
+    
     tapCount = 0;
     clearCount = 0;
     data = [NSUserDefaults standardUserDefaults];
@@ -32,13 +38,13 @@
 
 -(void)kakunou{
     if([select isEqualToString:@"チュートリアル開始"]){
-        Array = @[@"No1_1.png",@"No1_2.png",@"No1_3.png",@"No1_4.png",@"No1_5.png",@"No2_1.png",@"No2_2.png",@"No2_3.png",@"No2_4.png",@"No2_5.png",@"No3_1.png",@"No3_2.png",@"No3_3.png",@"No3_4.png",@"No3_5.png",@"No4_1.png",@"No4_2.png",@"No4_3.png",@"No4_4.png"];
+        Array = @[@"No1_1.png",@"No1_2.png",@"No1_3.png",@"No1_4.png",@"No1_5.png",@"No2_1.png",@"No2_2.png",@"No2_3.png",@"No2_4.png",@"No2_5.png",@"No3_1.png",@"No3_2.png",@"No3_3.png",@"No3_4.png",@"No3_5.png",@"No4_1.png",@"No4_2.png",@"No4_3.png",@"No4_4.png",@"No4_5.png"];
     }else if([select isEqualToString:@"チュートリアル終了"]){
         Array = @[@"No5_1.png",@"No5_2.png",@"No5_3.png",@"No5_4.png",@"No6_1.png",@"No6_2.png",@"No6_3.png"];
     }else if([select isEqualToString:@"本島開始"]){
-        Array = @[@"t1s.png",@"t2s.png",@"t3s.png",@"t4s.png"];
+        Array = @[@"hon1_1.png",@"hon1_2.png",@"hon1_3.png",@"hon1_4.png"];
     }else if([select isEqualToString:@"本島終了"]){
-        Array = @[@"t1g.png",@"t2g.png",@"t3g.png",@"t4g.png",@"t5g.png",@"t6g.png"];
+        Array = @[@"hon2_1.png",@"hon2_2.png",@"hon2_3.png",@"hon2_4.png",@"hon2_5.png",@"hon3_1.png"];
     }else if([select isEqualToString:@"トイレッ島開始"]){
         Array = @[@"t1s.png",@"t2s.png",@"t3s.png",@"t4s.png"];
     }else if([select isEqualToString:@"トイレッ島終了"]){
@@ -67,6 +73,7 @@
     tapCount = tapCount + 1;
     
     if(tapCount == Array.count){
+        [audio stop];
         [self performSegueWithIdentifier:@"back" sender:nil];
     }else{
         UIImage *img = [UIImage imageNamed:Array[tapCount]];

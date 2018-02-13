@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface LastMovieViewController : UIViewController{
     
@@ -19,6 +20,7 @@
     NSUserDefaults *data;
     NSArray *Array;
     NSString *select;
+    AVAudioPlayer *audio;
     int clearCount;
     int tapCount;
     

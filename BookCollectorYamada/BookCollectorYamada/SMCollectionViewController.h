@@ -44,6 +44,7 @@
 -(IBAction)Ending1;
 -(IBAction)Ending2;
 -(IBAction)Ending3;
+-(IBAction)tap;
 
 
 

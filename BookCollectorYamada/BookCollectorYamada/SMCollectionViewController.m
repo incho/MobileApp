@@ -157,7 +157,7 @@
         [tuS setBackgroundImage:img2 forState:UIControlStateNormal];
         UIImage *img3 = [UIImage imageNamed:@"No1_2.png"];
         [tuG setBackgroundImage:img3 forState:UIControlStateNormal];
-        UIImage *img4 = [UIImage imageNamed:@"No1_3.png"];
+        UIImage *img4 = [UIImage imageNamed:@"本島開始.png"];
         [honS setBackgroundImage:img4 forState:UIControlStateNormal];
         UIImage *img5 = [UIImage imageNamed:@"本島ゴール.png"];
         [honG setBackgroundImage:img5 forState:UIControlStateNormal];
@@ -165,13 +165,13 @@
         [toiS setBackgroundImage:img6 forState:UIControlStateNormal];
         UIImage *img7 = [UIImage imageNamed:@"トイレッ島ゴール.png"];
         [toiG setBackgroundImage:img7 forState:UIControlStateNormal];
-        UIImage *img8 = [UIImage imageNamed:@"kon_op1.png"];
+        UIImage *img8 = [UIImage imageNamed:@"こんぺい島開始.png"];
         [konS setBackgroundImage:img8 forState:UIControlStateNormal];
-        UIImage *img9 = [UIImage imageNamed:@"kon_op1.png"];
+        UIImage *img9 = [UIImage imageNamed:@"こんぺい島ゴール.png"];
         [konG setBackgroundImage:img9 forState:UIControlStateNormal];
         UIImage *img10 = [UIImage imageNamed:@"３ステージクリア後.png"];
         [end setBackgroundImage:img10 forState:UIControlStateNormal];
-        UIImage *img11 = [UIImage imageNamed:@"lastmae.png"];
+        UIImage *img11 = [UIImage imageNamed:@"エンディング1.png"];
         [end1 setBackgroundImage:img11 forState:UIControlStateNormal];
         UIImage *img12 = [UIImage imageNamed:@"エンディング2.png"];
         [end2 setBackgroundImage:img12 forState:UIControlStateNormal];
@@ -298,7 +298,10 @@
     }
 }
 
-
+-(IBAction)tap{
+    [audio stop];
+    [self performSegueWithIdentifier:@"back" sender:nil];
+}
 
 
 

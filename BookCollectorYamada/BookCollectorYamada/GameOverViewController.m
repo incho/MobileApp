@@ -17,7 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    data = [NSUserDefaults standardUserDefaults];
     
     NSString *bundle = [[NSBundle mainBundle] pathForResource:@"gameover" ofType:@"mp3"];
     NSURL *url = [NSURL fileURLWithPath:bundle];

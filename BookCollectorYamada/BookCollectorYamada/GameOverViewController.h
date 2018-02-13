@@ -11,7 +11,6 @@
 
 @interface GameOverViewController : UIViewController{
     
-    NSUserDefaults *data;
     AVAudioPlayer *audio;
     
 }
