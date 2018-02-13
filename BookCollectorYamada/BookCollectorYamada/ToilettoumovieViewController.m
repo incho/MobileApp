@@ -53,7 +53,7 @@
         
         count2 = 0;
         movieArray2 = @[@"t1g.png",@"t2g.png",@"t3g.png",@"t4g.png",@"t5g.png",@"t6g.png"];
-        UIImage *img = [UIImage imageNamed:@"トイレッ島.png"];
+        UIImage *img = [UIImage imageNamed:@"after1_8.png"];
         [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
         [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
@@ -90,7 +90,7 @@
         UIImage *img = [UIImage imageNamed:@"トイレッ島.png"];
         [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         
-        UIImage *img2 = [UIImage imageNamed:@"トイレッ島.png"];
+        UIImage *img2 = [UIImage imageNamed:@"after1_8.png"];
         [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
         
         UIImage *img3 = [UIImage imageNamed:@"hard.png"];
@@ -114,20 +114,12 @@
             [movieImage setBackgroundImage:img forState:UIControlStateNormal];
         }
     }else if(MovieCount == 6){
-        NSLog(@"%d",MovieCount);
-        count = count + 1;
-        
-        if(count == movieArray.count){
             NSLog(@"%d",MovieCount);
             MovieCount = MovieCount + 1;
             [data setInteger:MovieCount forKey:@"MovieCount"];
             [data synchronize];
             [audio stop];
             [self performSegueWithIdentifier:@"next" sender:nil];
-        }else{
-            UIImage *img = [UIImage imageNamed:movieArray[count]];
-            [movieImage setBackgroundImage:img forState:UIControlStateNormal];
-        }
     }else{
         [audio stop];
         [self performSegueWithIdentifier:@"next" sender:nil];
@@ -149,18 +141,11 @@
             [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
         }
     }else if(MovieCount == 7){
-        count2 = count2 + 1;
-        
-        if(count2 == movieArray2.count){
             MovieCount = MovieCount + 1;
             [data setInteger:MovieCount forKey:@"MovieCount"];
             [data synchronize];
             [audio stop];
             [self performSegueWithIdentifier:@"back" sender:nil];
-        }else{
-            UIImage *img2 = [UIImage imageNamed:movieArray2[count2]];
-            [movieImage2 setBackgroundImage:img2 forState:UIControlStateNormal];
-        }
     }else{
         [data setInteger:MovieCount forKey:@"MovieCount"];
         [data synchronize];

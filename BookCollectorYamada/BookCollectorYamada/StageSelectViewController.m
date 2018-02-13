@@ -128,7 +128,7 @@
         Stage4.image = [UIImage imageNamed:@"hon_b.png"];
         Stage5.image = [UIImage imageNamed:@"hon_b.png"];
         
-    }else if(clearCount == 6){
+    }else if(clearCount >= 6){
         UIImage *img = [UIImage imageNamed:@"S_本島.png"];
         UIImage *img2 = [UIImage imageNamed:@"S_トイレッ島.png"];
         UIImage *img3 = [UIImage imageNamed:@"S_こんぺい島.png"];

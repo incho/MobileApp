@@ -23,6 +23,7 @@
     AVAudioPlayer *audio;
     int clearCount;
     int tapCount;
+    int MovieCount;
     
 }
 
