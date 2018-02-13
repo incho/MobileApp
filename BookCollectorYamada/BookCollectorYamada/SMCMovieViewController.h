@@ -22,6 +22,7 @@
 }
 
 -(IBAction) tap;
+-(IBAction)modoru;
 
 
 @end

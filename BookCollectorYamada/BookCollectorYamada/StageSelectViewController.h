@@ -41,6 +41,7 @@
 -(IBAction)hon;
 -(IBAction)toile;
 -(IBAction)kon;
+-(IBAction)modoru;
 
 
 

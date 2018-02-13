@@ -157,36 +157,6 @@
 }
 
 
--(IBAction)skip{
-    if(MovieCount == 4){
-        MovieCount = MovieCount + 1;
-        [data setInteger:MovieCount forKey:@"MovieCount"];
-        [data synchronize];
-        [audio stop];
-        [self performSegueWithIdentifier:@"next" sender:nil];
-    }else if(MovieCount == 5){
-        MovieCount = MovieCount + 1;
-        [data setInteger:MovieCount forKey:@"MovieCount"];
-        [data synchronize];
-        [audio stop];
-        [self performSegueWithIdentifier:@"next" sender:nil];
-    }else if(MovieCount == 8){
-        MovieCount = MovieCount + 1;
-        [data setInteger:MovieCount forKey:@"MovieCount"];
-        [data synchronize];
-        [audio stop];
-        [self performSegueWithIdentifier:@"next" sender:nil];
-    }else if(MovieCount == 9){
-        MovieCount = MovieCount + 1;
-        [data setInteger:MovieCount forKey:@"MovieCount"];
-        [data synchronize];
-        [audio stop];
-        [self performSegueWithIdentifier:@"next" sender:nil];
-    }else{
-        [audio stop];
-        [self performSegueWithIdentifier:@"next" sender:nil];
-    }
-}
 
 -(IBAction)Htap{
     MovieCount = MovieCount + 1;
@@ -195,6 +165,11 @@
     [audio stop];
     [self performSegueWithIdentifier:@"hard" sender:nil];
 }
+
+-(IBAction)modoru{
+    [self performSegueWithIdentifier:@"back" sender:nil];
+}
+
 
 
 @end
